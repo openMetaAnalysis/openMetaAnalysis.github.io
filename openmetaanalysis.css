@@ -1,3 +1,10 @@
+.pmid {
+	text-decoration:underline;
+	color: #0000EE;
+}
+.pmid:visited {
+	color: #551A8B;
+}
 .body_panel
 {
 display:inline-block;
