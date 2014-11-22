@@ -3,8 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Title of the document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+<script>
+$(document).ready(function(){
+  //Link handlers
+  $(".system").click(function(){
+    e.preventDefault();
+    alert('');
+  });
+})
+</script>
 </head>
 <body>
 <!--#include virtual="/bias-table-head.htm" -->
-</body>
+<p>Here</p>
+<a class="system" href="index.html">Return to summary</a>
 </html>
