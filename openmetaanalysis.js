@@ -9,6 +9,6 @@ $(document).ready(function(){
   });
   $(".pmid").click(function(event){
     event.preventDefault();
-	window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text()
+	window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).attr("href")
   });
 })
