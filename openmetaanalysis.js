@@ -1,8 +1,8 @@
 $(document).ready(function(){
   //Link handlers
-  $(".system").click(function(event){
+  $(".main").click(function(event){
     event.preventDefault();
-	window.location.href = "http://openmetaanalysis.github.io//" + $(this).attr("href")
+	window.location.href = "http://openmetaanalysis.github.io/" + $(this).attr("href")
   $(".repo").click(function(event){
     event.preventDefault();
 	window.location.href = "http://github.com/" + $(this).attr("href")
