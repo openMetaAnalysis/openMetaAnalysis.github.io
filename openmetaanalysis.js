@@ -1,3 +1,4 @@
+var repo_name = location.pathname.substring(1,location.pathname.indexOf("/",1));
 $(document).ready(function(){
   //Link handlers
   $(".main").click(function(event){
