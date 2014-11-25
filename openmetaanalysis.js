@@ -1,6 +1,8 @@
 var repo_dir = location.pathname.substring(1,location.pathname.indexOf("/",1));
 var repo_name = repo_dir.replace('-', ' ');
-$(document).ready(function(){
+$( document ).ajaxComplete(function() {
+	//Display the repo_name in all the correct spots
+	$(".repo_name").text(repo_name);
 	//Highlight emphasis
 	$( ".emphasis" ).css('background-color', '#FFFF00' );
 	$( ".emphasis" ).css('font-style', 'italic' );
@@ -8,8 +10,8 @@ $(document).ready(function(){
 	$( "emphasis" ).css('background-color', '#FFFF00' );
 	$( "emphasis" ).css('font-style', 'italic' );
 	$( "emphasis" ).css('font-weight', 'bold' );
-	//Display the repo_name in all the correct spots
-	$(".repo_name").text(repo_name);
+	});
+$(document).ready(function(){
 	//Link handlers
 	$(".main").click(function(event){
 		event.preventDefault();
