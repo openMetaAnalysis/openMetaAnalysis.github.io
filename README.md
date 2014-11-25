@@ -2,4 +2,4 @@ openMetaAnalysis
 ==========================
 
 * [Public view](http://openmetaanalysis.github.io)
-* [Source files](../../tree/gh-pages/)
+* [Source files](https://github.com/openMetaAnalysis/openMetaAnalysis.github.io)
