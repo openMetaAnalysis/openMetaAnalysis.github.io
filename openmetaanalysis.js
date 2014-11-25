@@ -1,6 +1,8 @@
 var repo_dir = location.pathname.substring(1,location.pathname.indexOf("/",1));
 var repo_name = repo_dir.replace('-', ' ');
 $(document).ready(function(){
+  //Display the repo_name in all the correct spots
+  $(".repo_name").text(repo_name);
   //Link handlers
   $(".main").click(function(event){
     event.preventDefault();
