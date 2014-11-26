@@ -18,8 +18,9 @@ var url = "/template/tables/bias.xml";
                 },
             success: function(xml) { 
 			$(xml).find('study').each(function(){
+					var randomization
 					$(this).find('randomization').each(function(){
-						var randomization = $(this).html()
+						randomization = $(this).html()
 						})
 					$(this).find('allocation').each(function(){
 						var allocation = $(this).html()
