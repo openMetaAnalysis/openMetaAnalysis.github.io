@@ -1,4 +1,6 @@
-var repo_dir = location.pathname.substring(1,location.pathname.indexOf("/",1));
+var n = location.pathname.indexOf("/",1)
+if (n = 0){(n = ){n = location.pathname.length}
+var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
 $( document ).ajaxComplete(function() {
 	//Display the repo_name in all the correct spots
