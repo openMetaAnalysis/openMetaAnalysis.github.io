@@ -1,4 +1,5 @@
 $(document).ready(function(){
+$("#header_pico").html("<p>Included trials, starting with the oldest trials.</p><table><caption>Randomized controlled trials of this topic</caption><tbody><tr><th>Trial</th><th>Patients</th><th>Intervention</th><th>Comparison</th><th>Outcome</th><th style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
 var url = "/template/tables/pico.xml";
         $.ajax({
             type: "GET",
