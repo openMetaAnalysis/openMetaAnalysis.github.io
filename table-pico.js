@@ -32,14 +32,6 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 					$(this).find('outcome').each(function(){
 						$(this).find("bullet[type='primary']").each(function(){
 							outcome += '<br>&bull; ' + $(this).html()
-							$("[type=primary]").each(function(){
-								outcome += '<br>&bull; ' + $(this).html()
-							})
-							//outcome += '<br>Secondary:';
-							$("[type=secondary]").each(function(){
-								outcome += '<br>&bull; ' + $(this).html()
-							})
-
 						})
 					})
                         	var pmid= $(this).find('citation').attr('pmid');
