@@ -20,23 +20,23 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						})
 				var intervention = '';
 					$(this).find('intervention').find('bullet').each(function(){
-						intervention += '<br>&bull; ' + $(this).html()
+						intervention += '<br>&bull; ' + $(this).text()
 						})
 				intervention = $(this).find('intervention').find('bullet').remove().end().html() + intervention
 				var comparison = '';
 					$(this).find('comparison').find('bullet').each(function(){
-						comparison += '<br>&bull; ' + $(this).html()
+						comparison += '<br>&bull; ' + $(this).text()
 						})
 				comparison = $(this).find('comparison').find('bullet').remove().end().html() + comparison
 				var outcome = 'Primary:';
 					$(this).find('outcome').each(function(){
 						$(this).find("bullet[type='primary']").each(function(){
-							outcome += '<br>&bull; ' + $(this).html()
+							outcome += '<br>&bull; ' + $(this).text()
 						})
 						if ($(this).find("bullet[type='secondary']").length) {
 							outcome += '<br>Secondary:';
 							$(this).find("bullet[type='secondary']").each(function(){
-								outcome += '<br>&bull; ' + $(this).html()
+								outcome += '<br>&bull; ' + $(this).text()
 							})
 						}
 					})
