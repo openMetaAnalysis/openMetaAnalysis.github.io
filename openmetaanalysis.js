@@ -4,6 +4,7 @@ var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
 $( document ).ajaxComplete(function() {
 	//Display the repo_name in all the correct spots
+	alert(repo_name)
 	$(".repo_name").text(repo_name);
 	//Highlight emphasis
 	$( ".emphasis" ).css('background-color', '#FFFF00' );
