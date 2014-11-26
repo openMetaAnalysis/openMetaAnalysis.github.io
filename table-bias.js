@@ -18,27 +18,27 @@ var url = "/template/tables/bias.xml";
                 },
             success: function(xml) { 
 			$(xml).find('study').each(function(){
-					var randomization
+					var randomization, allocation, blinding_people, blinding_assessment, attrition, selective_reporting, other_biases;
 					$(this).find('randomization').each(function(){
 						randomization = $(this).html()
 						})
 					$(this).find('allocation').each(function(){
-						var allocation = $(this).html()
+						allocation = $(this).html()
 						})
 					$(this).find('blinding_people').each(function(){
-						var blinding_people = $(this).html()
+						blinding_people = $(this).html()
 						})
 					$(this).find('blinding_assessment').each(function(){
-						var blinding_assessment = $(this).html()
+						blinding_assessment = $(this).html()
 						})
 					$(this).find('attrition').each(function(){
-						var attrition = $(this).html()
+						attrition = $(this).html()
 						})
 					$(this).find('selective_reporting').each(function(){
-						var selective_reporting = $(this).html()
+						selective_reporting = $(this).html()
 						})
 					$(this).find('other_biases').each(function(){
-						var other_biases = $(this).html()
+						other_biases = $(this).html()
 						})
 				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + "<br>PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + '</td><td>' + randomization + '</td><td>' + intervention + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
 			        $('#citations').append(trHTML);
