@@ -1,6 +1,6 @@
 var n = location.pathname.indexOf("/",1)
 alert(n);
-if (n = 0){(n = location.pathname.length}
+if (n = 0){n = location.pathname.length}
 alert(n);
 var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
