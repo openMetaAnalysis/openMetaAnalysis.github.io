@@ -34,7 +34,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 							outcome += '<br>&bull; ' + $(this).html()
 						})
 						if ($(this).find("bullet[type='secondary']").length) {
-							outcome += 'Secondary:';
+							outcome += '<br>Secondary:';
 							$(this).find("bullet[type='secondary']").each(function(){
 								outcome += '<br>&bull; ' + $(this).html()
 							})
