@@ -14,7 +14,7 @@ var url = "/template/" + repo_name + "/tables/bias.xml";
             cache: false,
             dataType: "xml",
             error: function() {
-                alert("The XML File could not be processed correctly.");
+                alert("The XML File," + url + ", could not be processed correctly.");
                 },
             success: function(xml) { 
 			$(xml).find('study').each(function(){
