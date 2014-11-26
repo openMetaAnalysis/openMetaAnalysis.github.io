@@ -37,6 +37,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						$("[type=secondary]") .each(function(){
 							outcome += '<br>&bull; ' + $(this).html()				outcome = $(this).find('outcome').find('bullet').remove().end().text() + outcome
 						})
+					})
                         	var pmid= $(this).find('citation').attr('pmid');
 				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + $(this).find("citation").attr("journal_abbrev") + "<br>PMID: <a href='http://pubmed.gov/" + pmid + "'>" + pmid + '</td><td>' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
 			        $('#citations').append(trHTML);
