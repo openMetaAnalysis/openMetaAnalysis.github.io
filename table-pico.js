@@ -16,7 +16,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 			$(xml).find('study').each(function(){
 				var patients = $(this).find('patients').attr('total') + ' patients:';
 					$(this).find('patients').find('bullet').each(function(){
-						patients += '<br>&bull; ' + $(this).html()
+						patients += '<br>&bull; ' + $(this)
 						})
 				var intervention = '';
 					$(this).find('intervention').find('bullet').each(function(){
