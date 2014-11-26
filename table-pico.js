@@ -3,6 +3,7 @@ $( document ).ajaxComplete(function() {
 	});
 $(document).ready(function(){
 $("#header_pico").html("<p>Included trials, starting with the oldest trials.</p><table><caption>Randomized controlled trials of this topic</caption><tbody><tr><th>Trial</th><th>Patients</th><th>Intervention</th><th>Comparison</th><th>Outcome</th><th style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
+var regex = /(\d{7}+)/ig;
 var url = "/" + repo_dir + "/tables/pico.xml";
         $.ajax({
             type: "GET",
@@ -39,7 +40,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 								outcome += '<br>&bull; ' + $(this).text()
 							})
 						}
-						outcome = outcome.replace("PMID", "pmid");
+						outcome = outcome.replace(\d7, "pmid");
 					})
                         	var pmid= $(this).find('citation').attr('pmid');
 				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + $(this).find("citation").attr("journal_abbrev") + "<br>PMID: <a href='http://pubmed.gov/" + pmid + "'>" + pmid + '</td><td>' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
