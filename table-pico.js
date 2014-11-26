@@ -29,7 +29,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						})
 				comparison = $(this).find('comparison').find('bullet').remove().end().html() + comparison
 				var outcome = 'Primary';
-					$(this).find('outcome').find('bullet').each(function(){
+					$(this).find('outcome').find('bullet')[type="primary"].each(function(){
 						outcome += '<br>&bull; ' + $(this).html()
 						$("[type=primary]").each(function(){
 							outcome += '<br>&bull; ' + $(this).html()
