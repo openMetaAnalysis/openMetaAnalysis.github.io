@@ -31,7 +31,7 @@ var url = "/template/tables/bias.xml";
 					$(this).find('other_biases').each(function(){
 						var other_biases = $(this).html()
 						})
-				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + "<br>PMID: <a href='http://pubmed.gov/" + pmid + "'>" + $(this).find('citation').attr('pmid') + '</td><td>' + randomization + '</td><td>' + intervention + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
+				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + "<br>PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + '</td><td>' + randomization + '</td><td>' + intervention + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
 			        $('#citations').append(trHTML);
 				
 			})
