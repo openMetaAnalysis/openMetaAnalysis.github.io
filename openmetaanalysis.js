@@ -25,4 +25,8 @@ $(document).ready(function(){
 		event.preventDefault();
 		window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text(); //$(this).attr("href")
 	});
+	$("pmid").click(function(event){
+		event.preventDefault();
+		window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text(); //$(this).attr("href")
+	});
 })
