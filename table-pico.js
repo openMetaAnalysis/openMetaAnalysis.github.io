@@ -16,18 +16,18 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 			$(xml).find('study').each(function(){
 				var patients = $(this).find('patients').attr('total') + ' patients:';
 					$(this).find('patients').find('bullet').each(function(){
-						patients += '<br>&bull; ' + $(this).html()
+						patients += '<br>&bull; ' + $(this).text()
 						})
 				var intervention = '';
 					$(this).find('intervention').find('bullet').each(function(){
 						intervention += '<br>&bull; ' + $(this).text()
 						})
-				intervention = $(this).find('intervention').find('bullet').remove().end().html() + intervention
+				intervention = $(this).find('intervention').find('bullet').remove().end().text() + intervention
 				var comparison = '';
 					$(this).find('comparison').find('bullet').each(function(){
 						comparison += '<br>&bull; ' + $(this).text()
 						})
-				comparison = $(this).find('comparison').find('bullet').remove().end().html() + comparison
+				comparison = $(this).find('comparison').find('bullet').remove().end().text() + comparison
 				var outcome = 'Primary:';
 					$(this).find('outcome').each(function(){
 						$(this).find("bullet[type='primary']").each(function(){
