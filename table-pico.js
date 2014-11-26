@@ -31,11 +31,11 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 				var outcome = 'Primary';
 					$(this).find('outcome').find('bullet').each(function(){
 						$("[type=primary]") .each(function(){
-							outcome += '<br>&bull; ' + $(this).html()				outcome = $(this).find('outcome').find('bullet').remove().end().text() + outcome
+							outcome += '<br>&bull; ' + $(this).html()
 						})
 						outcome += '<br>Secondary:';
 						$("[type=secondary]") .each(function(){
-							outcome += '<br>&bull; ' + $(this).html()				outcome = $(this).find('outcome').find('bullet').remove().end().text() + outcome
+							outcome += '<br>&bull; ' + $(this).html()
 						})
 					})
                         	var pmid= $(this).find('citation').attr('pmid');
