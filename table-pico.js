@@ -18,15 +18,18 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 				var patients = $(this).find('patients').attr('total') + ' patients:';
 					$(this).find('patients').find('bullet').each(function(){
 						patients += '<br>&bull; ' + $(this).text()
+						patients = patients.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
 						})
 				var intervention = '';
 					$(this).find('intervention').find('bullet').each(function(){
 						intervention += '<br>&bull; ' + $(this).text()
+						intervention = intervention.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
 						})
 				intervention = $(this).find('intervention').find('bullet').remove().end().text() + intervention
 				var comparison = '';
 					$(this).find('comparison').find('bullet').each(function(){
 						comparison += '<br>&bull; ' + $(this).text()
+						comparison = comparison.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
 						})
 				comparison = $(this).find('comparison').find('bullet').remove().end().text() + comparison
 				var outcome = 'Primary:';
