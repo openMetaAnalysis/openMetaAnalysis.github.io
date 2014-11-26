@@ -18,7 +18,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
                 },
             success: function(xml) { 
 			$(xml).find('study').each(function(){
-					var randomization, allocation, blinding_people, blinding_assessment, attrition, selective_reporting, other_biases;
+					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
 					$(this).find('randomization').each(function(){
 						randomization = $(this).html()
 						})
