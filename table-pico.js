@@ -18,12 +18,12 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 					$(this).find('patients').find('bullet').each(function(){
 						patients += '<br>&bull; ' + $(this).html()
 						})
-				var intervention = [];
+				var intervention = '';
 					$(this).find('intervention').find('bullet').each(function(){
 						intervention += '<br>&bull; ' + $(this).html()
 						})
 				intervention = $(this).find('intervention').find('bullet').remove().end().html() + intervention
-				var comparison = [];
+				var comparison = '';
 					$(this).find('comparison').find('bullet').each(function(){
 						comparison += '<br>&bull; ' + $(this).html()
 						})
