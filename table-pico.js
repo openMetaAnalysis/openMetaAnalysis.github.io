@@ -24,7 +24,7 @@ var url = "/template/tables/pico.xml";
 						comparison += '<br>&bull; ' + $(this).html()
 						})
 				comparison = $(this).find('comparison').find('bullet').remove().end().html() + comparison
-				var outcome = '[]'Primary'';
+				var outcome = 'Primary';
 					$(this).find('outcome').find('bullet').each(function(){
 						outcome += '<br>&bull; ' + $(this).html()
 						})
