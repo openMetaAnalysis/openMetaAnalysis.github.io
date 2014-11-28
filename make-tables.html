@@ -18,19 +18,20 @@ float: left;
 function iterateJSON(idlist, publications) {
 
     var id = idlist.pop();
+    // test with http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11850928,11482001&format=json
     $.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', function(summary){
 
         var citation = "";
         var citation_bias = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
         var citation_pico = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
-        var citation_data = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
+        var citation_data = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
         for(author in summary.result[id].authors){
             citation+=summary.result[id].authors[author].name+', ';
         }
         citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
         citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
   
-        citation_data+='<citation > pmid=\"' + summary.result[id].pmid + '\"></citation >'
+        citation_data+='&lt;citation pmid=\"' + summary.result[id].id + '\"&gt;&lt;/citation&gt;'
   
         //console.log(citation);
         publications.push(citation_data);
