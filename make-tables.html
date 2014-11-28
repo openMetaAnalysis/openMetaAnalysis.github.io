@@ -19,7 +19,7 @@ $(document).ready(function(){
         //disable the button to prevent multiple clicks
 		$("#submitbutton").prop( "disabled", true );
 		citation_data = ""
-		$("#bias").html("<i>searching...</i>")
+		$("#status").html("<i>searching...</i>")
 		
 		//Get list of IDs based on search terms
 		$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json',{ 
@@ -42,7 +42,7 @@ function iterateJSON(idlist, publications) {
     $.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
 		function(summary){
 
-        var citation = "";
+        var citation = "&lt;!-- start of a new study --&gt;<br>";
 
         //for(author in summary.result[id].authors){
         //    citation+=summary.result[id].authors[author].name+', ';
@@ -57,8 +57,16 @@ function iterateJSON(idlist, publications) {
 			pubyear = pubyear.substring(0, pubyear.indexOf(" "));
 			}
 
-        citation+='&lt;citation pmid=\"' + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + '&lt;/citation&gt;<br>'
-  
+        citation+="&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;<br>"
+		citation+= "&lt;randomization&gt;&nbsp;risk&lt;/randomization&gt;<br>"
+		citation+= '&lt;allocation&gt;&nbsp;risk&lt;/allocation&gt;<br>'
+		citation+= '&lt;blinding_people&gt;&nbsp;risk&lt;/blinding_people&gt;<br>'
+		citation+= '&lt;blinding_assessment&gt;&nbsp;risk&lt;/blinding_assessment&gt;<br>'
+		citation+= '&lt;attrition&gt;&nbsp;risk&lt;/attrition&gt;\<br>'
+		citation+= '&lt;selective_reporting&gt;&nbsp;risk&lt;/selective_reporting&gt;<br>'
+		citation+= '&lt;other_biases&gt;&nbsp;risk&lt;/other_biases&gt;<br>'
+		citation+= '&lt;/study&gt;<br>'
+		
         //console.log(citation);
         publications.push(citation);
         
@@ -76,9 +84,18 @@ function iterateJSON(idlist, publications) {
 
 <input id="input" type="text" size="100" placeholder="Enter search terms or a list of PMIDs separated by spaces, commas, or semi-colons"><br/>
 <button id="submitbutton" type="button">Submit</button>
-
-<div id="bias">Waiting for click</div>
-<div id="pico"></div>
-<div id="data"></div>
+<div>&nbsp;</div>
+<div id="status">Waiting for click</div>
+<div>Below will be the contents for file that holds the data for the meta-analysis.</div>
+<div>&nbsp;</div>
+<div id="data" rows="50" cols="200" style="border-style: solid; border-width: 2px;width:800px">Under development</div>
+<div>&nbsp;</div>
+<div>Below will be the contents for file that holds the risk of bias information.</div>
+<div>&nbsp;</div>
+<div id="bias" rows="50" cols="200" style="border-style: solid; border-width: 2px;width:800px">Contents will appear here</div>
+<div>&nbsp;</div>
+<div>Below will be the contents for file that holds the PICO information.</div>
+<div>&nbsp;</div>
+<div id="pico" rows="50" cols="200" style="border-style: solid; border-width: 2px;width:800px">Under development</</div>
 </body>
 </html>
