@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PubMed xml to table bias</title>
+<style>
+img {
+height: 100px;
+float: left;
+}
+</style>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+//http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api
+//http://api.jquery.com/jquery.getjson/
+///Not used:
+//http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2904758/
+function iterateJSON(idlist, publications) {
+
+    var id = idlist.pop();
+    $.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', function(summary){
+
+        var citation = "";
+        for(author in summary.result[id].authors){
+            citation+=summary.result[id].authors[author].name+', ';
+        }
+        citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
+        citation ='<li>' + citation + '</li>';
+        //console.log(citation);
+        publications.push(citation);
+        
+        if(idlist.length!=0){
+            iterateJSON(idlist, publications);
+        }else{
+            console.log(publications);
+			$("#results").html(publications)
+        }
+    });
+}
+</script>
+</head>
+<body>
+<ul id="results"></ul>
+<script>
+$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=badgett+r[author]&retmode=json', function(data){
+    var ids = data.esearchresult.idlist;
+    var publications = [];
+    iterateJSON(ids, publications);
+});
+</script>
+</body>
+</html>
