@@ -3,44 +3,70 @@
 <head>
 <meta charset="utf-8">
 <title>PubMed xml to table bias</title>
-<style>
-img {
-height: 100px;
-float: left;
-}
-</style>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 //http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api
+//http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=25164756&retmode=json
 //http://api.jquery.com/jquery.getjson/
 ///Not used:
 //http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2904758/
-function iterateJSON(idlist, publications) {
+var citation_bias = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
+var citation_pico = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
+var citation_data = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
 
+$(document).ready(function(){
+    $("#submitbutton").on("click", function(){
+        //disable the button to prevent multiple clicks
+		$("#submitbutton").prop( "disabled", true );
+		citation_data = ""
+		$("#bias").html("<i>searching...</i>")
+		
+		//Get list of IDs based on search terms
+		$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json',{ 
+			term : $("#input").val(),
+			format: "json"
+			})
+		.done(function(data){
+			var ids = data.esearchresult.idlist;
+			var publications = [];
+			iterateJSON(ids, publications);
+			$("#submitbutton").prop( "disabled", false );
+		});	
+
+	});
+})
+
+function iterateJSON(idlist, publications) {
     var id = idlist.pop();
     // test with http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11850928,11482001&format=json
-    $.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', function(summary){
+    $.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
+		function(summary){
 
         var citation = "";
-        var citation_bias = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
-        var citation_pico = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
-        var citation_data = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
-        for(author in summary.result[id].authors){
-            citation+=summary.result[id].authors[author].name+', ';
-        }
-        citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
-        citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
+
+        //for(author in summary.result[id].authors){
+        //    citation+=summary.result[id].authors[author].name+', ';
+        //}
+        //citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
   
-        citation_data+='&lt;citation pmid=\"' + summary.result[id].id + '\"&gt;&lt;/citation&gt;'
+		var studyname = summary.result[id].authors[0].name
+		studyname = studyname.substring(0, studyname.indexOf(" "));
+
+		var pubyear = summary.result[id].pubdate
+		if (pubyear.indexOf(" ") > 1){
+			pubyear = pubyear.substring(0, pubyear.indexOf(" "));
+			}
+
+        citation+='&lt;citation pmid=\"' + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + '&lt;/citation&gt;<br>'
   
         //console.log(citation);
-        publications.push(citation_data);
+        publications.push(citation);
         
         if(idlist.length!=0){
             iterateJSON(idlist, publications);
         }else{
             //console.log(publications);
-		$("#bias").html(publications)
+			$("#bias").html(publications)
         }
     });
 }
@@ -48,15 +74,11 @@ function iterateJSON(idlist, publications) {
 </head>
 <body>
 
-<div id="bias"></div>
+<input id="input" type="text" size="100" placeholder="Enter search terms or a list of PMIDs separated by spaces, commas, or semi-colons"><br/>
+<button id="submitbutton" type="button">Submit</button>
+
+<div id="bias">Waiting for click</div>
 <div id="pico"></div>
 <div id="data"></div>
-<script>
-$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=badgett+r[author]&retmode=json', function(data){
-    var ids = data.esearchresult.idlist;
-    var publications = [];
-    iterateJSON(ids, publications);
-});
-</script>
 </body>
 </html>
