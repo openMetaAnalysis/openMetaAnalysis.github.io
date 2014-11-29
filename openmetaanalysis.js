@@ -6,6 +6,7 @@ $(document).ready(function(){
 	//Display the repo_name in all the correct spots
 	$(".repo_name").text(repo_name);
 	//Customize src for images based on repo name
+	alert($("#forest").prop('src'))
 	$("#forest").prop('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#forest").prop('src'))
 	$("#grade").prop('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#grade").prop('src'))
 	//Link handlers
