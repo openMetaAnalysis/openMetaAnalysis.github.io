@@ -18,6 +18,10 @@ $(document).ready(function(){
 		event.preventDefault();
 		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + $(this).attr("href");
 	});
+	$(".master-dir").click(function(event){
+		event.preventDefault();
+		window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href");
+	});
 	$(".pmid").click(function(event){
 		event.preventDefault();
 		window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text(); //$(this).attr("href")
