@@ -13,9 +13,9 @@ $(document).ready(function(){
 		event.preventDefault();
 		window.location.href = "http://openmetaanalysis.github.io/" + $(this).attr("href");
 	});
-	$(".repo").click(function(event){
+	$(".master .repo").click(function(event){
 		event.preventDefault();
-		window.location.href = "http://github.com/" + $(this).attr("href");
+		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href");
 	});
 	$(".pmid").click(function(event){
 		event.preventDefault();
