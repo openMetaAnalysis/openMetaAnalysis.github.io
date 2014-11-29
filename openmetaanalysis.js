@@ -9,11 +9,12 @@ $(document).ready(function(){
 	$("#forest").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#forest").attr('src'))
 	$("#grade").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#grade").attr('src'))
 	//Link handlers
+		//gh-pages
 	$(".main").click(function(event){
 		event.preventDefault();
 		window.location.href = "http://openmetaanalysis.github.io/" + $(this).attr("href");
 	});
-	$(".master .repo").click(function(event){
+	$(".master").click(function(event){
 		event.preventDefault();
 		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href");
 	});
