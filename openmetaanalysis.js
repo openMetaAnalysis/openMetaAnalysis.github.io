@@ -6,8 +6,9 @@ $(document).ready(function(){
 	//Display the repo_name in all the correct spots
 	$(".repo_name").text(repo_name);
 	//Customize src for images based on repo name
-	$("#forest").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#forest").attr('src'))
-	$("#grade").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#grade").attr('src'))
+	$("image .master").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("image .master").attr('src'))
+	//$("#forest").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#forest").attr('src'))
+	//$("#grade").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#grade").attr('src'))
 	//Link handlers
 	$(".main").click(function(event){
 		event.preventDefault();
