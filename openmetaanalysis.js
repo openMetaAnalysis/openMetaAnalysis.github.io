@@ -15,11 +15,12 @@ $(document).ready(function(){
 		window.location.href = "http://openmetaanalysis.github.io/" + $(this).attr("href");
 	});
 	$(".master").click(function(event){
+		//For specific files on master branch
 		event.preventDefault();
 		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href");
-//https://raw.githubusercontent.com/openMetaAnalysis/Hypertonic-Saline-for-Bronchiolitis/master/forest%20plots/Outcome%20-%20Primary.png
 	});
 	$(".master-dir").click(function(event){
+		//For directories on master branch
 		event.preventDefault();
 		window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href");
 	});
