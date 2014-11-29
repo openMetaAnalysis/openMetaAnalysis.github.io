@@ -16,7 +16,7 @@ $(document).ready(function(){
 	});
 	$(".master").click(function(event){
 		event.preventDefault();
-		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href");
+		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + $(this).attr("href");
 	});
 	$(".pmid").click(function(event){
 		event.preventDefault();
