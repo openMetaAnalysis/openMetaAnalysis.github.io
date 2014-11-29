@@ -14,8 +14,8 @@ $( document ).ajaxComplete(function() {
 	$( "emphasis" ).css('font-weight', 'bold' );
 	});
 $(document).ready(function(){
+	//Customize src for images based on repo name
 	$("img.master").prop('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("img.master").prop('src'))
-	});
 	//Link handlers
 	$(".main").click(function(event){
 		event.preventDefault();
