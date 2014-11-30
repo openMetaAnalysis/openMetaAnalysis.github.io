@@ -1,12 +1,5 @@
 $( document ).ajaxComplete(function() {
 	//Background-color of cells
-	//Highlight emphasis
-	$( ".emphasis" ).css('background-color', '#FFFF00' );
-	$( ".emphasis" ).css('font-style', 'italic' );
-	$( ".emphasis" ).css('font-weight', 'bold' );
-	$( "emphasis" ).css('background-color', '#FFFF00' );
-	$( "emphasis" ).css('font-style', 'italic' );
-	$( "emphasis" ).css('font-weight', 'bold' );
 	});
 $(document).ready(function(){
 $("#header_pico").html("<p>Included trials, starting with the oldest trials.</p><table><caption>Randomized controlled trials of this topic</caption><tbody><tr><th>Trial</th><th>Patients</th><th>Intervention</th><th>Comparison</th><th>Outcome</th><th style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
@@ -60,8 +53,10 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 					})
                         	var pmid= $(this).find('citation').attr('pmid');
 				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + $(this).find("citation").attr("journal_abbrev") + "<br>PMID: <a href='http://pubmed.gov/" + pmid + "'>" + pmid + '</td><td>' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
+				//Highlight emphasis
+				var regex = /\*{2}(\d+)\*{2}/ig;
+				trHTML = trHTML.replace(regex, "<span style='background-color:yellow;font-weight:bold;font-style:italics'>$1</span>");	
 			        $('#citations').append(trHTML);
-				
 			})
                 }
       });
