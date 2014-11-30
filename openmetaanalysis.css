@@ -1,3 +1,11 @@
+.wrapper
+{
+width: 860px;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0px;
+margin-left: auto;
+}
 .pmid {
 	text-decoration:underline;
 	color: #0000EE;
