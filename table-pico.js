@@ -54,7 +54,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
                         	var pmid= $(this).find('citation').attr('pmid');
 				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + $(this).find("citation").attr("journal_abbrev") + "<br>PMID: <a href='http://pubmed.gov/" + pmid + "'>" + pmid + '</td><td>' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
 				//Highlight emphasis
-				var regex = /\*{2}(\d+)\*{2}/ig;
+				var regex = /\*{2}(.+)\*{2}/ig;
 				trHTML = trHTML.replace(regex, "<span style='background-color:yellow;font-weight:bold;font-style:italics'>$1</span>");	
 			        $('#citations').append(trHTML);
 			})
