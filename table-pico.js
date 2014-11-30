@@ -35,12 +35,10 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 				var outcome = 'Primary:';
 					$(this).find('outcome').each(function(){
 						$(this).find("bullet[type='primary']").each(function(){
-							$(this).find("bullet[type='secondary']").each(function(){
 								if ( $(this).attr('url'))
 									{outcome += "<br>&bull; <a href=\"" + $(this).attr('url') + " \">" + $(this).text() + '</a>'}
 								else
 									{outcome += '<br>&bull; ' + $(this).text()}
-							})
 						})
 						if ($(this).find("bullet[type='secondary']").length) {
 							outcome += '<br>Secondary:';
