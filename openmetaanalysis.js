@@ -15,14 +15,19 @@ $(document).ready(function(){
 		window.location.href = "http://openmetaanalysis.github.io/" + $(this).attr("href");
 	});
 	$(".master").click(function(event){
-		//For specific files on master branch
+		//For directories on master branch
 		event.preventDefault();
-		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href");
+		window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/' + $(this).attr("href");
 	});
 	$(".master-dir").click(function(event){
 		//For directories on master branch
 		event.preventDefault();
 		window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href");
+	});
+	$(".master-file").click(function(event){
+		//For specific files on master branch
+		event.preventDefault();
+		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href");
 	});
 	$(".pmid").click(function(event){
 		event.preventDefault();
