@@ -3,7 +3,7 @@ $( document ).ajaxComplete(function() {
 	});
 $(document).ready(function(){
 $("#header_pico").html("<p>Included trials, starting with the oldest trials.</p><table><caption>Randomized controlled trials of this topic</caption><tbody><tr><th>Trial</th><th>Patients</th><th>Intervention</th><th>Comparison</th><th>Outcome</th><th style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
-var regex = /(\d{7,})/ig;
+var regex = /([^>c]\d{7,})/ig; //from http://jsfiddle.net/badgettrg/60482cbh/
 var url = "/" + repo_dir + "/tables/pico.xml";
         $.ajax({
             type: "GET",
@@ -40,7 +40,10 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						if ($(this).find("bullet[type='secondary']").length) {
 							outcome += '<br>Secondary:';
 							$(this).find("bullet[type='secondary']").each(function(){
-								outcome += '<br>&bull; ' + $(this).text()
+								if ( $(this).attr('url'))
+									{outcome += '<br>&bull; <a href=\"http://\"' + $(this).text() + '</a>'}
+								else
+									{outcome += '<br>&bull; ' + $(this).text()}
 							})
 						}
 						outcome = outcome.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
