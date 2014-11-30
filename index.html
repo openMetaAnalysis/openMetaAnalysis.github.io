@@ -103,7 +103,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 //For gh-pages
 //Page history and edit
 var pagename = location.pathname.split('/').slice(-1);
-if (pagename.length < 2){pagename = "index.html"}
+if (pagename.toString().length < 1){pagename = "index.html"}
 document.write("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/commits/master/" + pagename + "'>Page history</a></div>")
 </script>
 
