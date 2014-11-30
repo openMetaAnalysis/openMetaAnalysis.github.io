@@ -79,9 +79,20 @@ function iterateJSON(idlist, publications) {
     });
 }
 </script>
+<style>
+
+.wrapper
+{
+  width: 860px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
+</style>
 </head>
 <body>
-
+<div class="wrapper">
 <input id="input" type="text" autocomplete="on" size="100" placeholder="Enter search terms or a list of PMIDs separated by spaces, commas, or semi-colons"><br/>
 <button id="submitbutton" type="button">Submit</button>
 <div>&nbsp;</div>
@@ -97,5 +108,25 @@ function iterateJSON(idlist, publications) {
 <div>Below will be the contents for file that holds the PICO information. Replace text that is highlighted in yellow.</div>
 <div>&nbsp;</div>
 <div id="pico" rows="50" cols="200" style="border-style: solid; border-width: 2px;width:800px">Under development</</div>
+<script>
+//For gh-pages
+//Page history and edit
+var pagename = location.pathname.split('/').slice(-1);
+if (pagename.toString().length < 1){pagename = "index.html"}
+document.write("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/commits/master/" + pagename + "'>Page history</a></div>")
+</script>
+
+</div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-56740469-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
 </body>
 </html>
