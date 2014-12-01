@@ -49,7 +49,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			var denom = $(xml).find('study').length;
 			$("#judgment").html('Low risk')
 			ratio = $(xml).find("study:contains(High)").length/denom;
-			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval($(xml).find("study:contains(Low)").length/denom).toFixed(2) + "</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(1 - $(xml).find("study:contains(Unclear)").length/denom).toFixed(2) + " or more</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			if (ratio > 0.5){
 				$("#judgment").html('High risk');
 				$("#judgment").css('background-color','#ffcccc');
