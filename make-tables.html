@@ -80,23 +80,77 @@ function iterateJSON(idlist, publications) {
 }
 </script>
 <style>
-
-.wrapper
+#menu
 {
-  width: 860px;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-bottom: 0px;
-  margin-left: auto;
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+} 
+
+.listitem
+{
+display:inline;
+float:left;
 }
+
+a.menuitem:link,a.menuitem:visited
+{
+display:block;
+width:150px;
+font-weight:bold;
+text-align:center;
+padding:4px;
+text-decoration:none;background-color:#6DC6E7;
+color:#FFFFFF;
+}
+
+a.menuitem:hover,a.menuitem:active
+{
+background-color:#0022B4;
+color:#FFFFFF;
+}
+
+.tooltiptext{
+	display: none;
+}
+.ToolTipClass{
+color:black;
+border-color:#0022B4;
+background-color: #6DC6E7
+}
+
 </style>
 </head>
+
 <body>
+<!-- 
+http://jquery-csv.googlecode.com/git/examples/basic-usage.html
+http://jquery-csv.googlecode.com/git/examples/flot.html -> seems best and most stable without reticulating spines error
+http://code.google.com/p/jquery-csv/wiki/API -> instructions
+-->
 <div class="wrapper">
+
+<div class="page-header">
+      <div style="color:#0022B4">
+		<h1>openMetaAnalysis: <span style="font-size:50%">collaborative and continuous</span></h1>
+	</div>
+	
+	<ul id="menu">
+	<li class="listitem"><a href="http://openmetaanalysis.github.io/" class="menuitem">Home</a></li>
+	<li class="listitem"><a href="https://public.opencpu.org/ocpu/github/openMetaAnalysis/home/www/editor.html" class="menuitem">Editor</a></li>
+	<li class="listitem"><a href="https://public.opencpu.org/ocpu/github/openMetaAnalysis/home/www/arrows.html" class="menuitem">Arrows Plot</a></li>
+	<li class="listitem"><a href="http://openmetaanalysis.github.io/methods.html" class="menuitem">Methods</a></li>
+	<li class="listitem"><a href="http://openmetaanalysis.github.io/using_github.html" class="menuitem">Using GitHub</a></li>
+	</ul> 
+</div>
+
+<h2>Make tables</h2>
+
 <input id="input" type="text" autocomplete="on" size="100" placeholder="Enter search terms or a list of PMIDs separated by spaces, commas, or semi-colons"><br/>
 <button id="submitbutton" type="button">Submit</button>
 <div>&nbsp;</div>
-<div id="status">Waiting for click</div>
+<div id="status">Status: Waiting for input</div>
 <div>Below will be the contents for file that holds the data for the meta-analysis. Replace text that is highlighted in yellow.</div>
 <div>&nbsp;</div>
 <div id="data" rows="50" cols="200" style="border-style: solid; border-width: 2px;width:800px">Under development</div>
