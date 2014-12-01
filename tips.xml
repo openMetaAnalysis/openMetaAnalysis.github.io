@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tips>
+<!-- start of a new tip -->
+<item name="grade_quality_definition">
+  <message>
+      <p>High quality - Further research is very unlikely to change our confidence in the estimate of effect</p>
+      <p>Moderate quality - Further research is likely to have an important impact on our confidence in the estimate of effect and may change the estimate</p>
+      <p>Low quality - Further research is very likely to have an important impact on our confidence in the estimate of effect and is likely to change the estimate</p>
+      <p>Very low quality - Any estimate of effect is very uncertain
+    </message>
+  <link>
+    <text>GRADE</text>
+    <href>http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2335261/</href>
+  </link>
+</item>
+<!-- Leave this bottom line -->
+</tips>
