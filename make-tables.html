@@ -77,11 +77,11 @@ function iterateJSON(idlist) {
         publications.push(citation);
 
 	citation = ""
-        citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
+        citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>";
         publications1.push(citation);
 
 	citation = ""
-        citation+=studyname + "," + pubyear + "," + summary.result[id].uid  + "," + studyname + " , , , ,"''"" ,&lt;br&gt;"
+        citation+=studyname + "," + pubyear + "," + summary.result[id].uid  + "," + studyname + " , , , ,'',&lt;br&gt;";
         publications2.push(citation);
         
         if(idlist.length!=0){
