@@ -41,8 +41,8 @@ $(document).ready(function(){
 //function iterateJSON(idlist, publications) {
 function iterateJSON(idlist) {
 	var publications = [];
+	var publications1 = [];
 	var publications2 = [];
-	var publications3 = [];
 	var id = idlist.pop();
 	// test with http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11850928,11482001&format=json
 	$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
