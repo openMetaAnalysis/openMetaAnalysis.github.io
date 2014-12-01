@@ -47,14 +47,14 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			//summary judgment
 			var ratio = 0;
 			var denom = $(xml).find('study').length;
-			alert(denom);
 			$("#judgment").html('Low risk')
 			ratio = $(xml).find("study:contains(High)").length/denom;
-			alert($(xml).find("study:contains(High)").length);
+			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + ratio.toFixed(2) + "</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+			alert(ratio);
 			if (ratio > 0.5){
 				$("#judgment").html('High risk');
 				$("#judgment").css('background-color','#ffcccc');
-				$("#rationale").html("\'Most information (" + ratio.toFixed(2) + ") is from studies at low or unclear risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + ratio.toFixed(2) + "</span>) is from studies at low or unclear risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			};
 			ratio = $(xml).find("study:contains(Unclear)").length/denom;
 			if (ratio > 0.5){
