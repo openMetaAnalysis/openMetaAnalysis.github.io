@@ -29,20 +29,15 @@ $(document).ready(function(){
 			})
 		.done(function(data){
 			var ids = data.esearchresult.idlist;
-			//var publications = [];
-			//iterateJSON(ids, publications);
-			iterateJSON(ids);
+			var publications = [];
+			iterateJSON(ids, publications);
 			$("#submitbutton").prop( "disabled", false );
 		});	
 
 	});
 })
 
-//function iterateJSON(idlist, publications) {
-function iterateJSON(idlist) {
-	var publications = [];
-	var publications1 = [];
-	var publications2 = [];
+function iterateJSON(idlist, publications) {
 	var id = idlist.pop();
 	// test with http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11850928,11482001&format=json
 	$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
