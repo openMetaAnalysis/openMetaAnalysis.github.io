@@ -68,7 +68,7 @@ function iterateJSON(idlist) {
 		citation+= "&lt;allocation&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
 		citation+= "&lt;blinding_people&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
 		citation+= "&lt;blinding_assessment&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_assessment&gt;<br>"
-		citation+= "&lt;attrition&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/attrition&gt;\<br>"
+		citation+= "&lt;attrition&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/attrition&gt;<br>"
 		citation+= "&lt;selective_reporting&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/selective_reporting&gt;<br>"
 		citation+= "&lt;other_biases&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/other_biases&gt;<br>"
 		citation+= "&lt;/study&gt;<br>"
@@ -76,21 +76,21 @@ function iterateJSON(idlist) {
         //console.log(citation);
         publications.push(citation);
 
-	citation = ""
-        citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>";
-        publications1.push(citation);
+	//citation = ""
+        //citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>";
+        //publications1.push(citation);
 
-	citation = ""
-        citation+=studyname + "," + pubyear + "," + summary.result[id].uid  + "," + studyname + " , , , ,'',&lt;br&gt;";
-        publications2.push(citation);
+	//citation = ""
+        //citation+=studyname + "," + pubyear + "," + summary.result[id].uid  + ", , , , ,'',&lt;br&gt;";
+        //publications2.push(citation);
         
         if(idlist.length!=0){
             iterateJSON(idlist, publications);
         }else{
             //console.log(publications);
 			$("#bias").html(publications)
-			$("#pico").html(publications1)
-			$("#data").html(publications2)
+			//$("#pico").html(publications1)
+			//$("#data").html(publications2)
         }
     });
 }
