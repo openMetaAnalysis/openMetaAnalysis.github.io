@@ -42,4 +42,9 @@ th{
 }
 .col1{
 	width:100px;
+	max-width:100px;
+}
+caption{
+	font-weight:bold;
+	font-size:130%;
 }
