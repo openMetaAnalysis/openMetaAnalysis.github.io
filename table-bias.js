@@ -47,6 +47,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			//summary judgment
 			var ratio = 0;
 			var denom = $(xml).find('study').length;
+			alert(denom);
 			$("#answer").html('Low risk')
 			ratio = $(xml).find("study:contains(High)").length/denom;
 			if (ratio > 0.5){
