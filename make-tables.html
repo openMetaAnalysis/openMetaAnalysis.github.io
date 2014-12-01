@@ -29,19 +29,24 @@ $(document).ready(function(){
 			})
 		.done(function(data){
 			var ids = data.esearchresult.idlist;
-			var publications = [];
-			iterateJSON(ids, publications);
+			//var publications = [];
+			//iterateJSON(ids, publications);
+			iterateJSON(ids);
 			$("#submitbutton").prop( "disabled", false );
 		});	
 
 	});
 })
 
-function iterateJSON(idlist, publications) {
-    var id = idlist.pop();
-    // test with http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11850928,11482001&format=json
-    $.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
-		function(summary){
+//function iterateJSON(idlist, publications) {
+function iterateJSON(idlist) {
+	var publications = [];
+	var publications2 = [];
+	var publications3 = [];
+	var id = idlist.pop();
+	// test with http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11850928,11482001&format=json
+	$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
+	function(summary){
 
         var citation = "&lt;!-- start of a new study --&gt;<br>";
 
@@ -70,12 +75,22 @@ function iterateJSON(idlist, publications) {
 		
         //console.log(citation);
         publications.push(citation);
+
+	citation = ""
+        citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
+        publications1.push(citation);
+
+	citation = ""
+        citation+=studyname + "," + pubyear + "," + summary.result[id].uid  + "," + studyname + " , , , ,"''"" ,&lt;br&gt;"
+        publications2.push(citation);
         
         if(idlist.length!=0){
             iterateJSON(idlist, publications);
         }else{
             //console.log(publications);
 			$("#bias").html(publications)
+			$("#pico").html(publications1)
+			$("#data").html(publications2)
         }
     });
 }
