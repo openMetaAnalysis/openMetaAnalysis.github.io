@@ -50,14 +50,9 @@ $(document).ready(function(){
 				$("#tip").css({"margin-right":"auto"});
 				$("#tip").css({"opacity":"1"});
 				$("[name=choose]")
-				content.find("[name= " + $("#tip".attr("id") + ")]").each(function(){
+				content.find("[name= " + $("#tip").attr("id") + "]").each(function(){
 				      alert($(this).text)
 				      });
-
-	$(this).find($("#tip").attr("id")).each(function(){
-attrition = $(this).text()
-})
-
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
 				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
