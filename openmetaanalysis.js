@@ -41,6 +41,7 @@ $(document).ready(function(){
 		$( "#tip" ).css('display', 'none');
 	});
 	$('a.hastip').mouseenter(function(event){
+		var tipname = $(this).attr("id");
 		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
@@ -50,8 +51,8 @@ $(document).ready(function(){
 				$("#tip").css({"border-width":"medium"});
 				$("#tip").css({"margin-right":"auto"});
 				$("#tip").css({"opacity":"1"});
-				alert("[name= " + $(this).attr("id") + "]")
-				var temp =responseTxt.find("[name= " + $("#tip").attr("id") + "]").each(function(){
+				alert("[name= " + tipname + "]")
+				var temp =responseTxt.find("[name= " + tipname + "]").each(function(){
 				     alert(temp)
 				     });
 				var trigger = $(this).attr('id');
