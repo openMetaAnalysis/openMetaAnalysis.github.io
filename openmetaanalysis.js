@@ -41,10 +41,9 @@ $(document).ready(function(){
 		$( "#tip" ).css('display', 'none');
 	});
 	$('a.hastip').mouseenter(function(event){
-		$("#tip").load("/tips.xml",content, function(responseTxt,statusTxt,xhr){
+		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				alert("Success: "+xhr.status+": "+xhr.statusText);
-				alert(content);
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"white"});
 				$("#tip").css({"border-style":"solid"});
