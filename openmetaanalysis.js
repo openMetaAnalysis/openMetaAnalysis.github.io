@@ -43,6 +43,8 @@ $(document).ready(function(){
 	$('a.hastip').mouseenter(function(event){
 		$("#tip").load("/tips.xml",content, function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
+				alert("Success: "+xhr.status+": "+xhr.statusText);
+				alert(content);
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"white"});
 				$("#tip").css({"border-style":"solid"});
