@@ -58,8 +58,8 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "</a>"
 					})
 				     });
-				     $("#tip").html("<div style = 'background-color:white;opacity:1'>" + tiptext + '</div>')
-				$("#tip").css('display','inline');
+				     $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;'>" + tiptext + '</div>')
+				$("#tip").css('display','block');
 				$("#tip").css({"background-color":"#6DC6E7"});
 				$("#tip").css({"color":"#0022B4"});
 				$("#tip").css({"opacity":"1"});
