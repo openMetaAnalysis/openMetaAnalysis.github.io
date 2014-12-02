@@ -47,8 +47,8 @@ $(document).ready(function(){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
 				var xmlDoc = $.parseXML(responseTxt)
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
-				     $("#tip").replaceWith( "<div id='tip'>" + $(this).find("message").xml() + "</div>")
-				     //$("#tip").append($(this).text())
+				     $("#tip").append( "<div>" + $(this).find("p").text() + "</div>")
+				     $("#tip").append( "<a href='" + $(this).find("href").text() + "'>" + $(this).find("text").text() + </div>")
 				     });
 				     alert($("#tip").html());
 				$("#tip").css('display','inline');
