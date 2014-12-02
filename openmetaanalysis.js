@@ -50,6 +50,7 @@ $(document).ready(function(){
 				     $("#tip").replaceWith( "<div id='tip'>" + $(this).text() + "</div>")
 				     //$("#tip").append($(this).text())
 				     });
+				     alert($("#tip").html());
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"#6DC6E7"});
 				$("#tip").css({"color":"#0022B4"});
