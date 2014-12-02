@@ -37,4 +37,20 @@ $(document).ready(function(){
 		event.preventDefault();
 		window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text(); //$(this).attr("href")
 	});
+	$('a.hastip').mouseleave(function(event){
+		$( "#tip" ).css('display', 'none');
+	});
+	$('a.hastip').mouseenter(function(event){
+		$("#tip").css('display','inline');
+		$("#tip").css({"background-color":"white"});
+		$("#tip").css({"border-style":"solid"});
+		$("#tip").css({"border-width":"medium"});
+		$("#tip").css({"margin-right":"auto"});
+		$("#tip").css({"opacity":"1"});
+		var trigger = $(this).attr('id');
+		posleft = $("#" + trigger).position().left;
+		if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
+		$( "#tip" ).offset({top: $("#" + trigger).position().top + 25, left: posleft});
+		$("#tip").html('text tip')
+	});
 })
