@@ -100,13 +100,11 @@ function iterateJSON(idlist, publications) {
 }
 </script>
 <style type="text/css" media="screen">
-    #editor { 
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
+#editor { 
+  position: relative;
+  width: 950px;
+  height: 300px;
+}
 
 #menu
 {
@@ -184,9 +182,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow.</div>
 <div>&nbsp;</div>
 
-<div id="editor-container">
-<div id="editor" style="width:600px;">Please wait for code to be written here.</div>
-</div>
+<div id="editor">Please wait for code to be written here.</div>
 
 <script>
 //For gh-pages
