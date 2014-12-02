@@ -7,43 +7,9 @@
 
 <!-- jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-
-<!-- tooltip -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css" />
-
-<script>
-$(document).ready(function(){
-	//http://qtip2.com/
-	// Apply tooltip on all <a/> elements with title attributes. Mousing over
-    // these elements will the show tooltip as expected, but mousing onto the
-    // tooltip is now possible for interaction with it's contents.
-    //$('a').each(function () {
-    $('.hastip').each(function () {
-        $(this).qtip({
-            content: $(this).next('.tooltiptext'),
-            hide: {
-                fixed: true,
-                delay: 300
-            },
-			position: {
-				my: 'bottom left',  // Position my top left...
-				at: 'bottom right', // at the bottom right of...
-			},
-			style: { classes: 'ToolTipClass'
-			}
-		});
-    });
-
-	$('.hastip').click(function(e) {
-		e.stopPropagation();
-		return false;
-	});	
-});
-</script>
+<script src="/openmetaanalysis.js"></script>
 
 <style>
-
 .wrapper
 {
   width: 860px;
@@ -82,15 +48,6 @@ a.menuitem:hover,a.menuitem:active
 {
 background-color:#0022B4;
 color:#FFFFFF;
-}
-
-.tooltiptext{
-	display: none;
-}
-.ToolTipClass{
-color:black;
-border-color:#0022B4;
-background-color: #6DC6E7
 }
 
 </style>
@@ -172,20 +129,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <li>We use the random effects model with the inverse variance.</li>
 <li>The Knapp-Hartung method adjusts test statistics and confidence intervals to gives wider (more conservative) confidence intervals and is one of the methods suggested by Cornell et al.(2)</li>
 <li>The continuity correction of Diamond is used.(3)</li>
-<li>Summary measures for binary outcomes include odds ratio and relative risk. Measures for continuous outcomes are either mean differences or <a href="http://handbook.cochrane.org/chapter_12/12_6_interpreting_results_from_continuous_outcomes_including.htm" class="hastip">standardized mean differences</a>.
-	<div class="tooltiptext">
-	The standardized mean difference (SMD) is:<br/>
-	<img src="smd.png" alt="SMD"/><br/>
-	In the interpretation of SMD:
-	<ul>
-		<li>0.2 represents a small effect</li>
-		<li>0.5 a moderate effect</li>
-		<li>> 0.8 a large effect</li> 
-	</ul>
-	<div id="">The 'standardization' allows pooling of different types of outcomes.</div>
-	<div id="">From: Cochrane Handbook. 12.6  <a href="http://handbook.cochrane.org/chapter_12/12_6_2_re_expressing_smds_using_rules_of_thumb_for_effect_sizes.htm">Interpreting results from continuous outcomes (including standardized mean differences)</a></div>
-	</div>
-</li>
+<li>Summary measures for binary outcomes include odds ratio and relative risk. Measures for continuous outcomes are either mean differences or <a href="http://handbook.cochrane.org/chapter_12/12_6_interpreting_results_from_continuous_outcomes_including.htm" class="hastip" id="smd_definition">standardized mean differences</a>.</li>
 <li>Subgroup analyses and meta-regressions are done as needed.</li>
 <li>Heterogeneity is assessed with I<sup>2</sup></li>
 </ul>
@@ -268,5 +212,6 @@ document.write("<div style='text-align:center'><a href='https://github.com/openM
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+<div id="tip" style="display:none"></div>
 </body>
 </html>
