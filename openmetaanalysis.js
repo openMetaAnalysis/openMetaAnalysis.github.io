@@ -47,7 +47,7 @@ $(document).ready(function(){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
 				var xmlDoc = $.parseXML(responseTxt)
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
-				     $("#tip").replaceWith( "<div id='tip'>" + $(this).find("message") + "</div>")
+				     $("#tip").replaceWith( "<div id='tip'>" + $(this).find("message").contents() + "</div>")
 				     //$("#tip").append($(this).text())
 				     });
 				     alert($("#tip").html());
