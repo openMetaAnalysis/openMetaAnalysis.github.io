@@ -47,7 +47,7 @@ $(document).ready(function(){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
 				var xmlDoc = $.parseXML(responseTxt)
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
-				     $("#tip").html(temp.text)
+				     $("#tip").html(temp.text())
 				     });
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"white"});
