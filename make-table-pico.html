@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PubMed xml to table bias</title>
+<link rel="stylesheet" href="/openmetaanalysis.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+//http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api
+//http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=25164756&retmode=json
+//http://api.jquery.com/jquery.getjson/
+///Not used:
+//http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2904758/
+var citation_bias = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!-- start of a new study -->\n<study>\n";
+
+$(document).ready(function(){
+
+    $("#submitbutton").on("click", function(){
+        //disable the button to prevent multiple clicks
+		$("#submitbutton").prop( "disabled", true );
+		citation_data = ""
+		$("#status").html("<i>searching...</i>")
+		
+		//Get list of IDs based on search terms
+		$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json',{ 
+			term : $("#input").val(),
+			format: "json"
+			})
+		.done(function(data){
+			var ids = data.esearchresult.idlist;
+			var publications = [];
+			iterateJSON(ids, publications);
+			$("#submitbutton").prop( "disabled", false );
+		});	
+
+	});
+
+function iterateJSON(idlist, publications) {
+	var id = idlist.pop();
+	// test with http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11850928,11482001&format=json
+	$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
+	function(summary){
+
+        var citation = "&lt;!-- start of a new study --&gt;<br>";
+
+        //for(author in summary.result[id].authors){
+        //    citation+=summary.result[id].authors[author].name+', ';
+        //}
+        //citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
+
+		var studyname = summary.result[id].authors[0].name;
+		studyname = studyname.substring(0, studyname.indexOf(" "));
+
+		var pubyear = summary.result[id].pubdate
+		if (pubyear.indexOf(" ") > 1){
+			pubyear = pubyear.substring(0, pubyear.indexOf(" "));
+			}
+
+        citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
+		citation+= "&lt;randomization&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
+		citation+= "&lt;design&gt;<span style='background-color:yellow'>Randomized controlled trial</span>&lt;/design&gt;<br>"
+		citation+= "&lt;patients total=<span style='background-color:yellow'>__</span>&gt;<br>"
+		citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
+		citation+= "&lt;/patients&gt;<br>"
+		citation+= "&lt;intervention&gt;<span style='background-color:yellow'>3% saline solution (2 ml)</span><br>"
+		citation+= "&lt;bullet&gt;<span style='background-color:yellow'>With 5 mg (0.5 ml) terbutaline</span>&lt;/bullet&gt;<br>"
+		citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Every __ hours for __ days</span>&lt;/bullet&gt;<br>"
+		citation+= ">&lt;/intervention&gt;<br>"
+		citation+= "&lt;comparison&gt;<span style='background-color:yellow'>0.9% saline solution (2 ml)</span><br>"
+		citation+= "&lt;bullet&gt;<span style='background-color:yellow'>With 5 mg (0.5 ml) terbutaline</span>&lt;/bullet&gt;<br>"
+		citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Every __ hours for __ days</span>&lt;/bullet&gt;<br>"
+		citation+= ">&lt;/comparison&gt;<br>"
+		citation+= "&lt;outcome&gt;<br>"
+		citation+= "&lt;bullet&gt;<span style='background-color:yellow'>With 5 mg (0.5 ml) terbutaline</span>&lt;/bullet&gt;<br>"
+		citation+= "&lt;bullet type='primary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>Bronchiolitis Severity Score (Wang, 1992)</span>&lt;/bullet&gt;<br>"
+		citation+= "&lt;bullet type='primary'&gt;<span style='background-color:yellow'>Measured at one hour</span>&lt;/bullet&gt;<br>"
+		citation+= "&lt;/outcome&gt;<br>"
+		citation+= "&lt;/study&gt;<br>"
+		
+        publications.push(citation);
+
+	//citation = ""
+        //citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>";
+        //publications1.push(citation);
+
+	//citation = ""
+        //citation+=studyname + "," + pubyear + "," + summary.result[id].uid  + ", , , , ,'',&lt;br&gt;";
+        //publications2.push(citation);
+        
+        if(idlist.length!=0){
+		iterateJSON(idlist, publications);
+        }else{
+		//editor.setValue(publications)
+		$("#editor").html(publications)
+        }
+    });
+}
+	
+	
+})
+
+</script>
+<style type="text/css" media="screen">
+#editor { 
+  position: relative;
+  border-style:solid;
+  border-width:medium;
+}
+
+#menu
+{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+} 
+
+.listitem
+{
+display:inline;
+float:left;
+}
+
+a.menuitem:link,a.menuitem:visited
+{
+display:block;
+width:150px;
+font-weight:bold;
+text-align:center;
+padding:4px;
+text-decoration:none;background-color:#6DC6E7;
+color:#FFFFFF;
+}
+
+a.menuitem:hover,a.menuitem:active
+{
+background-color:#0022B4;
+color:#FFFFFF;
+}
+
+.tooltiptext{
+	display: none;
+}
+.ToolTipClass{
+color:black;
+border-color:#0022B4;
+background-color: #6DC6E7
+}
+
+</style>
+</head>
+
+<body>
+<!-- 
+http://jquery-csv.googlecode.com/git/examples/basic-usage.html
+http://jquery-csv.googlecode.com/git/examples/flot.html -> seems best and most stable without reticulating spines error
+http://code.google.com/p/jquery-csv/wiki/API -> instructions
+-->
+<div class="wrapper">
+
+<div class="page-header">
+      <div style="color:#0022B4">
+		<h1>openMetaAnalysis: <span style="font-size:50%">collaborative and continuous</span></h1>
+	</div>
+	
+	<ul id="menu">
+	<li class="listitem"><a href="http://openmetaanalysis.github.io/" class="menuitem">Home</a></li>
+	<li class="listitem"><a href="https://public.opencpu.org/ocpu/github/openMetaAnalysis/home/www/editor.html" class="menuitem">Editor</a></li>
+	<li class="listitem"><a href="https://public.opencpu.org/ocpu/github/openMetaAnalysis/home/www/arrows.html" class="menuitem">Arrows Plot</a></li>
+	<li class="listitem"><a href="http://openmetaanalysis.github.io/methods.html" class="menuitem">Methods</a></li>
+	<li class="listitem"><a href="http://openmetaanalysis.github.io/using_github.html" class="menuitem">Using GitHub</a></li>
+	</ul> 
+</div>
+
+<h2>Make tables</h2>
+
+<input id="input" type="text" autocomplete="on" size="100" placeholder="Enter search terms or a list of PMIDs separated by spaces, commas, or semi-colons"><br/>
+<button id="submitbutton" type="button">Submit</button>
+<div>&nbsp;</div>
+<div id="status">Status: Waiting for input</div>
+
+<h3>PICO table</h3>
+<div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow.</div>
+<div>&nbsp;</div>
+
+<div id="editor">Please wait for code to be written here.</div>
+
+<script>
+//For gh-pages
+//Page history and edit
+var pagename = location.pathname.split('/').slice(-1);
+if (pagename.toString().length < 1){pagename = "index.html"}
+document.write("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/commits/master/" + pagename + "'>Page history</a></div>")
+</script>
+
+</div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-56740469-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+</body>
+</html>
