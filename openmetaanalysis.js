@@ -46,17 +46,19 @@ $(document).ready(function(){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
 				var xmlDoc = $.parseXML(responseTxt)
+				var tiptext;
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
 					$(this).find('p').each(function(){
-						$("#tip").append( "<p>" +  $(this).text() + "</p>")
+						tiptext += "<p>" +  $(this).text() + "</p>"
 					})
 					$(this).find('href').each(function(){
-						$("#tip").append( "<p><a href='" +  $(this).text() + "'>")
+						tiptext += "<p><a href='" +  $(this).text() + "'>"
 					})
 					$(this).find('text').each(function(){
-						$("#tip").append( $(this).text() + "</a></p>")
+						tiptext += $(this).text() + "</a></p>"
 					})
 				     });
+				     $("#tip").html(tiptext)
 				     alert($("#tip").html());
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"#6DC6E7"});
