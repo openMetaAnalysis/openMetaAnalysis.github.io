@@ -7,8 +7,8 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
 <!-- Ajax.org Cloud9 Editor from http://ace.c9.io/#nav=api&api=editor -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-xml.js"></script>
+<script src="/ace.js"></script>
+<script src="/mode-xml.js"></script>
 
 <script>
 //http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api
@@ -59,7 +59,7 @@ function iterateJSON(idlist, publications) {
         //    citation+=summary.result[id].authors[author].name+', ';
         //}
         //citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
-  alert(summary.result[id].authors[0].name);
+
 		var studyname = summary.result[id].authors[0].name;
 		studyname = studyname.substring(0, studyname.indexOf(" "));
 
