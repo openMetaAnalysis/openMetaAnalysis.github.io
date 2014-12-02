@@ -51,7 +51,7 @@ $(document).ready(function(){
 				$("#tip").css({"opacity":"1"});
 				$("[name=choose]")
 				content.find("[name= " + $("#tip").attr("id") + "]").each(function(){
-				      alert($(this).text)
+				      alert($(this).text())
 				      });
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
