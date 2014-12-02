@@ -47,10 +47,11 @@ $(document).ready(function(){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
 				var xmlDoc = $.parseXML(responseTxt)
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
-				     $("#tip").html($(this).text())
+				     $("#tip").append($(this).text())
 				     });
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"#6DC6E7"});
+				$("#tip").css({"color":"#0022B4"});
 				$("#tip").css({"opacity":"1"});
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
