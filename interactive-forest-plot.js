@@ -38,7 +38,7 @@ $(document).ready(function(){
 			$( "tr:contains('High')").find('td:first').css({"background-color":"#ff5959"});	 
 			//alert($("#" + trigger).position().top)
 			//alert($("#tip0").html());
-			//$(this).after($("#tip").html())
+			//$(this).after($("#tip0").html())
 			
 			if(statusTxt=="error")
 				alert("Error: "+xhr.status+": "+xhr.statusText);
