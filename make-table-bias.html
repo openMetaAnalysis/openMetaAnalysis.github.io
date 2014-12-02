@@ -83,12 +83,20 @@ function iterateJSON(idlist, publications) {
         if(idlist.length!=0){
 		iterateJSON(idlist, publications);
         }else{
-		$("#bias").html(publications)
+		$("#editor").text(publications)
         }
     });
 }
 </script>
-<style>
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
 #menu
 {
 list-style-type:none;
@@ -164,8 +172,14 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <h3>Risk of bias table</h3>
 <div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow.</div>
 <div>&nbsp;</div>
-<!-- https://code.google.com/p/google-code-prettify/wiki/GettingStarted -->
-<pre class="prettyprint linenums"></pre>
+<div id="editor"></div>
+    
+<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+</script>
 
 <script>
 //For gh-pages
