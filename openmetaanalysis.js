@@ -44,16 +44,15 @@ $(document).ready(function(){
 		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
-				alert(responseTxt)
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"white"});
 				$("#tip").css({"border-style":"solid"});
 				$("#tip").css({"border-width":"medium"});
 				$("#tip").css({"margin-right":"auto"});
 				$("#tip").css({"opacity":"1"});
-				//content.find("[name= " + $("#tip").attr("id") + "]").each(function(){
-				 //     alert("This:\n\n" + $(this).text())
-				 //     });
+				var temp =responseTxt.find("[name= " + $("#tip").attr("id") + "]").each(function(){
+				     alert(temp)
+				     });
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
 				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
