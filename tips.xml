@@ -12,6 +12,22 @@
     <text>GRADE</text>
     <href>http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2335261/</href>
   </link>
+<!-- start of a new tip -->
+<item name="smd_definition">
+  <message>
+    <p>The standardized mean difference (SMD) is: (difference in mean outcomes)/(standard deviation of mean outcome)</p>
+    <p>In the interpretation of SMD:</p>
+    	<ul>
+    		<li>0.2 represents a small effect</li>
+    		<li>0.5 a moderate effect</li>
+    		<li>&gt; 0.8 a large effect</li> 
+    	</ul>
+    <p>The 'standardization' allows pooling of different types of outcomes.</p>
+    </message>
+  <link>
+    <text>Cochrane Handbook</text>
+    <href>http://handbook.cochrane.org/chapter_12/12_6_2_re_expressing_smds_using_rules_of_thumb_for_effect_sizes.htm</href>
+  </link>
 </item>
 <!-- Leave this bottom line -->
 </tips>
