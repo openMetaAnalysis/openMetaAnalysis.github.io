@@ -41,7 +41,6 @@ $(document).ready(function(){
 		$( "#tip" ).css('display', 'none');
 	});
 	$('a.hastip').mouseenter(function(event){
-		.find('foo:contains(bar)').
 		$("#tip").load("/tips.xml),content, function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				$("#tip").css('display','inline');
@@ -50,6 +49,15 @@ $(document).ready(function(){
 				$("#tip").css({"border-width":"medium"});
 				$("#tip").css({"margin-right":"auto"});
 				$("#tip").css({"opacity":"1"});
+				$("[name=choose]")
+				content.find("[name= " + $("#tip".attr("id") + ")]").each(function(){
+				      alert($(this).text)
+				      });
+
+	$(this).find($("#tip").attr("id")).each(function(){
+attrition = $(this).text()
+})
+
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
 				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
