@@ -49,9 +49,8 @@ $(document).ready(function(){
 				$("#tip").css({"border-width":"medium"});
 				$("#tip").css({"margin-right":"auto"});
 				$("#tip").css({"opacity":"1"});
-				$("[name=choose]")
 				content.find("[name= " + $("#tip").attr("id") + "]").each(function(){
-				      alert($(this).text())
+				      alert("This:\n\n" + $(this).text())
 				      });
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
