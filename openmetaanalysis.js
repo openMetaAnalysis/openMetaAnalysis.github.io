@@ -52,7 +52,7 @@ $(document).ready(function(){
 				$("#tip").css({"margin-right":"auto"});
 				$("#tip").css({"opacity":"1"});
 				var xmlDoc = $.parseXML(responseTxt)
-				var temp =xmlDoc.find("[name= " + tipname + "]").each(function(){
+				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
 				     alert(temp)
 				     });
 				var trigger = $(this).attr('id');
