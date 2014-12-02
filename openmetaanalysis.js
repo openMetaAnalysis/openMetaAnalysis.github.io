@@ -37,7 +37,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text(); //$(this).attr("href")
 	});
-	$('a.hastip').mouseleave(function(event){
+	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
 	});
 	$('a.hastip').mouseenter(function(event){
@@ -60,13 +60,14 @@ $(document).ready(function(){
 				     });
 				     $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;'>" + tiptext + '</div>')
 				$("#tip").css('display','block');
+				$("#tip").css('width','400px');
 				$("#tip").css({"background-color":"#6DC6E7"});
 				$("#tip").css({"color":"#0022B4"});
 				$("#tip").css({"opacity":"1"});
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
 				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
-				$( "#tip" ).offset({top: $("#" + trigger).position().top + 25, left: posleft});
+				$( "#tip" ).offset({top: $("#" + trigger).position().top + 5, left: posleft});
 			}
 			if(statusTxt=="error"){
 				alert("Error: "+xhr.status+": "+xhr.statusText);
