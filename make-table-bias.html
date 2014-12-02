@@ -92,7 +92,7 @@ function iterateJSON(idlist, publications) {
         if(idlist.length!=0){
 		iterateJSON(idlist, publications);
         }else{
-		$("#editor").setValue(publications,1)
+		editor.setValue(publications)
         }
     });
 }
