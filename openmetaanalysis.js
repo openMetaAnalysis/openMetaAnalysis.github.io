@@ -50,6 +50,7 @@ $(document).ready(function(){
 				$("#tip").css({"border-width":"medium"});
 				$("#tip").css({"margin-right":"auto"});
 				$("#tip").css({"opacity":"1"});
+				alert("[name= " + $("#tip").attr("id") + "]")
 				var temp =responseTxt.find("[name= " + $("#tip").attr("id") + "]").each(function(){
 				     alert(temp)
 				     });
