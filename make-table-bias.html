@@ -59,7 +59,7 @@ function iterateJSON(idlist, publications) {
         //    citation+=summary.result[id].authors[author].name+', ';
         //}
         //citation+=' \"'+summary.result[id].title+'\" <i>'+summary.result[id].fulljournalname+'</i> '+summary.result[id].volume+'.'+summary.result[id].issue+' ('+summary.result[id].pubdate+'): '+summary.result[id].pages+'.';
-  
+  alert(summary.result[id].authors[0].name);
 		var studyname = summary.result[id].authors[0].name;
 		studyname = studyname.substring(0, studyname.indexOf(" "));
 
