@@ -40,6 +40,9 @@ $(document).ready(function(){
 	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
 	});
+	$('a.hastip').mouseleave(function(event){
+		$( "#tip" ).css('display', 'none');
+	});
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
 		var trigger = $(this).attr('id');
@@ -53,7 +56,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "<br>"
 					})
 					$(this).find('href').each(function(){
-						tiptext += "<a href='" +  $(this).text() + "' Sstyle='align:center'>"
+						tiptext += "<a href='" +  $(this).text() + "' style='align:center'>"
 					})
 					$(this).find('text').each(function(){
 						tiptext += $(this).text() + "</a>"
