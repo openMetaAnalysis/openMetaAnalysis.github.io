@@ -50,9 +50,7 @@ $(document).ready(function(){
 				     $("#tip").html($(this).text())
 				     });
 				$("#tip").css('display','inline');
-				$("#tip").css({"background-color":"white"});
-				$("#tip").css({"border-style":"solid"});
-				$("#tip").css({"border-width":"medium"});
+				$("#tip").css({"background-color":"#6DC6E7"});
 				$("#tip").css({"opacity":"1"});
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
