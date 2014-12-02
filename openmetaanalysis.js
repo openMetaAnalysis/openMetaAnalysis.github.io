@@ -45,16 +45,15 @@ $(document).ready(function(){
 		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
-				$("#tip").css('display','inline');
-				$("#tip").css({"background-color":"white"});
-				$("#tip").css({"border-style":"solid"});
-				$("#tip").css({"border-width":"medium"});
-				$("#tip").css({"margin-right":"auto"});
-				$("#tip").css({"opacity":"1"});
 				var xmlDoc = $.parseXML(responseTxt)
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
 				     $("#tip").html(temp.text)
 				     });
+				$("#tip").css('display','inline');
+				$("#tip").css({"background-color":"white"});
+				$("#tip").css({"border-style":"solid"});
+				$("#tip").css({"border-width":"medium"});
+				$("#tip").css({"opacity":"1"});
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
 				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
