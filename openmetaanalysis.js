@@ -53,7 +53,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "<br>"
 					})
 					$(this).find('href').each(function(){
-						tiptext += "<a href='" +  $(this).text() + "' style='align:center'>"
+						tiptext += "From: <a href='" +  $(this).text() + "' style='align:center'>"
 					})
 					$(this).find('text').each(function(){
 						tiptext += $(this).text() + "</a>"
@@ -67,7 +67,7 @@ $(document).ready(function(){
 				$("#tip").css({"opacity":"1"});
 				var posleft = $("#" + trigger).position().left;
 				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
-				$( "#tip" ).offset({top: $("#" + trigger).position().top + 5, left: posleft});
+				$( "#tip" ).offset({top: $("#" + trigger).position().top + 0, left: posleft});
 			}
 			if(statusTxt=="error"){
 				alert("Error: "+xhr.status+": "+xhr.statusText);
