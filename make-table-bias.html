@@ -5,6 +5,8 @@
 <title>PubMed xml to table bias</title>
 <link rel="stylesheet" href="/openmetaanalysis.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<!-- https://code.google.com/p/google-code-prettify/wiki/GettingStarted -->
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <script>
 //http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api
 //http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=25164756&retmode=json
@@ -68,7 +70,6 @@ function iterateJSON(idlist, publications) {
 		citation+= "&lt;other_biases&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/other_biases&gt;<br>"
 		citation+= "&lt;/study&gt;<br>"
 		
-        //console.log(citation);
         publications.push(citation);
 
 	//citation = ""
@@ -80,12 +81,9 @@ function iterateJSON(idlist, publications) {
         //publications2.push(citation);
         
         if(idlist.length!=0){
-            iterateJSON(idlist, publications);
+		iterateJSON(idlist, publications);
         }else{
-            //console.log(publications);
-			$("#bias").html(publications)
-			//$("#pico").html(publications1)
-			//$("#data").html(publications2)
+		$("#bias").html(publications)
         }
     });
 }
@@ -134,7 +132,7 @@ background-color: #6DC6E7
 </style>
 </head>
 
-<body>
+<body onload="prettyPrint()">
 <!-- 
 http://jquery-csv.googlecode.com/git/examples/basic-usage.html
 http://jquery-csv.googlecode.com/git/examples/flot.html -> seems best and most stable without reticulating spines error
@@ -163,21 +161,13 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <div>&nbsp;</div>
 <div id="status">Status: Waiting for input</div>
 
-<h3>Data table(s)</h3>
-Copy the content below into the appropriate file(s) for topic. Then replace text that is highlighted in yellow.<div>&nbsp;</div>
-<div id="data" rows="50" cols="200" style="border-style: solid; border-width: 2px;width:800px">Under development</div>
-<div>&nbsp;</div>
-
 <h3>Risk of bias table</h3>
 <div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow.</div>
 <div>&nbsp;</div>
-<div id="bias" rows="50" cols="200" style="border-style: solid; border-width: 2px;width:800px">Contents will appear here</div>
-<div>&nbsp;</div>
-
-<h3>PICO table</h3>
-<div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow.</div>
-<div>&nbsp;</div>
-<div id="pico" rows="50" cols="200" style="border-style: solid; border-width: 2px;width:800px">Under development</div>
+<!-- https://code.google.com/p/google-code-prettify/wiki/GettingStarted -->
+<pre class="prettyprint" id="bias" >
+source code here
+</pre>
 
 <script>
 //For gh-pages
