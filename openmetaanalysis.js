@@ -49,6 +49,7 @@ $(document).ready(function(){
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
 				     $("#tip").html(temp.text())
 				     });
+				alert(temp.text());
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"white"});
 				$("#tip").css({"border-style":"solid"});
