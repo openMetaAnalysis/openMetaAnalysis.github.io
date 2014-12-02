@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//Link handlers
 	$('a').mouseleave(function(event){
-		$( "#tip" ).css('display', 'none');
+		$( "#tip0" ).css('display', 'none');
 	});
 	$('a').mouseenter(function(event){
 		//alert($(this).attr("id"));
@@ -15,16 +15,16 @@ $(document).ready(function(){
 			//alert("External content loaded successfully!\n\n");
 			$("#div1").html("<table class='tipster'><caption><b>PICO components</b></caption><tr><th>Trial</th><th>Patients</th><th>Intervention</th><th>Comparison</th><th>Outcome</th></tr>" + $("#div1").html() + "</table>")
 			$("#div2").html("<table class='tipster'><caption><b>Possible bias</b></caption><tr><th class='col1' rowspan='2'>Trial</th><th colspan='2'>Selection biases:</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>Other biases:</th></tr><tr><th>Random sequence generation</th><th>Allocation concealment</th><th>Blinding of participants and personnel</th><th>Blinding of outcome assessment</th><th>Incomplete outcome data</th><th>Selective reporting</th><th>E.g. imbalanced compliance , co-interventions, or other.</th></tr>" + $("#div2").html() + "</table>")
-			$( "#tip" ).css({"background-color":"black","border-color":"black","border-width":"2px"});
+			$( "#tip0" ).css({"background-color":"black","border-color":"black","border-width":"2px"});
 			$( ".tipster" ).css({"display":"inline"});
 			$( ".tipster" ).css({"background-color":"white"});
 			$( ".tipster" ).css({"opacity":"1"});
 			$( ".tipster" ).css({"width":"500px"});
-			$( "#tip" ).offset({top: $("#" + trigger).position().top + 50, left:50})
-			//$( "#tip" ).css('border-style', 'solid' );
-			//$( "#tip" ).css('border-width', '3px' );
+			$( "#tip0" ).offset({top: $("#" + trigger).position().top + 50, left:50})
+			//$( "#tip0" ).css('border-style', 'solid' );
+			//$( "#tip0" ).css('border-width', '3px' );
 			//alert(event.PageY)
-			//$( "#tip" ).offset({top: event.PageY + 25, left:100})
+			//$( "#tip0" ).offset({top: event.PageY + 25, left:100})
 			//$( "div" ).css({"background-color":"white"});
 			//$( "caption").css({"background-color":"white"});
 			//$( "td" ).css({"background-color":"white"});
@@ -37,7 +37,7 @@ $(document).ready(function(){
 			$( "tr:contains('Unclear')").find('td:first').css({"background-color":"#ffcccc"});
 			$( "tr:contains('High')").find('td:first').css({"background-color":"#ff5959"});	 
 			//alert($("#" + trigger).position().top)
-			//alert($("#tip").html());
+			//alert($("#tip0").html());
 			//$(this).after($("#tip").html())
 			
 			if(statusTxt=="error")
