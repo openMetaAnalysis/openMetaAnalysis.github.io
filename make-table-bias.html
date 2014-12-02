@@ -5,8 +5,10 @@
 <title>PubMed xml to table bias</title>
 <link rel="stylesheet" href="/openmetaanalysis.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<!-- https://code.google.com/p/google-code-prettify/wiki/GettingStarted -->
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+<!-- Ajax.org Cloud9 Editor from http://ace.c9.io/#nav=api&api=editor -->
+<script src="/ace.js"></script>
+
 <script>
 //http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api
 //http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=25164756&retmode=json
@@ -174,7 +176,6 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <div>&nbsp;</div>
 <div id="editor"></div>
     
-<script src="/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
