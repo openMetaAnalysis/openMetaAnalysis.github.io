@@ -6,10 +6,6 @@
 <link rel="stylesheet" href="/openmetaanalysis.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
-<!-- Ajax.org Cloud9 Editor from http://ace.c9.io/#nav=api&api=editor -->
-<script src="/ace.js"></script>
-<script src="/mode-xml.js"></script>
-
 <script>
 //http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api
 //http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=25164756&retmode=json
@@ -20,13 +16,6 @@ var citation_bias = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?><included>\n<!
 
 $(document).ready(function(){
 
-  //For Ajax.org Cloud9 Editor
-  var editor = ace.edit("editor");
-  editor.setTheme("ace/theme/github");
-  editor.getSession().setMode("ace/mode/xml");
-  editor.setFontSize("14px");
-  editor.getSession().setUseWrapMode(true);
-  
     $("#submitbutton").on("click", function(){
         //disable the button to prevent multiple clicks
 		$("#submitbutton").prop( "disabled", true );
