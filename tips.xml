@@ -19,9 +19,9 @@
     <p>The standardized mean difference (SMD) is: (difference in mean outcomes)/(standard deviation of mean outcome)</p>
     <p>In the interpretation of SMD:</p>
     	<p><ul>
-    		<li>0.2 represents a small effect</li>
-    		<li>0.5 a moderate effect</li>
-    		<li>&gt; 0.8 a large effect</li> 
+    		<li>0.2 represents a small effect,</li>
+    		<li>0.5 a moderate effect,</li>
+    		<li>&gt; 0.8 a large effect,</li> 
     	</ul></p>
     <p>The 'standardization' allows pooling of different types of outcomes.</p>
     </message>
