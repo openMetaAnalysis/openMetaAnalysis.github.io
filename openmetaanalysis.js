@@ -41,7 +41,8 @@ $(document).ready(function(){
 		$( "#tip" ).css('display', 'none');
 	});
 	$('a.hastip').mouseenter(function(event){
-		$("#tip").load("/tips.xml",function(responseTxt,statusTxt,xhr){
+		.find('foo:contains(bar)').
+		$("#tip").load("/tips.xml),content, function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				$("#tip").css('display','inline');
 				$("#tip").css({"background-color":"white"});
