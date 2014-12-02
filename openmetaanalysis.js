@@ -52,7 +52,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "<br>"
 					})
 					$(this).find('href').each(function(){
-						tiptext += "<a href='" +  $(this).text() + "'>"
+						tiptext += "<a href='" +  $(this).text() + "' Sstyle='align:center'>"
 					})
 					$(this).find('text').each(function(){
 						tiptext += $(this).text() + "</a>"
@@ -66,6 +66,7 @@ $(document).ready(function(){
 				$("#tip").css({"opacity":"1"});
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
+				alert(posleft)
 				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
 				$( "#tip" ).offset({top: $("#" + trigger).position().top + 5, left: posleft});
 			}
