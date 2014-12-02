@@ -51,8 +51,8 @@ $(document).ready(function(){
 				$("#tip").css({"border-width":"medium"});
 				$("#tip").css({"margin-right":"auto"});
 				$("#tip").css({"opacity":"1"});
-				alert("[name= " + tipname + "]")
-				var temp =responseTxt.find("[name= " + tipname + "]").each(function(){
+				var xmlDoc = $.parseXML(responseTxt)
+				var temp =xmlDoc.find("[name= " + tipname + "]").each(function(){
 				     alert(temp)
 				     });
 				var trigger = $(this).attr('id');
