@@ -47,8 +47,15 @@ $(document).ready(function(){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
 				var xmlDoc = $.parseXML(responseTxt)
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
-				     $("#tip").append( "<div>" + $(this).find("p").text() + "</div>")
-				     $("#tip").append( "<a href='" + $(this).find("href").text() + "'>" + $(this).find("text").text() + </div>")
+					$(this).find('p').each(function(){
+						$("#tip").append( "<p>" +  $(this).text() + "</p>")
+					})
+					$(this).find('href').each(function(){
+						$("#tip").append( "<p><a href='" +  $(this).text() + "'>")
+					})
+					$(this).find('text').each(function(){
+						$("#tip").append( $(this).text() + "</a></p>")
+					})
 				     });
 				     alert($("#tip").html());
 				$("#tip").css('display','inline');
