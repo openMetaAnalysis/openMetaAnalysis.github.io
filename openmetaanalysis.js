@@ -55,6 +55,7 @@ $(document).ready(function(){
 				var temp =$(xmlDoc).find("[name= " + tipname + "]").each(function(){
 				     alert(temp)
 				     });
+				     alert(temp.text())
 				var trigger = $(this).attr('id');
 				var posleft = $("#" + trigger).position().left;
 				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
