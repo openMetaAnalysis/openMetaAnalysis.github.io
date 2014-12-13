@@ -8,40 +8,32 @@ $(document).ready(function(){
 	//Customize src for images based on repo name
 	$("#forest").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#forest").attr('src'))
 	$("#grade").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#grade").attr('src'))
-	//Link handlers
+	//Link rewrites
+	$("body").find('a.main').each(function(){
 		//gh-pages
-	$(".main").click(function(event){
-		event.preventDefault();
-		window.location.href = "http://openmetaanalysis.github.io/" + $(this).attr("href");
-	});
-	$(".master").click(function(event){
-		//For directories on master branch
-		event.preventDefault();
-		window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/' + $(this).attr("href");
-	});
+		$(this).attr('href', "http://openmetaanalysis.github.io/" + $(this).attr("href"));
+		})
+	$("body").find('a.master').each(function(){
+		//For directories on gh-pages
+		$(this).attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/' + $(this).attr("href"));
+		})
 	$("body").find('a.master-dir').each(function(){
+		//For directories on master
 		$(this).attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href"));
 		})
-	//$(".master-dir").attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(".master-dir").attr("href"));
-	$(".master-dir").cllick(function(event){
-		//For directories on master branch
-		//event.preventDefault();
-		//window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href");
-		//$(this).attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href"));
-	});
-	$(".master-file").click(function(event){
-		//For specific files on master branch
-		event.preventDefault();
-		window.location.href = "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href");
-	});
-	$(".pmid").click(function(event){
-		event.preventDefault();
-		window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text(); //$(this).attr("href")
-	});
-	$("pmid").click(function(event){
-		event.preventDefault();
-		window.location.href = "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text(); //$(this).attr("href")
-	});
+	$("body").find('a.master-file').each(function(){
+		//For specific files on master
+		$(this).attr('href', "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href"));
+		})
+	$("body").find('a.pmid').each(function(){
+		//For PMIDs
+		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
+		})
+	$("body").find('pmid').each(function(){
+		//For PMIDs
+		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
+		})
+	//Event handlers
 	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
 	});
