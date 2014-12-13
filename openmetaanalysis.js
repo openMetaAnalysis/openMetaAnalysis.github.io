@@ -19,7 +19,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/' + $(this).attr("href");
 	});
-	$(".master-dir").attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href"));
+	$(".master-dir").attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(".master-dir").attr("href"));
 	$(".master-dir").mousedown(function(event){
 		//For directories on master branch
 		//event.preventDefault();
