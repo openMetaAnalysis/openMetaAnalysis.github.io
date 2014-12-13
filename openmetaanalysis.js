@@ -22,8 +22,8 @@ $(document).ready(function(){
 	$(".master-dir").mousedown(function(event){
 		//For directories on master branch
 		//event.preventDefault();
-		//window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href");
-		$(this).attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("title"));
+		window.location.href = "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href");
+		//$(this).attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("title"));
 	});
 	$(".master-file").click(function(event){
 		//For specific files on master branch
