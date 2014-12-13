@@ -3,10 +3,10 @@
 <!-- start of a new tip -->
 <item name="grade_quality_definition">
   <message>
-      <p>High quality - Further research is very unlikely to change our confidence in the estimate of effect</p>
-      <p>Moderate quality - Further research is likely to have an important impact on our confidence in the estimate of effect and may change the estimate</p>
-      <p>Low quality - Further research is very likely to have an important impact on our confidence in the estimate of effect and is likely to change the estimate</p>
-      <p>Very low quality - Any estimate of effect is very uncertain</p>
+      <p><b>High quality</b> - Further research is very unlikely to change our confidence in the estimate of effect</p>
+      <p><b>Moderate quality</b> - Further research is likely to have an important impact on our confidence in the estimate of effect and may change the estimate</p>
+      <p><b>Low quality</b> - Further research is very likely to have an important impact on our confidence in the estimate of effect and is likely to change the estimate</p>
+      <p><b>Very low quality</b> - Any estimate of effect is very uncertain</p>
     </message>
   <link>
     <text>GRADE</text>
