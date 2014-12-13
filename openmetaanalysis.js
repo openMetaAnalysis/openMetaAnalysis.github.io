@@ -56,7 +56,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "</a>"
 					})
 				     });
-				     $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;'>" + tiptext + '</div>')
+				     $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>')
 				$("#tip").css('display','block');
 				$("#tip").css('width','400px');
 				$("#tip").css({"background-color":"#6DC6E7"});
