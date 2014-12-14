@@ -1,5 +1,6 @@
 var n = location.pathname.indexOf("/",1)
 if (n == 0){n = location.pathname.length}
+var pagename = location.pathname.split('/').slice(-1);
 var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
 $(document).ready(function(){
@@ -40,7 +41,7 @@ $(document).ready(function(){
 	//Edit and page history
 	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>Page history</a></div>")
 	//License
-	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/LICENSE'>Use this content</a></div>")//For gh-pages
+	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/LICENSE'>Use this content</a></div>")
 	//Event handlers
 	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
