@@ -34,12 +34,12 @@ $(document).ready(function(){
 		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		})
 	//write business
-	$write to div business in the footer
-	#issues and comments
+	//write to div business in the footer
+	//issues and comments
 	$("business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a></div>")
-	#Edit and page history
+	//Edit and page history
 	$("business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>Page history</a></div>")
-	#License
+	//License
 	$("business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/LICENSE'>Use this content</a></div>")//For gh-pages
 	//Event handlers
 	$('#tip').mouseleave(function(event){
