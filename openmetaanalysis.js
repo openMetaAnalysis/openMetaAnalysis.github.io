@@ -40,7 +40,7 @@ $(document).ready(function(){
 	#Edit and page history
 	$("business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>Page history</a></div>")
 	#License
-	$("business").append(<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/LICENSE'>Use this content</a></div>)//For gh-pages
+	$("business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/LICENSE'>Use this content</a></div>")//For gh-pages
 	//Event handlers
 	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
