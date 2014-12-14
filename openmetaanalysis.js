@@ -46,9 +46,9 @@ $(document).ready(function(){
 	lastmod = document.lastModified     // get string of last modified date
 	lastmoddate = Date.parse(lastmod)   // convert modified string to date
 	if (lastmoddate == 0) {               // unknown date (or January 1, 1970 GMT)
-		document.writeln("<div style='text-align:center'>Last Modified: Not available to your browser</div>")
+		$("#business").append("<div style='text-align:center'>Last Modified: Not available to your browser</div>")
 	} else {
-		document.writeln("<div style='text-align:center'>Last Modified: " + lastmod + "</div>")
+		$("#business").append("<div style='text-align:center'>Last Modified: " + lastmod + "</div>")
 	}
 	//Event handlers
 	$('#tip').mouseleave(function(event){
