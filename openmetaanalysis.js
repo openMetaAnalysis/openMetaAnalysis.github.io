@@ -1,7 +1,7 @@
 var n = location.pathname.indexOf("/",1)
 if (n == 0){n = location.pathname.length}
 var pagename = location.pathname.split('/').slice(-1);
-if (pagename == ""){pagename = "indexhtml"};
+if (pagename == ""){pagename = "index.html"};
 var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
 $(document).ready(function(){
