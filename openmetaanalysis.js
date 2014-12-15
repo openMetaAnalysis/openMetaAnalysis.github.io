@@ -34,22 +34,24 @@ $(document).ready(function(){
 		//For PMIDs
 		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		})
-	//write business
+	//write footer business
 	//write to div business in the footer
-	//issues and comments
-	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a></div>")
-	//Edit and page history
-	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>Page history</a></div>")
-	//License
-	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/LICENSE'>Use this content</a></div>")
-	//Version date
+	//Resuse
+	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/LICENSE'>Cite &amp; Use this content</a></div>")
+	//Edit and...
+	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a>")
+	//...issues/comments
+	$("#business").append(" - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a></div>")
+	//Version date...
 	lastmod = document.lastModified     // get string of last modified date
 	lastmoddate = Date.parse(lastmod)   // convert modified string to date
 	if (lastmoddate == 0) {               // unknown date (or January 1, 1970 GMT)
-		$("#business").append("<div style='text-align:center'>Last Modified: Not available to your browser</div>")
+		$("#business").append("<div style='text-align:center'>Updated: Not available to your browser")
 	} else {
-		$("#business").append("<div style='text-align:center'>Last Modified: " + lastmod + "</div>")
+		$("#business").append("<div style='text-align:center'>Updated: " + lastmod)
 	}
+	//...page history
+	$("#business").append(" - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>Page history</a></div>"
 	//Event handlers
 	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
