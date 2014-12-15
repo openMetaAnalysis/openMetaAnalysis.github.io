@@ -51,7 +51,7 @@ $(document).ready(function(){
 		$("#business").append("<div style='text-align:center'>Updated: " + lastmod)
 	}
 	//...page history
-	$("#business").append(" - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>Page history</a></div>"
+	$("#business").append(" - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>Page history</a></div>")
 	//Event handlers
 	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
