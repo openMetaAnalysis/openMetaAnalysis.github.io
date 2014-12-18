@@ -19,43 +19,94 @@
   margin-left: auto;
 }
 
-#menu
-{
-list-style-type:none;
-margin:0;
-padding:0;
-overflow:hidden;
-} 
-
-.listitem
-{
-display:inline;
-float:left;
-}
-
-a.menuitem:link,a.menuitem:visited
-{
-display:block;
-width:150px;
-font-weight:bold;
-text-align:center;
-padding:4px;
-text-decoration:none;background-color:#6DC6E7;
-color:#FFFFFF;
-}
-
-a.menuitem:hover,a.menuitem:active
-{
-background-color:#0022B4;
-color:#FFFFFF;
-}
-
 table, td, th{
  padding:10px;
  border: 1px solid black;
  border-collapse: collapse;
 }
 
+//Menu from http://codepen.io/philhoyt/pen/ujHzd
+#primary_nav_wrap
+{
+	margin-top:15px;
+}
+
+#primary_nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primary_nav_wrap ul a
+{
+	display:block;
+	background-color:#6DC6E7;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-weight:bold;
+	//font-weight:700;
+	//font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+	//font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#primary_nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primary_nav_wrap ul li.current-menu-item
+{
+	background:#0022B4;
+		color:#FFFFFF;
+}
+
+#primary_nav_wrap ul a:hover
+{
+	background:#0022B4;
+	color:#FFFFFF;
+}
+
+#primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background-color:#6DC6E7;
+	color:#FFFFFF;
+	padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+	float:none;
+	width:200px
+}
+
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px;
+}
+
+#primary_nav_wrap ul ul ul
+{
+	top:0;
+	left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block
+}
 </style>
 </head>
 
@@ -71,14 +122,20 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
       <div style="color:#0022B4">
 		<h1>openMetaAnalysis: <span style="font-size:50%">collaborative and continuous</span></h1>
 	</div>
-	
-	<ul id="menu">
-	<li class="listitem"><a href="http://openmetaanalysis.github.io/" class="menuitem">Home</a></li>
-	<li class="listitem"><a href="https://openmetaanalysis.ocpu.io/home/www/editor.html" class="menuitem">Editor</a></li>
-	<li class="listitem"><a href="https://openmetaanalysis.ocpu.io/home/www/arrows.html" class="menuitem">Arrows Plot</a></li>
-	<li class="listitem"><a href="http://openmetaanalysis.github.io/methods.html" class="menuitem">Methods</a></li>
-	<li class="listitem"><a href="http://openmetaanalysis.github.io/using_github.html" class="menuitem">Using GitHub</a></li>
-	</ul> 
+
+<nav id="primary_nav_wrap">
+<ul id="menu">
+<li class="listitem"><a href="http://openmetaanalysis.github.io/" class="menuitem">Home</a></li>
+<li class="listitem"><a href="#" class="menuitem">Editors</a>
+<ul>
+<li><a href="editor.html" class="menuitem">Intervention</a></li>
+<li><a href="editor-dx.html" class="menuitem">Diagnosis</a></li></ul>
+</li>
+<li class="listitem"><a href="arrows.html" class="menuitem">Arrows Plot</a></li>
+<li class="listitem"><a href="http://openmetaanalysis.github.io/methods.html" class="menuitem">Methods</a></li>
+<li class="listitem"><a href="http://openmetaanalysis.github.io/using_github.html" class="menuitem">Using GitHub</a></li>
+</ul>
+</nav>
 </div>
 
 <h2>Methods</h2>
