@@ -17,10 +17,10 @@ var url = "/" + repo_dir + "/tables/bias.xml";
                 alert("The XML File," + url + ", could not be processed correctly.");
                 },
             success: function(xml) {
-			var totalsubjects = [];
+			var totalsubjects = 0;
 			$(xml).find('study').each(function(){
 					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
-					totalsubjects += eval($(this).find('citation').attr('totalsubjects'))
+					totalsubjects += eval($(this).find('citation').attr('totalsubjects')).toFixed(2)
 					$(this).find('randomization').each(function(){
 						randomization = $(this).text()
 						})
