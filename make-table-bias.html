@@ -57,7 +57,7 @@ function iterateJSON(idlist, publications) {
 			pubyear = pubyear.substring(0, pubyear.indexOf(" "));
 			}
 
-        citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + " totalsubjects=\"0\" &lt;/citation&gt;</span><br>"
+        citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		citation+= "&lt;randomization&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
 		citation+= "&lt;allocation&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
 		citation+= "&lt;blinding_people&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
