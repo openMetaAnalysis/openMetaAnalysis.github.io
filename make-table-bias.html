@@ -12,7 +12,7 @@
 //http://api.jquery.com/jquery.getjson/
 ///Not used:
 //http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2904758/
-var citation_bias = '&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;included>\n&lt;!-- start of a new study --\>\n&lt;study&gt;\n';
+var citation_bias = '&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;<br>&lt;included><br>';
 
 $(document).ready(function(){
 
@@ -57,7 +57,7 @@ function iterateJSON(idlist, publications) {
 			pubyear = pubyear.substring(0, pubyear.indexOf(" "));
 			}
 
-        citation+="<span style='color:red;font-weight:bold'>&lt;study&gt;\n&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
+        citation+="<span style='color:red;font-weight:bold'>&lt;study&gt;<br>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		citation+= "&lt;randomization&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
 		citation+= "&lt;allocation&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
 		citation+= "&lt;blinding_people&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
@@ -81,7 +81,7 @@ function iterateJSON(idlist, publications) {
 		iterateJSON(idlist, publications);
         }else{
 		//editor.setValue(publications)
-		$("#editor").html(citation_bias + publications + '\n&lt;!-- Leave this bottom line --\>\n&lt;/included&gt;')
+		$("#editor").html(citation_bias + publications + '<br>&lt;!-- Leave this bottom line --\><br>&lt;/included&gt;')
         }
     });
 }
