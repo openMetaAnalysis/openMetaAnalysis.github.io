@@ -12,7 +12,7 @@
 //http://api.jquery.com/jquery.getjson/
 ///Not used:
 //http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2904758/
-var citation_bias = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;included>\n&lt;!-- start of a new study --\>\n&lt;study&gt;\n";
+var citation_bias = '&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;included>\n&lt;!-- start of a new study --\>\n&lt;study&gt;\n';
 
 $(document).ready(function(){
 
@@ -81,7 +81,7 @@ function iterateJSON(idlist, publications) {
 		iterateJSON(idlist, publications);
         }else{
 		//editor.setValue(publications)
-		$("#editor").html(citation_bias + publications + "\n&lt;!-- Leave this bottom line --\>\n&lt;/included&gt;")
+		$("#editor").html(citation_bias + publications + '\n&lt;!-- Leave this bottom line --\>\n&lt;/included&gt;')
         }
     });
 }
