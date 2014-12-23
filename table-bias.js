@@ -20,7 +20,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			var totalsubjects = 0;
 			$(xml).find('study').each(function(){
 					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
-					totalsubjects += eval($(this).find('citation').attr('totalsubjects')).toFixed(2)
+					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 					$(this).find('randomization').each(function(){
 						randomization = $(this).text()
 						})
