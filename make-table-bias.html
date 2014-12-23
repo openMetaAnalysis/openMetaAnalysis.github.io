@@ -78,7 +78,7 @@ function iterateJSON(idlist, publications) {
         //publications2.push(citation);
         
         if(idlist.length!=0){
-		iterateJSON(idlist, publications);
+		iterateJSON(idlist, citation_bias + publications + "\n&lt;!-- Leave this bottom line --&gt;\n&lt;/included&gt;");
         }else{
 		//editor.setValue(publications)
 		$("#editor").html(publications)
