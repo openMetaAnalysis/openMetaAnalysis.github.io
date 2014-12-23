@@ -24,7 +24,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
 					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 					alert($(this).text())
-					f (($(this).text().indexOf,"igh")>0){
+					if (($(this).text().indexOf,"igh")>0){
 						highrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 						}
 					if (($(this).text().indexOf,"igh")>0 || ($(this).text().indexOf,"nclear")>0){
