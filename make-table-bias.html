@@ -67,7 +67,8 @@ function iterateJSON(idlist, publications) {
 		citation+= "&lt;other_biases&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/other_biases&gt;<br>"
 		citation+= "&lt;/study&gt;<br>"
 		
-        publications.push(citation);
+        //publications.push(citation);
+        publications += citation;
 
 	//citation = ""
         //citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>";
