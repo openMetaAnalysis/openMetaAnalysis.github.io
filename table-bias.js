@@ -18,9 +18,17 @@ var url = "/" + repo_dir + "/tables/bias.xml";
                 },
             success: function(xml) {
 			var totalsubjects = 0;
+			highrisksubjects = 0;
+			unclearrisksubjects = 0;
 			$(xml).find('study').each(function(){
 					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
 					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
+					if ($(this).text().indexOf,"igh")>0){
+						highrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
+						}
+					if ($(this).text().indexOf,"igh")>0 || $(this).text().indexOf,"nclear")>0){
+						unclearrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
+						}
 					$(this).find('randomization').each(function(){
 						randomization = $(this).text()
 						})
@@ -61,7 +69,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			if (ratio > 0.5){
 				$("#judgment").html('High risk');
 				$("#judgment").css('background-color','#ff5959');
-				$("#rationale").html("\'The proportion of information from studies at high risk of bias (<span style='color:red;font-weight:bold'>" + ratio.toFixed(2) + "</span> - " + totalsubjects + " subjects) is sufficient to affect the interpretation of results.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+				$("#rationale").html("\'The proportion of information from studies at high risk of bias (<span style='color:red;font-weight:bold'>" + ratio.toFixed(2) + "</span> or " + eval(100*highrisksubjects/totalsubjects).toFixed(0) + "% of subjects) is sufficient to affect the interpretation of results.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			};
 
                 }
