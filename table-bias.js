@@ -26,7 +26,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 					if ($(this).text().indexOf,"igh")>0){
 						highrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 						}
-					if ($(this).text().indexOf,"igh")>0 || $(this).text().indexOf,"nclear")>0){
+					if (($(this).text().indexOf,"igh")>0 || ($(this).text().indexOf,"nclear")>0){
 						unclearrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 						}
 					$(this).find('randomization').each(function(){
