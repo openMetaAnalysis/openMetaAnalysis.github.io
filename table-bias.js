@@ -18,8 +18,8 @@ var url = "/" + repo_dir + "/tables/bias.xml";
                 },
             success: function(xml) {
 			var totalsubjects = 0;
-			highrisksubjects = 0;
-			unclearrisksubjects = 0;
+			var highrisksubjects = 0;
+			var unclearrisksubjects = 0;
 			$(xml).find('study').each(function(){
 					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
 					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
