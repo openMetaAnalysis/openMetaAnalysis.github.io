@@ -24,7 +24,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
 					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 					if ($(this).text().indexOf("igh")>0){
-						highrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
+						highrisksubjects    += parseFloat($(this).find('citation').attr('totalsubjects'))
 						}
 					if ($(this).text().indexOf("igh")>0 || $(this).text().indexOf("nclear")>0){
 						unclearrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
@@ -59,17 +59,17 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			var denom = $(xml).find('study').length;
 			$("#judgment").html('Low risk')
 			//ratio = $(xml).find("study:contains(High)").length/denom;
-			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(1-(highrisksubjects+unclearrisksubjects)/totalsubjects)).toFixed(1) + "% of patients</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
-			alert("Unclear/high risk proportion:\n" + eval(100*(unclearrisksubjects+highrisksubjects)/totalsubjects).toFixed(1)+"%")
-			if ((unclearrisksubjects+highrisksubjects)/totalsubjects > 0.5){
+			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*unclearrisksubjects/totalsubjects).toFixed(1) + "% of patients</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+			alert("Unclear/high risk proportion:\n" + eval(100*(unclearrisksubjects)/totalsubjects).toFixed(1)+"%")
+			if (unclearrisksubjects/totalsubjects > 0.5){
 			//Below is per Cochrane, but does not seem sensible as a study could have most trials low risk and also have most trials low or unclear.
 			//if (1-highrisksubjects/totalsubjects > 0.5){
 				$("#judgment").html('Unclear risk');
 				$("#judgment").css('background-color','#ffcccc');
-				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(unclearrisksubjects+highrisksubjects)/totalsubjects).toFixed(1) + "% of patients</span>) is from studies at unclear or high risk of bias.\' (modified from <a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*unclearrisksubjects/totalsubjects).toFixed(1) + "% of patients</span>) is from studies at unclear or high risk of bias.\' (modified from <a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			};
 			//ratio = $(xml).find("study:contains(Unclear)").length/denom;
-			alert("High risk proportion:\n" + eval(100*highrisksubjects/totalsubjects).toFixed(1)+"%")
+			alert("High risk proportion:\n"        + eval(100*highrisksubjects/totalsubjects).toFixed(1)+"%")
 			if (highrisksubjects/totalsubjects > 0.5){
 				$("#judgment").html('High risk');
 				$("#judgment").css('background-color','#ff5959');
