@@ -34,7 +34,7 @@ $(document).ready(function(){
 	$("body").find('pmid').each(function(){
 		//For PMIDs
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
-		$(this).replaceWith($('<a href=\"http://pubmed.gov/" + $(this).text() + "\">' + '>' + $(this).text() + '</a>'));
+		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text() + '</a>'));
 		})
 	var str = $("#references").html();
 	// Set the regex string for PMIDs
