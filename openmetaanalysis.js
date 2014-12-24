@@ -50,7 +50,7 @@ $(document).ready(function(){
 	var regex = /([^>])(\n{1,}\s{0,})/ig;
 	// Replace plain text line feeds with <br>
 	// try 1: replaced_text = replaced_text.replace(regex, "<br>");
-	replaced_text = str.replace(regex, "$1<br>\n");
+	replaced_text = replaced_text.replace(regex, "$1<br>\n");
 	// Echo content
 	$('#references').html(replaced_text);
 	//write footer business
