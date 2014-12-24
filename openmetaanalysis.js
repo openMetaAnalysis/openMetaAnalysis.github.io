@@ -46,9 +46,11 @@ $(document).ready(function(){
 	// Replace plain text links by hyperlinks
 	replaced_text = replaced_text.replace(regex, "<a href='http://pubmedcentral.gov/$1' >$1</a>");
 	// Set the regex string for line
-	regex = /([^>]\n{1,}\s{0,})/ig;
+	// try 1: regex = /([^>]\n{1,}\s{0,})/ig;
+	var regex = /([^>])(\n{1,}\s{0,})/ig;
 	// Replace plain text line feeds with <br>
-	replaced_text = replaced_text.replace(regex, "<br>");
+	// try 1: replaced_text = replaced_text.replace(regex, "<br>");
+	replaced_text = str.replace(regex, "$1<br>\n");
 	// Echo content
 	$('#references').html(replaced_text);
 	//write footer business
