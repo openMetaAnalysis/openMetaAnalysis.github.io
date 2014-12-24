@@ -45,6 +45,10 @@ $(document).ready(function(){
 	regex = /(pmc\d{7,})/ig;
 	// Replace plain text links by hyperlinks
 	replaced_text = replaced_text.replace(regex, "<a href='http://pubmedcentral.gov/$1' >$1</a>");
+	// Set the regex string for line
+	regex = /([^>]\n)/ig;
+	// Replace plain text line feeds with <br>
+	replaced_text = replaced_text.replace(regex, "<br>");
 	// Echo content
 	$('#references').html(replaced_text);
 	//write footer business
