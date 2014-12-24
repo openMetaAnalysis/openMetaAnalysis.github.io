@@ -50,7 +50,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 					$(this).find('other_biases').each(function(){
 						other_biases = $(this).text()
 						})
-				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") + "<br>PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + '<br>Subjects:' + $(this).find('citation').attr('totalsubjects') + '</td><td>' + randomization + '</td><td>' + allocation + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
+				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") + "<br>PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + '</a><br>Subjects:' + $(this).find('citation').attr('totalsubjects') + '</td><td>' + randomization + '</td><td>' + allocation + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
 			        $('#citations').append(trHTML);
 			})
 
@@ -60,7 +60,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			$("#judgment").html('Low risk')
 			//ratio = $(xml).find("study:contains(High)").length/denom;
 			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(1-(highrisksubjects+unclearrisksubjects)/totalsubjects)).toFixed(1) + "% of patients</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
-			alert("Non-high risk proportion:\n" + eval(100*(1-highrisksubjects/totalsubjects)).toFixed(1)+"%")
+			alert("Unclear/high risk proportion:\n" + eval(100*(unclearrisksubjects+highrisksubjects)/totalsubjects).toFixed(1)+"%")
 			if ((unclearrisksubjects+highrisksubjects)/totalsubjects > 0.5){
 			//Below is per Cochrane, but does not seem sensible as a study could have most trials low risk and also have most trials low or unclear.
 			//if (1-highrisksubjects/totalsubjects > 0.5){
