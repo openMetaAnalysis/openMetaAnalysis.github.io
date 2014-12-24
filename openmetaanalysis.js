@@ -26,6 +26,7 @@ $(document).ready(function(){
 	$("body").find('a.master-file').each(function(){
 		//For specific files on master
 		$(this).attr('href', "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href"));
+		$(this).replaceWith($('<a href=\"http://pubmed.gov/" + $(this).text() + "\">' + '>' + $(this).text() + '</a>'));
 		})
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
