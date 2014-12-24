@@ -35,6 +35,18 @@ $(document).ready(function(){
 		//For PMIDs
 		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		})
+	var str = $("#references").html();
+	// Set the regex string for PMIDs
+	var regex = /(\s\d{7,})/ig;
+	// Replace plain text links by hyperlinks
+	var replaced_text;
+	replaced_text = str.replace(regex, "<a href='http://pubmed.gov/$1' >$1</a>");
+	// Set the regex string for PMCIDs
+	regex = /(pmc\d{7,})/ig;
+	// Replace plain text links by hyperlinks
+	replaced_text = replaced_text.replace(regex, "<a href='http://pubmedcentral.gov/$1' >$1</a>");
+	// Echo content
+	$('#references').html(replaced_text);
 	//write footer business
 	//write to div business in the footer
 	//Resuse
