@@ -37,14 +37,14 @@ $(document).ready(function(){
 		})
 	var str = $("#references").html();
 	// Set the regex string for PMIDs
-	var regex = /(\s\d{7,})/ig;
+	var regex = /(\s)(\d{7,})/ig;
 	// Replace plain text links by hyperlinks
 	var replaced_text;
-	replaced_text = str.replace(regex, "<a href='http://pubmed.gov/$1' >$1</a>");
+	replaced_text = str.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
 	// Set the regex string for PMCIDs
-	regex = /(pmc\d{7,})/ig;
+	regex = /(\s)(pmc\d{7,})/ig;
 	// Replace plain text links by hyperlinks
-	replaced_text = replaced_text.replace(regex, "<a href='http://pubmedcentral.gov/$1' >$1</a>");
+	replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmedcentral.gov/$2'>$2</a>");
 	// Set the regex string for line
 	// try 1: regex = /([^>]\n{1,}\s{0,})/ig;
 	var regex = /([^>])(\n{1,}\s{0,})/ig;
