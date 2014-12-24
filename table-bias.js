@@ -61,10 +61,12 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			//ratio = $(xml).find("study:contains(High)").length/denom;
 			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(1-(highrisksubjects+unclearrisksubjects)/totalsubjects)).toFixed(1) + "% of patients</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			//alert(1-highrisksubjects/totalsubjects)
-			if (1-highrisksubjects/totalsubjects > 0.5){
+			if ((unclearrisksubjects+highrisksubjects)/totalsubjects > 0.5){
+			//Below is per Cochrane, but does not seem sensible as a study could have most trials low risk and also have most trials low or unclear.
+			//if (1-highrisksubjects/totalsubjects > 0.5){
 				$("#judgment").html('Unclear risk');
 				$("#judgment").css('background-color','#ffcccc');
-				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(1-highrisksubjects/totalsubjects)).toFixed(1) + "% of patients</span>) is from studies at low or unclear risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(unclearrisksubjects+highrisksubjects)/totalsubjects)).toFixed(1) + "% of patients</span>) is from studies at unclear or high risk of bias.\' (modified from <a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			};
 			//ratio = $(xml).find("study:contains(Unclear)").length/denom;
 			//alert(highrisksubjects/totalsubjects)
