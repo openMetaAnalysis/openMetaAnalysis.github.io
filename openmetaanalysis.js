@@ -46,7 +46,7 @@ $(document).ready(function(){
 	// Replace plain text links by hyperlinks
 	replaced_text = replaced_text.replace(regex, "<a href='http://pubmedcentral.gov/$1' >$1</a>");
 	// Set the regex string for line
-	regex = /([^>]\n)/ig;
+	regex = /([^>]\n{1,}\s{0,})/ig;
 	// Replace plain text line feeds with <br>
 	replaced_text = replaced_text.replace(regex, "<br>");
 	// Echo content
