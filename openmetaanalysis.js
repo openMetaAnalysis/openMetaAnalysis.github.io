@@ -46,9 +46,13 @@ $(document).ready(function(){
 	regex = /(\s)(pmc\d{7,})/ig;
 	// Replace plain text links by hyperlinks
 	replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmedcentral.gov/$2'>$2</a>");
+	// Set the regex string for NCTs
+	regex = /(\s)(NCT\d{7,})/ig;
+	// Replace plain text links by hyperlinks
+	replaced_text = str.replace(regex, "$1<a href='https://clinicaltrials.gov/ct2/show/study/$2'>$2</a>");
 	// Set the regex string for line
 	// try 1: regex = /([^>]\n{1,}\s{0,})/ig;
-	var regex = /([^>])(\n{1,}\s{0,})/ig;
+	regex = /([^>])(\n{1,}\s{0,})/ig;
 	// Replace plain text line feeds with <br>
 	// try 1: replaced_text = replaced_text.replace(regex, "<br>");
 	replaced_text = replaced_text.replace(regex, "$1<br>\n");
