@@ -48,7 +48,7 @@ $(document).ready(function(){
 	// Set the regex string for PMIDs
 	regex = /(\s{1,})(\d{7,})/ig;
 	// Replace plain text links by hyperlinks
-	replaced_text = str.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
+	replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
 	// Set the regex string for line
 	// try 1: regex = /([^>]\n{1,}\s{0,})/ig;
 	regex = /([^>])(\n{1,}\s{0,})/ig;
