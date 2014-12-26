@@ -46,22 +46,52 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							}
 						})
 					$(this).find('allocation').each(function(){
-						allocation = $(this).text()
+						if (this.hasAttribute("explanation")){
+							allocation = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							}
+						else{
+							allocation = $(this).text()
+							}
 						})
 					$(this).find('blinding_people').each(function(){
-						blinding_people = $(this).text()
+						if (this.hasAttribute("explanation")){
+							blinding_people = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							}
+						else{
+							blinding_people = $(this).text()
+							}
 						})
 					$(this).find('blinding_assessment').each(function(){
-						blinding_assessment = $(this).text()
+						if (this.hasAttribute("explanation")){
+							blinding_assessment = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							}
+						else{
+							blinding_assessment = $(this).text()
+							}
 						})
 					$(this).find('attrition').each(function(){
-						attrition = $(this).text()
+						if (this.hasAttribute("explanation")){
+							attrition = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							}
+						else{
+							attrition = $(this).text()
+							}
 						})
 					$(this).find('selective_reporting').each(function(){
-						selective_reporting = $(this).text()
+						if (this.hasAttribute("explanation")){
+							selective_reporting = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							}
+						else{
+							selective_reporting = $(this).text()
+							}
 						})
 					$(this).find('other_biases').each(function(){
-						other_biases = $(this).text()
+						if (this.hasAttribute("explanation")){
+							other_biases = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							}
+						else{
+							other_biases = $(this).text()
+							}
 						})
 				var trHTML = '<tr><td>' +  citationtext + '</td><td>' + randomization + '</td><td>' + allocation + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
 			        $('#citations').append(trHTML);
