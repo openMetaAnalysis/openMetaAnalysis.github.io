@@ -19,7 +19,7 @@ $(document).ready(function(){
     $("#submitbutton").on("click", function(){
         //disable the button to prevent multiple clicks
 		$("#submitbutton").prop( "disabled", true );
-		citation_data = ""
+		var citation_bias = '&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;<br>&lt;included><br>';
 		$("#status").html("<i>searching...</i>")
 		
 		//Get list of IDs based on search terms
@@ -42,7 +42,7 @@ function iterateJSON(idlist, publications) {
 	$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
 	function(summary){
 
-        var citation = "&lt;!-- start of a new study --&gt;<br>";
+        var citation = "<span style='color:red;font-weight:bold'>&lt;!-- start of a new study --&gt;<br>";
 
         //for(author in summary.result[id].authors){
         //    citation+=summary.result[id].authors[author].name+', ';
@@ -56,8 +56,7 @@ function iterateJSON(idlist, publications) {
 		if (pubyear.indexOf(" ") > 1){
 			pubyear = pubyear.substring(0, pubyear.indexOf(" "));
 			}
-
-        citation+="<span style='color:red;font-weight:bold'>&lt;citation pmid=\"" + summary.result[id].uid + '\" year=\"' + pubyear + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
+        	citation+= "&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		citation+= "&lt;design&gt;<span style='background-color:yellow'>Randomized controlled trial</span>&lt;/design&gt;<br>"
 		citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;<br>"
 		citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
@@ -90,7 +89,7 @@ function iterateJSON(idlist, publications) {
 		iterateJSON(idlist, publications);
         }else{
 		//editor.setValue(publications)
-		$("#editor").html(publications)
+		$("#editor").html(citation_bias + publications + '&lt;!-- Leave this bottom line --\><br>&lt;/included&gt;')
         }
     });
 }
