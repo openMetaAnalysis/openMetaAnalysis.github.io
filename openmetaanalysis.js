@@ -36,25 +36,27 @@ $(document).ready(function(){
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text() + '</a>'));
 		})
-	var replaced_text = $("#references").html();
-	// Set the regex string for PMCIDs
-	var regex = /(\s{1,})(pmc\d{7,})/ig;
-	// Replace plain text links by hyperlinks
-	replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmedcentral.gov/$2'>$2</a>");
-	// Set the regex string for NCTs
-	regex = /(\s{1,})(NCT\d{7,})/ig;
-	// Replace plain text links by hyperlinks
-	replaced_text = replaced_text.replace(regex, "$1<a href='https://clinicaltrials.gov/ct2/show/study/$2'>$2</a>");
-	// Set the regex string for PMIDs
-	regex = /(\s{1,})(\d{7,})/ig;
-	// Replace plain text links by hyperlinks
-	replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
-	// Set the regex string for line
-	// try 1: regex = /([^>]\n{1,}\s{0,})/ig;
-	regex = /([^>])(\n{1,}\s{0,})/ig;
-	// Replace plain text line feeds with <br>
-	// try 1: replaced_text = replaced_text.replace(regex, "<br>");
-	replaced_text = replaced_text.replace(regex, "$1<br>\n");
+	if ($("#references").html().length > 1){
+		var replaced_text = $("#references").html();
+		// Set the regex string for PMCIDs
+		var regex = /(\s{1,})(pmc\d{7,})/ig;
+		// Replace plain text links by hyperlinks
+		replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmedcentral.gov/$2'>$2</a>");
+		// Set the regex string for NCTs
+		regex = /(\s{1,})(NCT\d{7,})/ig;
+		// Replace plain text links by hyperlinks
+		replaced_text = replaced_text.replace(regex, "$1<a href='https://clinicaltrials.gov/ct2/show/study/$2'>$2</a>");
+		// Set the regex string for PMIDs
+		regex = /(\s{1,})(\d{7,})/ig;
+		// Replace plain text links by hyperlinks
+		replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
+		// Set the regex string for line
+		// try 1: regex = /([^>]\n{1,}\s{0,})/ig;
+		regex = /([^>])(\n{1,}\s{0,})/ig;
+		// Replace plain text line feeds with <br>
+		// try 1: replaced_text = replaced_text.replace(regex, "<br>");
+		replaced_text = replaced_text.replace(regex, "$1<br>\n");
+		}
 	// Echo content
 	$('#references').html(replaced_text);
 	//write footer business
