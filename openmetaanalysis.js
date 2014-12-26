@@ -7,6 +7,17 @@ var repo_name = repo_dir.replace(/\-/gi, ' ');
 $(document).ready(function(){
 	//Display the repo_name in all the correct spots
 	$(".repo_name").text(repo_name);
+	function(tiptext){
+		$("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>')
+		$("#tip").css('display','block');
+		$("#tip").css('width','400px');
+		$("#tip").css({"background-color":"#6DC6E7"});
+		$("#tip").css({"color":"#0022B4"});
+		$("#tip").css({"opacity":"1"});
+		var posleft = $("#" + trigger).position().left;
+		if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
+		$( "#tip" ).offset({top: $("#" + trigger).position().top + 0, left: posleft});
+		}
 	//Customize src for images based on repo name
 	$("#forest").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#forest").attr('src'))
 	$("#grade").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#grade").attr('src'))
@@ -36,7 +47,7 @@ $(document).ready(function(){
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text() + '</a>'));
 		})
-	if ($("#references").html().length > 1){
+	if ($("#references"){
 		var replaced_text = $("#references").html();
 		// Set the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
@@ -77,6 +88,10 @@ $(document).ready(function(){
 	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
 	});
+	$('a.hastip_intitle').mouseenter(function(event){
+		tiptext += $(this).attr('title')
+		showtip(tiptext)
+		}
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
 		var trigger = $(this).attr('id');
@@ -96,15 +111,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "</a>"
 					})
 				     });
-				     $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>')
-				$("#tip").css('display','block');
-				$("#tip").css('width','400px');
-				$("#tip").css({"background-color":"#6DC6E7"});
-				$("#tip").css({"color":"#0022B4"});
-				$("#tip").css({"opacity":"1"});
-				var posleft = $("#" + trigger).position().left;
-				if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
-				$( "#tip" ).offset({top: $("#" + trigger).position().top + 0, left: posleft});
+				showtip(tiptext)
 			}
 			if(statusTxt=="error"){
 				alert("Error: "+xhr.status+": "+xhr.statusText);
