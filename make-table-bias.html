@@ -42,7 +42,7 @@ function iterateJSON(idlist, publications) {
 	$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
 	function(summary){
 
-        var citation = "<span style='color:red;font-weight:bold'><br>&lt;!-- start of a new study --&gt;<br>";
+        var citation = "<span style='color:red;font-weight:bold'>&lt;!-- start of a new study --&gt;<br>";
 
         //for(author in summary.result[id].authors){
         //    citation+=summary.result[id].authors[author].name+', ';
