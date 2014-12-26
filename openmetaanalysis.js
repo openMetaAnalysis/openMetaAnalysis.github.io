@@ -7,7 +7,7 @@ var repo_name = repo_dir.replace(/\-/gi, ' ');
 $(document).ready(function(){
 	//Display the repo_name in all the correct spots
 	$(".repo_name").text(repo_name);
-	function(tiptext){
+	function showtip (tiptext){
 		$("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>')
 		$("#tip").css('display','block');
 		$("#tip").css('width','400px');
