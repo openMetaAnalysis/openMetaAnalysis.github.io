@@ -38,7 +38,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						unclearrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 						}
 					$(this).find('randomization').each(function(){
-						if ( $(this).attr('explanation').length > 1){
+						if (this.hasAttribute("explanation")){
 							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation').text() + "\">" + $(this).text() + "</a>"
 							}
 						else{
