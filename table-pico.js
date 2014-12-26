@@ -15,6 +15,13 @@ var url = "/" + repo_dir + "/tables/pico.xml";
                 },
             success: function(xml) { 
 			$(xml).find('study').each(function(){
+				var citationtext = $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + $(this).find("citation").attr("journal_abbrev") + "<br>"
+				if ( $(this).find('citation').attr('pmid').length > 4){
+					citationtext += "PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + "</a><br>"
+					}
+				if ( $(this).find('citation').attr('nct')){
+					citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
+					}
 				var patients = $(this).find('patients').attr('total') + ' patients:';
 					$(this).find('patients').find('bullet').each(function(){
 						patients += '<br>&bull; ' + $(this).text()
@@ -52,7 +59,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						outcome = outcome.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
 					})
                         	var pmid= $(this).find('citation').attr('pmid');
-				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + $(this).find("citation").attr("journal_abbrev") + "<br>PMID: <a href='http://pubmed.gov/" + pmid + "'>" + pmid + '</td><td>' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
+				var trHTML = '<tr><td>' +  citationtext +  + '</td><td>' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
 				//Highlight emphasis
 				var regex = /\*{2}(.+)\*{2}/ig;
 				trHTML = trHTML.replace(regex, "<span style='background-color:yellow;font-weight:bold;font-style:italic'>$1</span>");	
