@@ -24,10 +24,10 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
 					var citationtext = $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") + "<br>"
 					if ( $(this).find('citation').attr('pmid').length > 4){
-						citationtext += "PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + '</a><br>"
+						citationtext += "PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + "</a><br>"
 					}
 					if ( $(this).find('citation').attr('nct').length > 4){
-						citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + '</a><br>"
+						citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
 					}
 					citationtext += "Subjects:' + $(this).find('citation').attr('totalsubjects')
 					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
