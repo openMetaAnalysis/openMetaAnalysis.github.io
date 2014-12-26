@@ -39,7 +39,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						}
 					$(this).find('randomization').each(function(){
 						if (this.hasAttribute("explanation")){
-							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation').text() + "\">" + $(this).text() + "</a>"
+							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
 							}
 						else{
 							randomization = $(this).text()
