@@ -22,6 +22,14 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			var unclearrisksubjects = 0;
 			$(xml).find('study').each(function(){
 					var randomization = [], allocation = [], blinding_people = [], blinding_assessment = [], attrition = [], selective_reporting = [], other_biases = [];
+					var citationtext = $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") + "<br>"
+					if ( $(this).find('citation').attr('pmid').length > 4){
+						citationtext += "PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + '</a><br>"
+					}
+					if ( $(this).find('citation').attr('nct').length > 4){
+						citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + '</a><br>"
+					}
+					citationtext += "Subjects:' + $(this).find('citation').attr('totalsubjects')
 					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 					if ($(this).text().indexOf("igh")>0){
 						highrisksubjects    += parseFloat($(this).find('citation').attr('totalsubjects'))
@@ -30,7 +38,12 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						unclearrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 						}
 					$(this).find('randomization').each(function(){
-						randomization = $(this).text()
+						if ( $(this).attr('explanation').length > 1){
+							randomization = "<a href=\"#\" class=\"hastiplocal\" title=\"" + $(this).attr('explanation').text() + "\">" + $(this).text() + "</a>"
+							}
+						else{
+							randomization = $(this).text()
+							}
 						})
 					$(this).find('allocation').each(function(){
 						allocation = $(this).text()
@@ -50,7 +63,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 					$(this).find('other_biases').each(function(){
 						other_biases = $(this).text()
 						})
-				var trHTML = '<tr><td>' + $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") + "<br>PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + '</a><br>Subjects:' + $(this).find('citation').attr('totalsubjects') + '</td><td>' + randomization + '</td><td>' + allocation + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
+				var trHTML = '<tr><td>' +  citationtext + '</td><td>' + randomization + '</td><td>' + allocation + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
 			        $('#citations').append(trHTML);
 			})
 
