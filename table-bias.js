@@ -26,7 +26,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 					if ( $(this).find('citation').attr('pmid').length > 4){
 						citationtext += "PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + "</a><br>"
 					}
-					if ( $(this).find('citation').attr('nct').length > 4){
+					if ( $(this).find('citation').attr('nct')){
 						citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
 					}
 					citationtext += "Subjects:" + $(this).find('citation').attr('totalsubjects')
