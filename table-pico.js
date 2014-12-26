@@ -15,7 +15,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
             success: function(xml) { 
 			$(xml).find('study').each(function(){
 				var citationtext = $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") +  '<br>' + $(this).find("citation").attr("journal_abbrev") + "<br>"
-				if ( $(this).find('citation').attr('pmid').length > 4){
+				if ( $(this).find('citation').attr('pmid')){
 					if ( $(this).find('citation').attr('pmid').length > 4){
 						citationtext += "PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + "</a><br>"
 						}
