@@ -42,7 +42,7 @@ function iterateJSON(idlist, publications) {
 	$.getJSON('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id='+id+'&retmode=json', 
 	function(summary){
 
-        var citation = "<span style='color:red;font-weight:bold'>&lt;!-- start of a new study --&gt;<br>";
+        var citation = "<span style='color:red;font-weight:bold'><br>&lt;!-- start of a new study --&gt;<br>";
 
         //for(author in summary.result[id].authors){
         //    citation+=summary.result[id].authors[author].name+', ';
@@ -57,7 +57,7 @@ function iterateJSON(idlist, publications) {
 			pubyear = pubyear.substring(0, pubyear.indexOf(" "));
 			}
 
-        citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
+        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		citation+= "&lt;randomization&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
 		citation+= "&lt;allocation&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
 		citation+= "&lt;blinding_people&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
