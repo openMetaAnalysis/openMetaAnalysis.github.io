@@ -87,11 +87,11 @@ $(document).ready(function(){
 	//Event handlers
 	$('#tip').mouseleave(function(event){
 		$( "#tip" ).css('display', 'none');
-	});
+		});
 	$('a.hastip_intitle').mouseenter(function(event){
 		var tiptext = $(this).attr('title');
 		showtip(tiptext);
-		}
+		});
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
 		var trigger = $(this).attr('id');
