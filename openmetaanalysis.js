@@ -89,8 +89,8 @@ $(document).ready(function(){
 		$( "#tip" ).css('display', 'none');
 	});
 	$('a.hastip_intitle').mouseenter(function(event){
-		tiptext += $(this).attr('title')
-		showtip(tiptext)
+		var tiptext = $(this).attr('title');
+		showtip(tiptext);
 		}
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
