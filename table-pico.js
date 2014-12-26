@@ -56,7 +56,6 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 									{outcome += '<br>&bull; ' + $(this).text()}
 							})
 						}
-						outcome = outcome.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
 					})
                         	var pmid= $(this).find('citation').attr('pmid');
 				var trHTML = '<tr><td>' +  citationtext + '</td><td>Subjects: ' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
