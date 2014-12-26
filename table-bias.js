@@ -29,7 +29,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 					if ( $(this).find('citation').attr('nct').length > 4){
 						citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
 					}
-					citationtext += "Subjects:' + $(this).find('citation').attr('totalsubjects')
+					citationtext += "Subjects:" + $(this).find('citation').attr('totalsubjects')
 					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 					if ($(this).text().indexOf("igh")>0){
 						highrisksubjects    += parseFloat($(this).find('citation').attr('totalsubjects'))
@@ -39,7 +39,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						}
 					$(this).find('randomization').each(function(){
 						if ( $(this).attr('explanation').length > 1){
-							randomization = "<a href=\"#\" class=\"hastiplocal\" title=\"" + $(this).attr('explanation').text() + "\">" + $(this).text() + "</a>"
+							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation').text() + "\">" + $(this).text() + "</a>"
 							}
 						else{
 							randomization = $(this).text()
