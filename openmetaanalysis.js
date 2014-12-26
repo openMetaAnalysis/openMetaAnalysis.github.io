@@ -7,7 +7,7 @@ var repo_name = repo_dir.replace(/\-/gi, ' ');
 $(document).ready(function(){
 	//Display the repo_name in all the correct spots
 	$(".repo_name").text(repo_name);
-	function showtip (tiptext){
+	function showtip (tiptext, trigger){
 		$("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>')
 		$("#tip").css('display','block');
 		$("#tip").css('width','400px');
@@ -90,7 +90,8 @@ $(document).ready(function(){
 		});
 	$('a.hastip_intitle').mouseenter(function(event){
 		var tiptext = $(this).attr('title');
-		showtip(tiptext);
+		var trigger = $(this).attr('id');
+		showtip(tiptext, trigger);
 		});
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
@@ -111,7 +112,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "</a>"
 					})
 				     });
-				showtip(tiptext)
+				showtip(tiptext, trigger)
 			}
 			if(statusTxt=="error"){
 				alert("Error: "+xhr.status+": "+xhr.statusText);
