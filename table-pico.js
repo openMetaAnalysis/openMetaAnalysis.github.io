@@ -59,10 +59,10 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						outcome = outcome.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
 					})
                         	var pmid= $(this).find('citation').attr('pmid');
-				var trHTML = '<tr><td>' +  citationtext + '</td><td>Subjects' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
+				var trHTML = '<tr><td>' +  citationtext + '</td><td>Subjects: ' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
 				//PubMed links
-				var regex = /([^>c]\d{7,})/ig; //from http://jsfiddle.net/badgettrg/60482cbh/
-				trHTML = trHTML.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
+				regex = /(\s{1,})(\d{7,})/ig; //from http://jsfiddle.net/badgettrg/60482cbh/
+				trHTML = trHTML.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
 				//Highlight emphasis
 				regex = /\*{2}(.+)\*{2}/ig;
 				trHTML = trHTML.replace(regex, "<span style='background-color:yellow;font-weight:bold;font-style:italic'>$1</span>");	
