@@ -49,6 +49,7 @@ $(document).ready(function(){
 		})
 	if ($("#references")){
 		var replaced_text = $("#references").html();
+		alert("Testing:\n\n" + $("#references").html())
 		// Set the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
 		// Replace plain text links by hyperlinks
