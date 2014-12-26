@@ -47,9 +47,9 @@ $(document).ready(function(){
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text() + '</a>'));
 		})
-	if ($("#references")){
+	if ($("#references").length){
 		var replaced_text = $("#references").html();
-		alert("Testing:\n\n" + $("#references").html())
+		//alert("Testing:\n\n" + $("#references").html())
 		// Set the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
 		// Replace plain text links by hyperlinks
