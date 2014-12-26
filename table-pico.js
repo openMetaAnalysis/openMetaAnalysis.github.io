@@ -59,7 +59,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						outcome = outcome.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
 					})
                         	var pmid= $(this).find('citation').attr('pmid');
-				var trHTML = '<tr><td>' +  citationtext +  + '</td><td>Subjects' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
+				var trHTML = '<tr><td>' +  citationtext + '</td><td>Subjects' + patients + '</td><td>' + intervention + '</td><td>' + comparison + '</td><td>' + outcome + '</td></tr>';
 				//PubMed links
 				var regex = /([^>c]\d{7,})/ig; //from http://jsfiddle.net/badgettrg/60482cbh/
 				trHTML = trHTML.replace(regex, "<a href='http://pubmed.gov/$1'>$1</a>");
