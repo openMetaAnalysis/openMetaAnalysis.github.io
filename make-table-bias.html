@@ -58,7 +58,6 @@ function iterateJSON(idlist, publications) {
 			}
 
 		if ($("#type_intervention").checked){
-			alert('rct')
 	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
 			citation+= "&lt;randomization&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
 			citation+= "&lt;allocation&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
@@ -70,7 +69,6 @@ function iterateJSON(idlist, publications) {
 			citation+= "&lt;/study&gt;<br>"
 		}
 		else{
-			alert('dta')
 	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
 			citation+= "&lt;patient_selection&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
 			citation+= "&lt;index_test&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
