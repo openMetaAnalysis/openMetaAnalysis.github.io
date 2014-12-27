@@ -40,26 +40,27 @@ $(document).ready(function(){
 		$("#labels").show()
 		if ($("#type_intervention").is(":checked")){
 			$("#box0label").html('Enter study design')
-			$("#box0").attr("placeholder", "Randomized controlled trial?")
+			$("#box0").attr("placeholder", "Enter randomized controlled trial?")
 			$("#box1label").html('Patients')
 			$("#box1").attr("placeholder", "Enter the condition being studied")
 			$("#box2label").html('Intervention')
 			$("#box2").attr("placeholder", "Enter the intervention being studied")
 			$("#box3label").html('Comparison')
-			$("#box3").attr("placeholder", "Placebo?")
+			$("#box3").attr("placeholder", "Enter placebo?")
 			$("#box4label").html('Outcome')
+			$("#box4").attr("placeholder", "Enter the primary outcome being studied (your can add secondaires later)")
 			}
 		if ($("#type_diagnosis").is(":checked")){
 			$("#box0label").html('Enter study design')
-			$("#box0").attr("placeholder", "Cross sectional study?")
+			$("#box0").attr("placeholder", "Enter cross sectional study (be careful of case-control)?")
 			$("#box1label").html('Patients')
-			$("#box1").attr("placeholder", "Enter symptom, sign, or condition being studied")
+			$("#box1").attr("placeholder", "Enter sndrome or condition being studied")
 			$("#box2label").html('Index test')
-			$("#box2").attr("placeholder", "Enter the test being studied")
+			$("#box2").attr("placeholder", "Enter the test/symptom/sign being studied")
 			$("#box3label").html('Reference test')
-			$("#box2").attr("placeholder", "Enter the reference test")
+			$("#box2").attr("placeholder", "Enter the reference ('gold standard') test")
 			$("#box4label").html('Flow and timing')
-			$("#box4").attr("placeholder", "Index preceded reference test by x to x days")
+			$("#box4").attr("placeholder", "Enter something like 'index preceded reference test by x to x days'")
 			}
 	});
 	
@@ -86,8 +87,8 @@ function iterateJSON(idlist, publications) {
 
         	citation+= "&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		if ($("#type_intervention").is(":checked")){
-			citation+= "&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").text() + "</span>&lt;/design&gt;<br>"
-			citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;" + $("#box1").text() + "<br>"
+			citation+= "&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").val() + "</span>&lt;/design&gt;<br>"
+			citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;" + $("#box1").value() + "<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Computerized random number generator</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patients&gt;<br>"
