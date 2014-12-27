@@ -39,16 +39,22 @@ $(document).ready(function(){
 	$(".type").on("click", function(){
 		$("#labels").show()
 		if ($("#type_intervention").is(":checked")){
+			$("#box0label").html('Design')
+			$("#box0").val('Randomized controlled trial')
 			$("#box1label").html('Patients')
-			$("#box1label").html('Intervention')
-			$("#box1label").html('Comparison')
-			$("#box1label").html('Outcome')
+			$("#box1").value('Consecutive enrollment')
+			$("#box2label").html('Intervention')
+			$("#box3label").html('Comparison')
+			$("#box4label").html('Outcome')
 			}
 		if ($("#type_diagnosis").is(":checked")){
+			$("#box0label").html('Design')
+			$("#box0").val('Cross sectional study')
 			$("#box1label").html('Patients')
-			$("#box1label").html('Index test')
-			$("#box1label").html('Reference test')
-			$("#box1label").html('Flow and timing')
+			$("#box1").value('Consecutive enrollment')
+			$("#box2label").html('Index test')
+			$("#box3label").html('Reference test')
+			$("#box4label").html('Flow and timing')
 			}
 	});
 	
@@ -223,6 +229,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <fieldset id="labels" style="display:none;border-collapse: collapse;
 <legend style="font-weight:bold">Prepopulate fields?</legend>
 <table style="border:none">
+<tr><td style="width:200px"><span id="box0label">&nbsp;</span></td><td><input name="box0" class="field" placeholder="enter text" id="box1" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box1label">&nbsp;</span></td><td><input name="box1" class="field" placeholder="enter text" id="box1" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box2label">&nbsp;</span></td><td><input name="box2" class="field" placeholder="enter text" id="box2" size="100"></td></tr>	
 <tr><td style="width:200px"><span id="box3label">&nbsp;</span></td><td><input name="box3" class="field" placeholder="enter text" id="box3" size="100"></td></tr>
