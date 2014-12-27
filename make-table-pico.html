@@ -42,19 +42,22 @@ $(document).ready(function(){
 			$("#box0label").html('Enter study design')
 			$("#box0").attr("placeholder", "Randomized controlled trial?")
 			$("#box1label").html('Patients')
-			$("#box1").placeholder('Enter condition being studied')
+			$("#box1").placeholder('Enter the condition being studied')
 			$("#box2label").html('Intervention')
+			$("#box2").placeholder('Enter the intervention being studied')
 			$("#box3label").html('Comparison')
+			$("#box3").attr("placeholder", "Placebo?")
 			$("#box4label").html('Outcome')
 			}
 		if ($("#type_diagnosis").is(":checked")){
 			$("#box0label").html('Enter study design')
 			$("#box0").attr("placeholder", "Cross sectional study?")
 			$("#box1label").html('Patients')
-			$("#box1").attr("placeholder", "Patients having __ symptom or suspected of __ disease?")
-			$("#box1").val('Consecutive enrollment')
+			$("#box1").attr("placeholder", "Enter symptom, sign, or condition being studied")
 			$("#box2label").html('Index test')
+			$("#box2").placeholder('Enter the test being studied')
 			$("#box3label").html('Reference test')
+			$("#box2").placeholder('Enter the reference test')
 			$("#box4label").html('Flow and timing')
 			$("#box4").attr("placeholder", "Index preceded reference test by x to x days")
 			}
@@ -83,41 +86,40 @@ function iterateJSON(idlist, publications) {
 
         	citation+= "&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		if ($("#type_intervention").is(":checked")){
-			citation+= "&lt;design&gt;<span style='background-color:yellow'>Randomized controlled trial</span>&lt;/design&gt;<br>"
+			citation+= "&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").text() + "</span>&lt;/design&gt;<br>"
 			citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;" + $("#box1").text() + "<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Computerized random number generator</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patients&gt;<br>"
-			citation+= "&lt;intervention&gt;<span style='background-color:yellow'>3% saline solution (2 ml)</span><br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>With 5 mg (0.5 ml) terbutaline</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Every __ hours for __ days</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;intervention&gt;<span style='background-color:yellow'>" + $("#box2").text() + "</span><br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Amount?</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Frequency?</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Duration?</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/intervention&gt;<br>"
-			citation+= "&lt;comparison&gt;<span style='background-color:yellow'>0.9% saline solution (2 ml)</span><br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>With 5 mg (0.5 ml) terbutaline</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Every __ hours for __ days</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;comparison&gt;<span style='background-color:yellow'>" + $("#box3").text() + "</span><br>"
 			citation+= "&lt;/comparison&gt;<br>"
 			citation+= "&lt;outcome&gt;<br>"
-			citation+= "&lt;bullet type='primary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>Bronchiolitis Severity Score (Wang, 1992)</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet type='primary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>" + $("#box4").text() + "</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet type='secondary'&gt;<span style='background-color:yellow'>Mortality</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/outcome&gt;<br>"
 			$("#criteria").html("<a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\">Individual criteria for judging risk of bias</a> in a trial using the '<a href=\"http://handbook.cochrane.org/chapter_8/8_5_the_cochrane_collaborations_tool_for_assessing_risk_of_bias.htm\">Cochrane's Risk of bias tool</a>'</li></ul>")
 		}
 		if ($("#type_diagnosis").is(":checked")){
-			citation+= "&lt;design&gt;<span style='background-color:yellow'>Cross sectional study</span>&lt;/design&gt;<br>"
+			citation+= "&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").text() + "</span>&lt;/design&gt;<br>"
 			citation+= "&lt;patient_selection total=\"<span style='background-color:yellow'>__</span>\"'&gt;<span style='background-color:yellow'>consecutive enrollment</span><br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Consecutive enrollment</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patient_selection&gt;<br>"
-			citation+= "&lt;index_test&gt;<span style='background-color:yellow'>chest radiograph</span><br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>read by radiologists</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>reading not standardized</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;index_test&gt;<span style='background-color:yellow'>" + $("#box2").text() + "</span><br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>read by who</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>interpretation standardized?</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/index_test&gt;<br>"
 			citation+= "&lt;reference_standard&gt;<br>"
-			citation+= "&lt;bullet type='primary'&gt;<span style='background-color:yellow'>Left heart catheterization</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet type='primary'&gt;<span style='background-color:yellow'>" + $("#box3").text() + "</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet type='secondary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>Left ventricular end-diastolic pressure over 10</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/reference_standard&gt;<br>"
-			citation+= "&lt;flow_timing&gt;<span style='background-color:yellow'>Reference test followed index test</span><br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>1-2 days between tests</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;flow_timing&gt;<span style='background-color:yellow'>" + $("#box4").text() + "</span><br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Other issues to note/</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/flow_timing&gt;<br>"
 			$("#criteria").html("<a href=\"http://www.bris.ac.uk/quadas/quadas-2/\">Four criteria for judging risk of bias from QUADAS-2</a> (see Risk of bias row in the Table guided by the detailed criteria in the rows above)</li></ul>")
 		}
@@ -230,9 +232,9 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <div><input name="type" class="type" value="intervention" id="type_intervention" type="radio" ><label for="type_intervention">Meta-analysis of randomized controlled trials (RCTs)</label></div>	
 </fieldset>
 
-<fieldset id="labels" style="display:none;border-collapse: collapse;
+<fieldset id="labels" style="display:none">
 <legend style="font-weight:bold">Prepopulate fields?</legend>
-<table style="border:none">
+<table style="border:none;border-collapse: collapse;">
 <tr><td style="width:200px"><span id="box0label">&nbsp;</span></td><td><input name="box0" class="field" placeholder="enter text" id="box0" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box1label">&nbsp;</span></td><td><input name="box1" class="field" placeholder="enter condition being studied" id="box1" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box2label">&nbsp;</span></td><td><input name="box2" class="field" placeholder="enter text" id="box2" size="100"></td></tr>	
