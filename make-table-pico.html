@@ -37,8 +37,19 @@ $(document).ready(function(){
 	});
 
 	$(".type").on("click", function(){
-	alert('')
 		$("#labels").show()
+		if ($("#type_intervention").is(":checked")){
+			$("#box1label").html('Patients')
+			$("#box1label").html('Intervention')
+			$("#box1label").html('Comparison')
+			$("#box1label").html('Outcome')
+			}
+		if ($("#type_diagnosis").is(":checked")){
+			$("#box1label").html('Patients')
+			$("#box1label").html('Index test')
+			$("#box1label").html('Reference test')
+			$("#box1label").html('Flow and timing')
+			}
 	});
 	
 function iterateJSON(idlist, publications) {
@@ -209,7 +220,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <div><input name="type" class="type" value="intervention" id="type_intervention" type="radio" ><label for="type_intervention">Meta-analysis of randomized controlled trials (RCTs)</label></div>	
 </fieldset>
 
-<fieldset id="labels" style="display:none">
+<fieldset id="labels" style="display:none;border-collapse: collapse;
 <legend style="font-weight:bold">Prepopulate fields?</legend>
 <table style="border:none">
 <tr><td style="width:200px"><span id="box1label">&nbsp;</span></td><td><input name="box1" class="field" placeholder="enter text" id="box1" size="100"></td></tr>
