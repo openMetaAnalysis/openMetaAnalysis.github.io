@@ -67,7 +67,7 @@ function iterateJSON(idlist, publications) {
 			citation+= "&lt;selective_reporting&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/selective_reporting&gt;<br>"
 			citation+= "&lt;other_biases&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/other_biases&gt;<br>"
 			citation+= "&lt;/study&gt;<br>"
-			$("#criteria").html("<a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\">Individual criteria for judging risk of bias</a> in a trial using the '<a href=\"http://handbook.cochrane.org/chapter_8/8_5_the_cochrane_collaborations_tool_for_assessing_risk_of_bias.htm\">Cochrane's Risk of bias tool</a>'")
+			$("#criteria").html("<ul><li><a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\">Individual criteria for judging risk of bias</a> in a trial using the '<a href=\"http://handbook.cochrane.org/chapter_8/8_5_the_cochrane_collaborations_tool_for_assessing_risk_of_bias.htm\">Cochrane's Risk of bias tool</a>'</li></ul>")
 		}
 		else{
 	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
@@ -76,7 +76,7 @@ function iterateJSON(idlist, publications) {
 			citation+= "&lt;reference_standard&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
 			citation+= "&lt;flow and timingt&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_assessment&gt;<br>"
 			citation+= "&lt;/study&gt;<br>"
-			$("#criteria").html("<a href=\"http://www.bris.ac.uk/quadas/quadas-2/\">Four criteria for judging risk of bias from QUADAS-2</a> (see Risk of bias row in the Table guided by the detailed criteria in the rows above)")
+			$("#criteria").html("<ul><li><a href=\"http://www.bris.ac.uk/quadas/quadas-2/\">Four criteria for judging risk of bias from QUADAS-2</a> (see Risk of bias row in the Table guided by the detailed criteria in the rows above)</li></ul>")
 		}
 
         //publications.push(citation);
@@ -188,7 +188,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <div id="status">Status: Waiting for input</div>
 
 <h3>Risk of bias table</h3>
-<div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow.</div>
+<div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow using the criteria below:</div>
 <div>&nbsp;</div>
 <div id="criteria">&nbsp;</div>
 <div id="editor">Please wait for code to be written here.</div>
