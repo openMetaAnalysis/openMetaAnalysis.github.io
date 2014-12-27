@@ -56,9 +56,9 @@ $(document).ready(function(){
 			$("#box1label").html('Patients')
 			$("#box1").attr("placeholder", "Enter sndrome or condition being studied")
 			$("#box2label").html('Index test')
-			$("#box2").attr("placeholder", "Enter the test/symptom/sign being studied")
+			$("#box2").attr("placeholder", "Enter the index test (test/symptom/sign) being studied")
 			$("#box3label").html('Reference test')
-			$("#box2").attr("placeholder", "Enter the reference ('gold standard') test")
+			$("#box3").attr("placeholder", "Enter the reference ('gold standard') test")
 			$("#box4label").html('Flow and timing')
 			$("#box4").attr("placeholder", "Enter something like 'index preceded reference test by x to x days'")
 			}
@@ -88,7 +88,7 @@ function iterateJSON(idlist, publications) {
         	citation+= "&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		if ($("#type_intervention").is(":checked")){
 			citation+= "&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").val() + "</span>&lt;/design&gt;<br>"
-			citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;" + $("#box1").val() + "<br>"
+			citation+= "&lt;patients totalsubjects='<span style='background-color:yellow'>__</span>'&gt;" + $("#box1").val() + "<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Computerized random number generator</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patients&gt;<br>"
@@ -99,28 +99,29 @@ function iterateJSON(idlist, publications) {
 			citation+= "&lt;/intervention&gt;<br>"
 			citation+= "&lt;comparison&gt;<span style='background-color:yellow'>" + $("#box3").val() + "</span><br>"
 			citation+= "&lt;/comparison&gt;<br>"
-			citation+= "&lt;outcome&gt;<br>"
-			citation+= "&lt;bullet type='primary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>" + $("#box4").text() + "</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet type='secondary'&gt;<span style='background-color:yellow'>Mortality</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;outcome&gt;" + $("#box4").val() + "<br>"
+			citation+= "&lt;bullet type='primary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>When measured or duration of follow-up?</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet type='secondary'&gt;<span style='background-color:yellow'>Criteria used or how measured?</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/outcome&gt;<br>"
 			$("#criteria").html("<a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\">Individual criteria for judging risk of bias</a> in a trial using the '<a href=\"http://handbook.cochrane.org/chapter_8/8_5_the_cochrane_collaborations_tool_for_assessing_risk_of_bias.htm\">Cochrane's Risk of bias tool</a>'</li></ul>")
 		}
 		if ($("#type_diagnosis").is(":checked")){
 			citation+= "&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").val() + "</span>&lt;/design&gt;<br>"
-			citation+= "&lt;patient_selection total=\"<span style='background-color:yellow'>__</span>\"'&gt;<span style='background-color:yellow'>consecutive enrollment</span><br>"
+			citation+= "&lt;patient_selection totalsubjects=\"<span style='background-color:yellow'>__</span>\"'&gt;<span style='background-color:yellow'>" + $("#box1").val() + "</span><br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Consecutive enrollment</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patient_selection&gt;<br>"
 			citation+= "&lt;index_test&gt;<span style='background-color:yellow'>" + $("#box2").val() + "</span><br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>read by who</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>interpretation standardized?</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Who interpreted?</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Interpretation standardized?</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/index_test&gt;<br>"
-			citation+= "&lt;reference_standard&gt;<br>"
-			citation+= "&lt;bullet type='primary'&gt;<span style='background-color:yellow'>" + $("#box3").val() + "</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet type='secondary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>Left ventricular end-diastolic pressure over 10</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;reference_standard&gt;" + $("#box3").val() + "<br>"
+			citation+= "&lt;bullet type='primary'&gt;<span style='background-color:yellow'>Criteria or cutoffs used?</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet type='secondary' &gt;<span style='background-color:yellow'>Who interpreted?</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet type='secondary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>Interpretation standardized?</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/reference_standard&gt;<br>"
-			citation+= "&lt;flow_timing&gt;<span style='background-color:yellow'>" + $("#box4").val() + "</span><br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Other issues to note/</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;flow_timing&gt;" + $("#box4").val() + "<br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Other issues to note?</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/flow_timing&gt;<br>"
 			$("#criteria").html("<a href=\"http://www.bris.ac.uk/quadas/quadas-2/\">Four criteria for judging risk of bias from QUADAS-2</a> (see Risk of bias row in the Table guided by the detailed criteria in the rows above)</li></ul>")
 		}
@@ -249,6 +250,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <h3>PICO table</h3>
 <div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow. Add text relevant to the criteria below:</div>
 <ul id="hints" style="display:none">
+<li id="bullets">If a bullet is not needed, delete its entire row.</li>
 <li id="criteria">&nbsp;</li>
 <li id="explanations">For important clinical observations that may explain a study's results, consider surrounding the text with **<span style="background-color:yellow;">to make a yellow highlight</span>**.</li>
 </ul>
