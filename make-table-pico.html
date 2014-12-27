@@ -36,6 +36,11 @@ $(document).ready(function(){
 	$("#hints").show()
 	});
 
+	$(".type").on("click", function(){
+	alert('')
+		$("#labels").show()
+	});
+	
 function iterateJSON(idlist, publications) {
 	var id = idlist.pop();
 	// test with http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11850928,11482001&format=json
@@ -201,9 +206,19 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <fieldset>
 <legend style="font-weight:bold">Meta-analysis type</legend>
 <div><input name="type" class="type" value="diagnosis" id="type_diagnosis" type="radio"><label for="type_diagnosis">Meta-analysis of diagnostic test assessments (DTAs)</label></div>
-<div><input name="type" class="type" value="intervention" id="type_intervention" type="radio" checked><label for="type_intervention">Meta-analysis of randomized controlled trials (RCTs)</label></div>	
+<div><input name="type" class="type" value="intervention" id="type_intervention" type="radio" ><label for="type_intervention">Meta-analysis of randomized controlled trials (RCTs)</label></div>	
 </fieldset>
-<div>&nbsp;</div>
+
+<fieldset id="labels" style="display:none">
+<legend style="font-weight:bold">Prepopulate fields?</legend>
+<table style="border:none">
+<tr><td style="width:200px"><span id="box1label">&nbsp;</span></td><td><input name="box1" class="field" placeholder="enter text" id="box1" size="100"></td></tr>
+<tr><td style="width:200px"><span id="box2label">&nbsp;</span></td><td><input name="box2" class="field" placeholder="enter text" id="box2" size="100"></td></tr>	
+<tr><td style="width:200px"><span id="box3label">&nbsp;</span></td><td><input name="box3" class="field" placeholder="enter text" id="box3" size="100"></td></tr>
+<tr><td style="width:200px"><span id="box4label">&nbsp;</span></td><td><input name="box4" class="field" placeholder="enter text" id="box4" size="100"></td></tr>	
+</table>
+</fieldset>
+
 <div id="status">Status: Waiting for input</div>
 
 <h3>PICO table</h3>
