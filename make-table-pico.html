@@ -42,7 +42,7 @@ $(document).ready(function(){
 			$("#box0label").html('Design')
 			$("#box0").val('Randomized controlled trial')
 			$("#box1label").html('Patients')
-			$("#box1").value('Consecutive enrollment')
+			$("#box1").value('Consecutive enrollment')<!-- will be used in the bullet?
 			$("#box2label").html('Intervention')
 			$("#box3label").html('Comparison')
 			$("#box4label").html('Outcome')
@@ -83,6 +83,7 @@ function iterateJSON(idlist, publications) {
 		if ($("#type_intervention").is(":checked")){
 			citation+= "&lt;design&gt;<span style='background-color:yellow'>Randomized controlled trial</span>&lt;/design&gt;<br>"
 			citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;<br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Computerized random number generator</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patients&gt;<br>"
 			citation+= "&lt;intervention&gt;<span style='background-color:yellow'>3% saline solution (2 ml)</span><br>"
@@ -102,6 +103,7 @@ function iterateJSON(idlist, publications) {
 		if ($("#type_diagnosis").is(":checked")){
 			citation+= "&lt;design&gt;<span style='background-color:yellow'>Cross sectional study</span>&lt;/design&gt;<br>"
 			citation+= "&lt;patient_selection total=\"<span style='background-color:yellow'>__</span>\"'&gt;<span style='background-color:yellow'>consecutive enrollment</span><br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Consecutive enrollment</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patient_selection&gt;<br>"
 			citation+= "&lt;index_test&gt;<span style='background-color:yellow'>chest radiograph</span><br>"
@@ -230,7 +232,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <legend style="font-weight:bold">Prepopulate fields?</legend>
 <table style="border:none">
 <tr><td style="width:200px"><span id="box0label">&nbsp;</span></td><td><input name="box0" class="field" placeholder="enter text" id="box1" size="100"></td></tr>
-<tr><td style="width:200px"><span id="box1label">&nbsp;</span></td><td><input name="box1" class="field" placeholder="enter text" id="box1" size="100"></td></tr>
+<tr><td style="width:200px"><span id="box1label">&nbsp;</span></td><td><input name="box1" class="field" placeholder="enter condition being studied" id="box1" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box2label">&nbsp;</span></td><td><input name="box2" class="field" placeholder="enter text" id="box2" size="100"></td></tr>	
 <tr><td style="width:200px"><span id="box3label">&nbsp;</span></td><td><input name="box3" class="field" placeholder="enter text" id="box3" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box4label">&nbsp;</span></td><td><input name="box4" class="field" placeholder="enter text" id="box4" size="100"></td></tr>	
