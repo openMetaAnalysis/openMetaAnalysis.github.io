@@ -57,16 +57,28 @@ function iterateJSON(idlist, publications) {
 			pubyear = pubyear.substring(0, pubyear.indexOf(" "));
 			}
 
-        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
-		citation+= "&lt;randomization&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
-		citation+= "&lt;allocation&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
-		citation+= "&lt;blinding_people&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
-		citation+= "&lt;blinding_assessment&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_assessment&gt;<br>"
-		citation+= "&lt;attrition&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/attrition&gt;<br>"
-		citation+= "&lt;selective_reporting&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/selective_reporting&gt;<br>"
-		citation+= "&lt;other_biases&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/other_biases&gt;<br>"
-		citation+= "&lt;/study&gt;<br>"
-		
+		if ($("#type_intervention").checked){
+			alert('rct')
+	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
+			citation+= "&lt;randomization&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
+			citation+= "&lt;allocation&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
+			citation+= "&lt;blinding_people&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
+			citation+= "&lt;blinding_assessment&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_assessment&gt;<br>"
+			citation+= "&lt;attrition&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/attrition&gt;<br>"
+			citation+= "&lt;selective_reporting&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/selective_reporting&gt;<br>"
+			citation+= "&lt;other_biases&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/other_biases&gt;<br>"
+			citation+= "&lt;/study&gt;<br>"
+		}
+		else{
+			alert('dta')
+	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
+			citation+= "&lt;patient_selection&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/randomization&gt;<br>"
+			citation+= "&lt;index_test&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
+			citation+= "&lt;reference_standard&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
+			citation+= "&lt;flow and timingt&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_assessment&gt;<br>"
+			citation+= "&lt;/study&gt;<br>"
+		}
+
         //publications.push(citation);
         publications += citation;
 
@@ -167,6 +179,11 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 
 <input id="input" type="text" autocomplete="on" size="100" placeholder="Enter search terms or a list of PMIDs separated by spaces, commas, or semi-colons"><br/>
 <button id="submitbutton" type="button">Submit</button>
+<fieldset>
+<legend style="font-weight:bold">Meta-analysis type</legend>
+<div><input name="diagnosis" class="type" value="diagnosis" id="type_diagnosis" type="radio"><label for="type_diagnosis">Meta-analysis of diagnostic test assessments (DTAs)</label></div>
+<div><input name="intervention" class="type" value="intervention" id="type_intervention" type="radio" checked><label for="type_intervention">Meta-analysis of randomized controlled trials (RCTs)</label></div>	
+</fieldset>
 <div>&nbsp;</div>
 <div id="status">Status: Waiting for input</div>
 
