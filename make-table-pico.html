@@ -79,7 +79,7 @@ function iterateJSON(idlist, publications) {
 		}
 		if ($("#type_diagnosis").is(":checked")){
 			citation+= "&lt;design&gt;<span style='background-color:yellow'>Cross sectional study</span>&lt;/design&gt;<br>"
-			citation+= "&lt;patient_selection total='<span style='background-color:yellow'>__</span>consecutive enrollment'&gt;<br>"
+			citation+= "&lt;patient_selection total=\"<span style='background-color:yellow'>__</span>\"&lt;<span style='background-color:yellow'>consecutive enrollment</span>'&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patient_selection&gt;<br>"
 			citation+= "&lt;index_test&gt;<span style='background-color:yellow'>chest radiograph</span><br>"
