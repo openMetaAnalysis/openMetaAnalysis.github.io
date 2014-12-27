@@ -84,7 +84,7 @@ function iterateJSON(idlist, publications) {
         	citation+= "&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		if ($("#type_intervention").is(":checked")){
 			citation+= "&lt;design&gt;<span style='background-color:yellow'>Randomized controlled trial</span>&lt;/design&gt;<br>"
-			citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;<br>"
+			citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;" + $("#box1").text() + "<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Computerized random number generator</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patients&gt;<br>"
@@ -233,7 +233,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <fieldset id="labels" style="display:none;border-collapse: collapse;
 <legend style="font-weight:bold">Prepopulate fields?</legend>
 <table style="border:none">
-<tr><td style="width:200px"><span id="box0label">&nbsp;</span></td><td><input name="box0" class="field" placeholder="enter text" id="box1" size="100"></td></tr>
+<tr><td style="width:200px"><span id="box0label">&nbsp;</span></td><td><input name="box0" class="field" placeholder="enter text" id="box0" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box1label">&nbsp;</span></td><td><input name="box1" class="field" placeholder="enter condition being studied" id="box1" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box2label">&nbsp;</span></td><td><input name="box2" class="field" placeholder="enter text" id="box2" size="100"></td></tr>	
 <tr><td style="width:200px"><span id="box3label">&nbsp;</span></td><td><input name="box3" class="field" placeholder="enter text" id="box3" size="100"></td></tr>
