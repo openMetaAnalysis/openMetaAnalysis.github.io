@@ -42,9 +42,9 @@ $(document).ready(function(){
 			$("#box0label").html('Enter study design')
 			$("#box0").attr("placeholder", "Randomized controlled trial?")
 			$("#box1label").html('Patients')
-			$("#box1").placeholder('Enter the condition being studied')
+			$("#box1").attr("placeholder", "Enter the condition being studied")
 			$("#box2label").html('Intervention')
-			$("#box2").placeholder('Enter the intervention being studied')
+			$("#box2").attr("placeholder", "Enter the intervention being studied")
 			$("#box3label").html('Comparison')
 			$("#box3").attr("placeholder", "Placebo?")
 			$("#box4label").html('Outcome')
@@ -55,9 +55,9 @@ $(document).ready(function(){
 			$("#box1label").html('Patients')
 			$("#box1").attr("placeholder", "Enter symptom, sign, or condition being studied")
 			$("#box2label").html('Index test')
-			$("#box2").placeholder('Enter the test being studied')
+			$("#box2").attr("placeholder", "Enter the test being studied")
 			$("#box3label").html('Reference test')
-			$("#box2").placeholder('Enter the reference test')
+			$("#box2").attr("placeholder", "Enter the reference test")
 			$("#box4label").html('Flow and timing')
 			$("#box4").attr("placeholder", "Index preceded reference test by x to x days")
 			}
@@ -233,7 +233,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 </fieldset>
 
 <fieldset id="labels" style="display:none">
-<legend style="font-weight:bold">Prepopulate fields?</legend>
+<legend style="font-weight:bold">Prepopulate fields that are similar between studies?</legend>
 <table style="border:none;border-collapse: collapse;">
 <tr><td style="width:200px"><span id="box0label">&nbsp;</span></td><td><input name="box0" class="field" placeholder="enter text" id="box0" size="100"></td></tr>
 <tr><td style="width:200px"><span id="box1label">&nbsp;</span></td><td><input name="box1" class="field" placeholder="enter condition being studied" id="box1" size="100"></td></tr>
