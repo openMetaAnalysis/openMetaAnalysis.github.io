@@ -39,22 +39,24 @@ $(document).ready(function(){
 	$(".type").on("click", function(){
 		$("#labels").show()
 		if ($("#type_intervention").is(":checked")){
-			$("#box0label").html('Design')
-			$("#box0").val('Randomized controlled trial')
+			$("#box0label").html('Enter study design')
+			$("#box0").attr("placeholder", "Randomized controlled trial?")
 			$("#box1label").html('Patients')
-			$("#box1").value('Consecutive enrollment')<!-- will be used in the bullet?
+			$("#box1").placeholder('Enter condition being studied')
 			$("#box2label").html('Intervention')
 			$("#box3label").html('Comparison')
 			$("#box4label").html('Outcome')
 			}
 		if ($("#type_diagnosis").is(":checked")){
-			$("#box0label").html('Design')
-			$("#box0").val('Cross sectional study')
+			$("#box0label").html('Enter study design')
+			$("#box0").attr("placeholder", "Cross sectional study?")
 			$("#box1label").html('Patients')
-			$("#box1").value('Consecutive enrollment')
+			$("#box1").attr("placeholder", "Patients having __ symptom or suspected of __ disease?")
+			$("#box1").val('Consecutive enrollment')
 			$("#box2label").html('Index test')
 			$("#box3label").html('Reference test')
 			$("#box4label").html('Flow and timing')
+			$("#box4").attr("placeholder", "Index preceded reference test by x to x days")
 			}
 	});
 	
