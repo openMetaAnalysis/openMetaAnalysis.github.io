@@ -78,22 +78,21 @@ function iterateJSON(idlist, publications) {
 			$("#criteria").html("<a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\">Individual criteria for judging risk of bias</a> in a trial using the '<a href=\"http://handbook.cochrane.org/chapter_8/8_5_the_cochrane_collaborations_tool_for_assessing_risk_of_bias.htm\">Cochrane's Risk of bias tool</a>'</li></ul>")
 		}
 		if ($("#type_diagnosis").is(":checked")){
-			citation+= "&lt;design&gt;<span style='background-color:yellow'>Randomized controlled trial</span>&lt;/design&gt;<br>"
-			citation+= "&lt;patients total='<span style='background-color:yellow'>__</span>'&gt;<br>"
+			citation+= "&lt;design&gt;<span style='background-color:yellow'>Cross sectional study</span>&lt;/design&gt;<br>"
+			citation+= "&lt;patient_selection total='<span style='background-color:yellow'>__</span>consecutive enrollment'&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;/patients&gt;<br>"
-			citation+= "&lt;intervention&gt;<span style='background-color:yellow'>3% saline solution (2 ml)</span><br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>With 5 mg (0.5 ml) terbutaline</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Every __ hours for __ days</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;/intervention&gt;<br>"
-			citation+= "&lt;comparison&gt;<span style='background-color:yellow'>0.9% saline solution (2 ml)</span><br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>With 5 mg (0.5 ml) terbutaline</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Every __ hours for __ days</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;/comparison&gt;<br>"
-			citation+= "&lt;outcome&gt;<br>"
-			citation+= "&lt;bullet type='primary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>Bronchiolitis Severity Score (Wang, 1992)</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;bullet type='secondary'&gt;<span style='background-color:yellow'>Mortality</span>&lt;/bullet&gt;<br>"
-			citation+= "&lt;/outcome&gt;<br>"
+			citation+= "&lt;/patient_selection&gt;<br>"
+			citation+= "&lt;index_test&gt;<span style='background-color:yellow'>chest radiograph</span><br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>read by radiologists</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>reading not standardized</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;/index_test&gt;<br>"
+			citation+= "&lt;reference_standard&gt;<br>"
+			citation+= "&lt;bullet type='primary'&gt;<span style='background-color:yellow'>Left heart catheterization</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;bullet type='secondary' url='http://pubmed.gov/_____'&gt;<span style='background-color:yellow'>Left ventricular end-diastolic pressure over 10</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;/reference_standard&gt;<br>"
+			citation+= "&lt;flow_timing&gt;<span style='background-color:yellow'>Reference test followed index test</span><br>"
+			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>1-2 days between tests</span>&lt;/bullet&gt;<br>"
+			citation+= "&lt;/flow_timing&gt;<br>"
 			$("#criteria").html("<a href=\"http://www.bris.ac.uk/quadas/quadas-2/\">Four criteria for judging risk of bias from QUADAS-2</a> (see Risk of bias row in the Table guided by the detailed criteria in the rows above)</li></ul>")
 		}
 
@@ -211,7 +210,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <div>Copy the content below into the appropriate file for topic. Then replace text that is highlighted in yellow. Add text relevant to the criteria below:</div>
 <ul id="hints" style="display:none">
 <li id="criteria">&nbsp;</li>
-<li id="explanations">For important clinical observations that may explain a study's results, consider surrounding the text with **<span style="background-color:yellow;">to make a yellow highlight</span>.</li>
+<li id="explanations">For important clinical observations that may explain a study's results, consider surrounding the text with **<span style="background-color:yellow;">to make a yellow highlight</span>**.</li>
 </ul>
 <div id="editor">Please wait for code to be written here.</div>
 
