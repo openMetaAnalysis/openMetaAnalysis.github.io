@@ -12,13 +12,13 @@
 //http://api.jquery.com/jquery.getjson/
 ///Not used:
 //http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2904758/
+var citation_bias = '&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;<br>&lt;included&gt;<br>';
 
 $(document).ready(function(){
 
     $("#submitbutton").on("click", function(){
         //disable the button to prevent multiple clicks
 		$("#submitbutton").prop( "disabled", true );
-		var citation_bias = '&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;<br>&lt;included&gt;<br>';
 		$("#status").html("<i>searching...</i>")
 		
 		//Get list of IDs based on search terms
