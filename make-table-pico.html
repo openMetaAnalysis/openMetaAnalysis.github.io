@@ -12,14 +12,13 @@
 //http://api.jquery.com/jquery.getjson/
 ///Not used:
 //http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2904758/
-var citation_bias = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?><br><included><!-- start of a new study --><study>\n";
 
 $(document).ready(function(){
 
     $("#submitbutton").on("click", function(){
         //disable the button to prevent multiple clicks
 		$("#submitbutton").prop( "disabled", true );
-		var citation_bias = '&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;<br>&lt;included><br>';
+		var citation_bias = '&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;<br>&lt;included&gt;<br>';
 		$("#status").html("<i>searching...</i>")
 		
 		//Get list of IDs based on search terms
@@ -88,7 +87,7 @@ function iterateJSON(idlist, publications) {
         	citation+= "&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		if ($("#type_intervention").is(":checked")){
 			citation+= "&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").val() + "</span>&lt;/design&gt;<br>"
-			citation+= "&lt;patients totalsubjects='<span style='background-color:yellow'>__</span>'&gt;" + $("#box1").val() + "<br>"
+			citation+= "&lt;patients totalsubjects='<span style='background-color:yellow'>__</span>&gt;" + $("#box1").val() + "<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Computerized random number generator</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= "&lt;/patients&gt;<br>"
