@@ -7,7 +7,7 @@ var repo_name = repo_dir.replace(/\-/gi, ' ');
 function showtip(tiptext, trigger, width){
 		$("#tip").css('display','block');
         $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>');
-		$("#tip").css('width','200px');
+		$("#tip").css('width', width);
 		$("#tip").css({"background-color":"#6DC6E7"});
 		$("#tip").css({"color":"#0022B4"});
 		$("#tip").css({"opacity":"1"});
@@ -103,7 +103,7 @@ $(document).ready(function(){
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
 		trigger = $(this);
-		width = "100px"
+		width = "400px"
 		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
