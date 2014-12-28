@@ -7,8 +7,9 @@ $( document ).ajaxComplete(function() {
 	//Event handlers in the xml
 	$('a.hastip_intitle').mouseenter(function(event){
 		var tiptext = $(this).attr('title');
-		var trigger = $(this).attr('id');
-		showtip(tiptext, trigger);
+		var trigger = $(this);
+		var width = "50px"
+		showtip(tiptext, trigger, width);
 		});
 });
 $(document).ready(function(){
