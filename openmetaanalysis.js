@@ -4,18 +4,22 @@ var pagename = location.pathname.split('/').slice(-1);
 if (pagename == ""){pagename = "index.html"};
 var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
-function showtip (tiptext, trigger){
-	//alert(trigger + "\n\n" + tiptext);
-	$("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>')
-	$("#tip").css('display','block');
-	$("#tip").css('width','400px');
-	$("#tip").css({"background-color":"#6DC6E7"});
-	$("#tip").css({"color":"#0022B4"});
-	$("#tip").css({"opacity":"1"});
-	var posleft = $("#" + trigger).position().left;
-	if ((posleft + $("#tip").width()) > $(window).width())(posleft = $(window).width() - $("#tip").width() - 10);
-	$( "#tip" ).offset({top: $("#" + trigger).position().top + 0, left: posleft});
-	}
+function showtip(tiptext, trigger){
+		$("#tip").css('display','block');
+        $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>');
+		$("#tip").css('width','200px');
+		$("#tip").css({"background-color":"#6DC6E7"});
+		$("#tip").css({"color":"#0022B4"});
+		$("#tip").css({"opacity":"1"});
+		var posleft = trigger.position().left;
+        if ((posleft + $("#tip").width()) > $(window).width()){
+            posleft = $(window).width() - $("#tip").width() - 10;
+		}
+        if (posleft < 0){
+            posleft = 10;
+		}
+        $("#tip").offset({top: trigger.position().top + 0, left: posleft});
+}  
 $(document).ready(function(){
 	//Display the repo_name in all the correct spots
 	$(".repo_name").text(repo_name);
@@ -92,12 +96,11 @@ $(document).ready(function(){
 		});
 	$('a.hastip_intitle').mouseenter(function(event){
 		var tiptext = $(this).attr('title');
-		var trigger = $(this).attr('id');
+		var trigger = $(this);
 		showtip(tiptext, trigger);
 		});
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
-		var trigger = $(this).attr('id');
 		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
@@ -114,7 +117,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "</a>"
 					})
 				     });
-				showtip(tiptext, trigger)
+				showtip(tiptext, $(this))
 			}
 			if(statusTxt=="error"){
 				alert("Error: "+xhr.status+": "+xhr.statusText);
