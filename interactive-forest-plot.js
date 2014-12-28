@@ -8,8 +8,8 @@ $(document).ready(function(){
 		//alert($(this).attr('id'))
 		var trigger = $(this).attr('id')
 		event.preventDefault();
-		$("#div1").load("pico-table.html tr:contains('" + $(this).attr("pmid") + "')")
-		$("#div2").load("bias-table.html tr:contains('" + $(this).attr("pmid") + "')",function(responseTxt,statusTxt,xhr)
+		$("#div1").load("interactive-forest-plot-pico.html tr:contains('" + $(this).attr("pmid") + "')")
+		$("#div2").load("interactive-forest-plot-bias.html tr:contains('" + $(this).attr("pmid") + "')",function(responseTxt,statusTxt,xhr)
 		{
 		if(statusTxt=="success")
 			//alert("External content loaded successfully!\n\n");
