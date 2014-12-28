@@ -8,7 +8,7 @@ $( document ).ajaxComplete(function() {
 	$('a.hastip_intitle').mouseenter(function(event){
 		var tiptext = $(this).attr('title');
 		var trigger = $(this);
-		var width = "50px"
+		var width = "200px"
 		showtip(tiptext, trigger, width);
 		});
 });
