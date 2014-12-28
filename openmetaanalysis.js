@@ -97,7 +97,7 @@ $(document).ready(function(){
 	$('a.hastip_intitle').mouseenter(function(event){
 		var tiptext = $(this).attr('title')
 		trigger = $(this);
-		width = "50px"
+		width = "200px"
 		showtip(tiptext, trigger, width);
 		});
 	$('a.hastip').mouseenter(function(event){
