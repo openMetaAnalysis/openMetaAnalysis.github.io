@@ -4,7 +4,7 @@ var pagename = location.pathname.split('/').slice(-1);
 if (pagename == ""){pagename = "index.html"};
 var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
-function showtip(tiptext, trigger){
+function showtip(tiptext, trigger, width){
 		$("#tip").css('display','block');
         $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>');
 		$("#tip").css('width','200px');
@@ -97,11 +97,13 @@ $(document).ready(function(){
 	$('a.hastip_intitle').mouseenter(function(event){
 		var tiptext = $(this).attr('title')
 		trigger = $(this);
-		showtip(tiptext, trigger);
+		width = "50px"
+		showtip(tiptext, trigger, width);
 		});
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
 		trigger = $(this);
+		width = "100px"
 		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
@@ -118,7 +120,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "</a>"
 					})
 				     });
-				showtip(tiptext, trigger)
+				showtip(tiptext, trigger, width)
 			}
 			if(statusTxt=="error"){
 				alert("Error: "+xhr.status+": "+xhr.statusText);
