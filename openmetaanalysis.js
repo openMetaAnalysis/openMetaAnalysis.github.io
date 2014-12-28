@@ -96,12 +96,12 @@ $(document).ready(function(){
 		});
 	$('a.hastip_intitle').mouseenter(function(event){
 		var tiptext = $(this).attr('title')
-		tigger = $(this);
-		showtip(tiptext, tigger);
+		trigger = $(this);
+		showtip(tiptext, trigger);
 		});
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
-		tigger = $(this);
+		trigger = $(this);
 		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
