@@ -95,12 +95,13 @@ $(document).ready(function(){
 		$( "#tip" ).css('display', 'none');
 		});
 	$('a.hastip_intitle').mouseenter(function(event){
-		var tiptext = $(this).attr('title');
-		var trigger = $(this);
-		showtip(tiptext, trigger);
+		var tiptext = $(this).attr('title')
+		tigger = $(this);
+		showtip(tiptext, tigger);
 		});
 	$('a.hastip').mouseenter(function(event){
 		var tipname = $(this).attr("id");
+		tigger = $(this);
 		$("#tip").load("/tips.xml", function(responseTxt,statusTxt,xhr){
 			if(statusTxt=="success"){
 				//alert("Success: "+xhr.status+": "+xhr.statusText);
@@ -117,7 +118,7 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "</a>"
 					})
 				     });
-				showtip(tiptext, $(this))
+				showtip(tiptext, trigger)
 			}
 			if(statusTxt=="error"){
 				alert("Error: "+xhr.status+": "+xhr.statusText);
