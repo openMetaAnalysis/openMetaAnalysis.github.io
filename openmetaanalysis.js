@@ -49,7 +49,7 @@ $(document).ready(function(){
 		//$(this).attr("class","hastip")
 		//$(this).attr("href","#")
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
-		$(this).replaceWith($("<a href=\"#"\" class=\"hastip\" id=\"grade_quality_definition\">" + $(this).text() + '</a>'));
+		$(this).replaceWith($("<a href=\"#\" class=\"hastip\" id=\"grade_quality_definition\">" + $(this).text() + '</a>'));
 		})
 	//For eligibility criteria
 	$("CRITERIA").css("display","none")
