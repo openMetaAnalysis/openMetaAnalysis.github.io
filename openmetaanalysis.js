@@ -43,6 +43,18 @@ $(document).ready(function(){
 		//For specific files on master
 		$(this).attr('href', "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href"));
 		})
+	$("body").find('GRADE').each(function(){
+		//For GRADE
+		//$(this).attr("id","grade_quality_definition")
+		//$(this).attr("class","hastip")
+		//$(this).attr("href","#")
+		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
+		$(this).replaceWith($("<a href=\"#"\" class=\"hastip\" id=\"grade_quality_definition\">" + $(this).text() + '</a>'));
+		})
+	//For eligibility criteria
+	$("CRITERIA").css("display","none")
+	$("criteria_display").html($("CRITERIA").html())
+	
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
 		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
