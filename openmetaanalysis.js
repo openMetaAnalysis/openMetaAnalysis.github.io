@@ -53,7 +53,7 @@ $(document).ready(function(){
 		})
 	//For eligibility criteria
 	$("CRITERIA").css("display","none")
-	$("criteria_display").html($("CRITERIA").html())
+	$("#criteria_display").html($("CRITERIA").html())
 	
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
