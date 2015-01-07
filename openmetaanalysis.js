@@ -24,7 +24,7 @@ $(document).ready(function(){
 	//Display the repo_name in all the correct spots
 	$(".repo_name").text(repo_name);
 	//Is this a meta-regression?
-	if (repo_dir == " Early-goal-directed-therapy-for-septic-shock"){
+	if (repo_dir == "Early-goal-directed-therapy-for-septic-shock"){
 		alert('https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#metaregression_figure").attr('src'))
 	}
 	$("#metaregression_figure").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#metaregression_figure").attr('src'))
