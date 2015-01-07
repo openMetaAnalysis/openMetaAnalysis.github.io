@@ -25,7 +25,7 @@ $(document).ready(function(){
 	$(".repo_name").text(repo_name);
 	//Is this a meta-regression?
 	$("#metaregression_figure").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#metaregression_figure").attr('src'))
-	if $("#metaregression_figure").load(function() {
+	$("#metaregression_figure").load(function() {
 		metaregression = true;
 		alert('metargression')
 	});
