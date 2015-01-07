@@ -4,6 +4,7 @@ var pagename = location.pathname.split('/').slice(-1);
 if (pagename == ""){pagename = "index.html"};
 var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
+var metagression = false;
 function showtip(tiptext, trigger, width){
 		$("#tip").css('display','block');
         $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>');
@@ -25,12 +26,12 @@ $(document).ready(function(){
 	$(".repo_name").text(repo_name);
 	//Is this a meta-regression?
 	if (repo_dir == "Early-goal-directed-therapy-for-septic-shock"){
-		alert('https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#metaregression_figure").attr('src'))
+		//code for testing a specific repository
 	}
 	$("#metaregression_figure").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#metaregression_figure").attr('src'))
 	$("#metaregression_figure").load(function() {
 		metaregression = true;
-		alert('metargression')
+		$("#metaregression").show();
 	});
 	//Customize src for images based on repo name
 	$("#forest").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#forest").attr('src'))
