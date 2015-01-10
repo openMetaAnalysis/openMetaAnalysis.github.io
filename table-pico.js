@@ -25,7 +25,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
 						}
 					}
-				var patients = $(this).find('patients').attr('total') + ' subjects with ' + $(this).find('patients').text();
+				var patients = $(this).find('patients').attr('total') + ' subjects with ' + $(this).find('patients').val();
 					$(this).find('patients').find('bullet').each(function(){
 						patients += '<br>&bull; ' + $(this).text()
 						})
