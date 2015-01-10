@@ -138,14 +138,8 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 	//Write footer
 	//Reuse
 	$("#business-bias").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/reusing.MD'>Cite &amp; use this content</a></div>")
-	//Edit and issues/comments
-	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/tables/pico.bias'>Edit this page</a> (Hint: use <a href=\"https://kobra.io\">Kobra</a> for collaborative editing) - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a></div>")
-	//Version date...
-	lastmod = xml.lastModified     // get string of last modified date
-	lastmoddate = Date.parse(lastmod)   // convert modified string to date
-	if (lastmoddate == 0) {               // unknown date (or January 1, 1970 GMT)
-		$("#business").append("<div style='text-align:center'>You need a new browser</div>")
-	} else {
-		$("#business").append("<div style='text-align:center'>Updated: " + lastmod + " - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>History</a></div>")
-	}
+	//Edit and history
+	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/tables/bias.xml'>Edit this page</a> (Hint: use <a href=\"https://kobra.io\">Kobra</a> for collaborative editing) - <div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/tables/bias.xml'>History</a></div>")
+	//Issues and comments
+	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a></div>")
 });
