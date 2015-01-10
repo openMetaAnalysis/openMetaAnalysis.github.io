@@ -87,7 +87,8 @@ function iterateJSON(idlist, publications) {
         	citation+= "&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\"&gt;' + studyname + "&lt;/citation&gt;</span><br>"
 		if ($("#type_intervention").is(":checked")){
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").val() + "</span>&lt;/design&gt;<br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;patients total=\"<span style='background-color:yellow'>__</span>\"&gt;" + $("#box1").val() + "<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;patients total=\"<span style='background-color:yellow'>__</span>\"&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;description&gt;<span style='background-color:yellow'>" + $("#box1").val()  + "</span>&lt;/description&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;bullet&gt;<span style='background-color:yellow'>Computerized random number generator</span>&lt;/bullet&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;/patients&gt;<br>"
@@ -106,7 +107,8 @@ function iterateJSON(idlist, publications) {
 		}
 		if ($("#type_diagnosis").is(":checked")){
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;design&gt;<span style='background-color:yellow'>" + $("#box0").val() + "</span>&lt;/design&gt;<br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;patient_selection total=\"<span style='background-color:yellow'>__</span>\"&gt;<span style='background-color:yellow'>" + $("#box1").val() + "</span><br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;patient_selection total=\"<span style='background-color:yellow'>__</span>\"&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;description&gt;<span style='background-color:yellow'>" + $("#box1").val()  + "</span>&lt;/description&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;bullet&gt;<span style='background-color:yellow'>Consecutive enrollment</span>&lt;/bullet&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;bullet&gt;<span style='background-color:yellow'>Mean age __ months</span>&lt;/bullet&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;/patient_selection&gt;<br>"
