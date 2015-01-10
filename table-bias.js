@@ -40,7 +40,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
 							}
 						}
-					citationtext += $(this).find('citation').attr('totalsubjects') + "subjects with " + $(this).find('patients').text()
+					citationtext += "Subjects: " $(this).find('citation').attr('totalsubjects')
 					totalsubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 					if ($(this).text().indexOf("igh")>0){
 						highrisksubjects    += parseFloat($(this).find('citation').attr('totalsubjects'))
