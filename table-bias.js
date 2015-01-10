@@ -13,7 +13,9 @@ $( document ).ajaxComplete(function() {
 		});
 });
 $(document).ready(function(){
+//Write header
 $("#header_bias").html("<table><caption>Possible bias in randomized controlled trials of this topic<br><a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\" style=\"font-size:12px\">Criteria for individual items from Cochrane Handbook</a></caption><tr><th class='col1' rowspan='2'>Trial</th><th colspan='2'>Selection bias</th><th>Performance bias</th><th>Detection bias</th><th>Attrition bias</th><th>Reporting bias</th><th>Other biased</th><th rowspan=2 style='width:7px;background-color:white;border: 1px solid white'></th></tr><tr><th>Random sequence generation</th><th>Allocation concealment</th><th>Blinding of participants and personnel</th><th>Blinding of outcome assessment</th><th>Incomplete outcome data</th><th>Selective reporting</th><th>E.g. imbalanced compliance , co-interventions, or other.</th></tr></table>");
+//Get xml for table
 var url = "/" + repo_dir + "/tables/bias.xml";
         $.ajax({
             type: "GET",
@@ -132,4 +134,18 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 
                 }
       });
-    });
+     
+	//Write footer
+	//Reuse
+	$("#business-bias").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/reusing.MD'>Cite &amp; use this content</a></div>")
+	//Edit and issues/comments
+	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/tables/pico.bias'>Edit this page</a> (Hint: use <a href=\"https://kobra.io\">Kobra</a> for collaborative editing) - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a></div>")
+	//Version date...
+	lastmod = xml.lastModified     // get string of last modified date
+	lastmoddate = Date.parse(lastmod)   // convert modified string to date
+	if (lastmoddate == 0) {               // unknown date (or January 1, 1970 GMT)
+		$("#business").append("<div style='text-align:center'>You need a new browser</div>")
+	} else {
+		$("#business").append("<div style='text-align:center'>Updated: " + lastmod + " - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>History</a></div>")
+	}
+});
