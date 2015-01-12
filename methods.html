@@ -15,16 +15,19 @@ $(document).ready(function(){
     e.preventDefault();
 	var subjects = parseFloat($("#denom1").val())  + parseFloat($("#denom2").val()) ;
 	if ($("#counts").is(':checked')){
-		//weightedvalue = ((parseFloat($("#numer1").val()) + parseFloat($("#numer2").val()))/subjects);
-		weightedvalue = (($("#numer1").val()*$("#denom1").val() + $("#numer2").val()*$("#denom2").val())/subjects);
+		weightedvalue = 100*((parseFloat($("#numer1").val()) + parseFloat($("#numer2").val()))/subjects);
+		//weightedvalue = (($("#numer1").val()*$("#denom1").val() + $("#numer2").val()*$("#denom2").val())/subjects);
+		weightedvalue = weightedvalue.toFixed(2).toString() + "%";
 		}
 	if ($("#percents").is(':checked')){
 		weightedvalue = (($("#numer1").val()*$("#denom1").val() + $("#numer2").val()*$("#denom2").val())/subjects);
+		weightedvalue = weightedvalue.toFixed(2).toString() + "%";
 		}
 	if ($("#means").is(':checked')){
 		weightedvalue = (($("#numer1").val()*$("#denom1").val() + $("#numer2").val()*$("#denom2").val())/subjects);
+		weightedvalue = weightedvalue.toFixed(2).toString();
 		}
-    $("#answer").html(weightedvalue.toFixed(2));
+    $("#answer").html(weightedvalue);
   });
 });
 </script>
