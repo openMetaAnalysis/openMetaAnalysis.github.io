@@ -115,7 +115,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			var denom = $(xml).find('study').length;
 			$("#judgment").html('Low risk')
 			//ratio = $(xml).find("study:contains(High)").length/denom;
-			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(1-unclearrisksubjects/totalsubjects)).toFixed(1) + "% of patients</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(1-unclearrisksubjects/totalsubjects)).toFixed(1) + "% of " + totalsubjects + " patients</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			//alert("Unclear/high risk proportion:\n" + eval(100*(unclearrisksubjects)/totalsubjects).toFixed(1)+"%")
 			if (unclearrisksubjects/totalsubjects > 0.5){
 			//Below is per Cochrane, but does not seem sensible as a study could have most trials low risk and also have most trials low or unclear.
