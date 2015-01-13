@@ -59,12 +59,12 @@ function iterateJSON(idlist, publications) {
 
 		if ($("#type_intervention").is(":checked")){
 	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;randomization <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Method not described\"</span>&gt;<span style='background-color:yellow'>Unclear risk</span>&lt;/randomization&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;randomization <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Method of randomization not described\"</span>&gt;<span style='background-color:yellow'>Unclear risk</span>&lt;/randomization&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;allocation&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;blinding_people&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;blinding_assessment&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_assessment&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;blinding_assessment <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Blinding of assessors not stated\"</span>&gt;<span style='background-color:yellow'>Unclear&nbsp;risk</span>&lt;/blinding_assessment&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;attrition&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/attrition&gt;<br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;selective_reporting&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/selective_reporting&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;selective_reporting <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Protocol not available\"</span>&gt;<span style='background-color:yellow'>Unclear&nbsp;risk</span>&lt;/selective_reporting&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;other_biases&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/other_biases&gt;<br>"
 			citation+= "&lt;/study&gt;<br>"
 			$("#criteria").html("<a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\">Individual criteria for judging risk of bias</a> in a trial using the '<a href=\"http://handbook.cochrane.org/chapter_8/8_5_the_cochrane_collaborations_tool_for_assessing_risk_of_bias.htm\">Cochrane's Risk of bias tool</a>'</li></ul>")
