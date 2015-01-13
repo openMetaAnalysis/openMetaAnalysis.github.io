@@ -122,14 +122,14 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			//if (1-highrisksubjects/totalsubjects > 0.5){
 				$("#judgment").html('Unclear risk');
 				$("#judgment").css('background-color','#ffcccc');
-				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*unclearrisksubjects/totalsubjects).toFixed(1) + "% of patients</span>) is from studies at unclear or high risk of bias.\' (modified from <a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*unclearrisksubjects/totalsubjects).toFixed(1) + "% of " + totalsubjects + " patients</span>) is from studies at unclear or high risk of bias.\' (modified from <a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			};
 			//ratio = $(xml).find("study:contains(Unclear)").length/denom;
 			//alert("High risk proportion:\n"        + eval(100*highrisksubjects/totalsubjects).toFixed(1)+"%")
 			if (highrisksubjects/totalsubjects > 0.5){
 				$("#judgment").html('High risk');
 				$("#judgment").css('background-color','#ff5959');
-				$("#rationale").html("\'The proportion of information (<span style='color:red;font-weight:bold'>" + eval(100*highrisksubjects/totalsubjects).toFixed(1) + "% of patients</span> from studies at high risk of bias is sufficient to affect the interpretation of results.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+				$("#rationale").html("\'The proportion of information (<span style='color:red;font-weight:bold'>" + eval(100*highrisksubjects/totalsubjects).toFixed(1) + "% of " + totalsubjects + " patients</span> from studies at high risk of bias is sufficient to affect the interpretation of results.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			};
 
                 }
