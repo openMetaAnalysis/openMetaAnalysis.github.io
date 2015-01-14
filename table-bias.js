@@ -47,7 +47,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						}
 					if ( $(this).find('citation').attr('nct')){
 						if ( $(this).find('citation').attr('nct').length > 4){
-							citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
+							citationtext += "<a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
 							}
 						}
 					citationtext += "Subjects: " + $(this).find('citation').attr('totalsubjects')
