@@ -37,6 +37,14 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							citationtext += "PMID: <a href='http://pubmed.gov/" + $(this).find('citation').attr('pmid') + "'>" + $(this).find('citation').attr('pmid') + "</a><br>"
 							}
 						}
+					if ( $(this).find('citation').attr('trialregistration')){
+						if ( $(this).find('citation').attr('trialregistration').indexOf("nct") >= 0){
+							citationtext += "<a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
+							}
+						if ( $(this).find('citation').attr('trialregistration').indexOf("ISRCTN") >= 0){
+							citationtext += "<a href='http://www.isrctn.com/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
+							}
+						}
 					if ( $(this).find('citation').attr('nct')){
 						if ( $(this).find('citation').attr('nct').length > 4){
 							citationtext += "NCT: <a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
