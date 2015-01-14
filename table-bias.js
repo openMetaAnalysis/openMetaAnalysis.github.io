@@ -39,10 +39,10 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						}
 					if ( $(this).find('citation').attr('trialregistration')){
 						if ( $(this).find('citation').attr('trialregistration').indexOf("nct") >= 0){
-							citationtext += "<a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
+							citationtext += "<a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('trialregistration') + "'>" + $(this).find('citation').attr('trialregistration') + "</a><br>"
 							}
 						if ( $(this).find('citation').attr('trialregistration').indexOf("ISRCTN") >= 0){
-							citationtext += "<a href='http://www.isrctn.com/" + $(this).find('citation').attr('nct') + "'>" + $(this).find('citation').attr('nct') + "</a><br>"
+							citationtext += "<a href='http://www.isrctn.com/" + $(this).find('citation').attr('trialregistration') + "'>" + $(this).find('citation').attr('trialregistration') + "</a><br>"
 							}
 						}
 					if ( $(this).find('citation').attr('nct')){
