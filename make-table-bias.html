@@ -58,7 +58,7 @@ function iterateJSON(idlist, publications) {
 			}
 
 		if ($("#type_intervention").is(":checked")){
-	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
+	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" trialregistration=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;randomization <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Method of randomization not described\"</span>&gt;<span style='background-color:yellow'>Unclear risk</span>&lt;/randomization&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;allocation <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Method of concealing allocation not stated\"</span>&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;blinding_people <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Did not state blinding of subjects and personnel.\"</span>&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
