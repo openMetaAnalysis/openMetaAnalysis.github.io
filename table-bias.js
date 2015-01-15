@@ -62,51 +62,51 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							}
 						})
 					$(this).find('allocation').each(function(){
-						if (this.hasAttribute("explanation")){
-							allocation = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
-							}
-						else{
-							allocation = $(this).text()
+						allocation = $(this).text()
+						if (this.hasAttribute('explanation')){
+							if ($(this).attr('explanation').length>8){
+								allocation = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+								}
 							}
 						})
 					$(this).find('blinding_people').each(function(){
-						if (this.hasAttribute("explanation")){
-							blinding_people = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
-							}
-						else{
-							blinding_people = $(this).text()
+						blinding_people = $(this).text()
+						if (this.hasAttribute('explanation')){
+							if ($(this).attr('explanation').length>8){
+								blinding_people = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+								}
 							}
 						})
 					$(this).find('blinding_assessment').each(function(){
-						if (this.hasAttribute("explanation")){
-							blinding_assessment = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
-							}
-						else{
-							blinding_assessment = $(this).text()
+						blinding_assessment = $(this).text()
+						if (this.hasAttribute('explanation')){
+							if ($(this).attr('explanation').length>8){
+								blinding_assessment = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+								}
 							}
 						})
 					$(this).find('attrition').each(function(){
-						if (this.hasAttribute("explanation")){
-							attrition = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
-							}
-						else{
-							attrition = $(this).text()
+						attrition = $(this).text()
+						if (this.hasAttribute('explanation')){
+							if ($(this).attr('explanation').length>8){
+								attrition = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+								}
 							}
 						})
 					$(this).find('selective_reporting').each(function(){
-						if (this.hasAttribute("explanation")){
-							selective_reporting = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
-							}
-						else{
-							selective_reporting = $(this).text()
+						selective_reporting = $(this).text()
+						if (this.hasAttribute('explanation')){
+							if ($(this).attr('explanation').length>8){
+								selective_reporting = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+								}
 							}
 						})
 					$(this).find('other_biases').each(function(){
-						if (this.hasAttribute("explanation")){
-							other_biases = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
-							}
-						else{
-							other_biases = $(this).text()
+						other_biases = $(this).text()
+						if (this.hasAttribute('explanation')){
+							if ($(this).attr('explanation').length>8){
+								other_biases = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+								}
 							}
 						})
 				var trHTML = '<tr><td>' +  citationtext + '</td><td>' + randomization + '</td><td>' + allocation + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
