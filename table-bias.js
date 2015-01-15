@@ -54,9 +54,9 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						unclearrisksubjects += parseFloat($(this).find('citation').attr('totalsubjects'))
 						}
 					$(this).find('randomization').each(function(){
-						if (this.hasAttribute('explanation')){
-							if (this.attr('explanation').length > 8){
-								randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+						if (this.find('randomization').hasAttribute('explanation')){
+							if (this.find('randomization').attr('explanation').length > 8){
+								randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).find('randomization').attr('explanation')+ "\">" + $(this).text() + "</a>"
 								}
 							}
 						else{
@@ -64,9 +64,9 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							}
 						})
 					$(this).find('allocation').each(function(){
-						if (this.hasAttribute('explanation')){
-							if (this.attr('explanation').length > 8){
-								allocation = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+						if (this.find('allocation').hasAttribute('explanation')){
+							if (this.find('allocation').attr('explanation').length > 8){
+								allocation = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).find('allocation').attr('explanation')+ "\">" + $(this).text() + "</a>"
 								}
 							}
 						else{
@@ -74,9 +74,9 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							}
 						})
 					$(this).find('blinding_people').each(function(){
-						if (this.hasAttribute('explanation')){
-							if (this.attr('explanation').length > 8){
-								blinding_people = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+						if (this.find('blinding_people').hasAttribute('explanation')){
+							if (this.find('blinding_people').attr('explanation').length > 8){
+								blinding_people = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).find('blinding_people').attr('explanation')+ "\">" + $(this).text() + "</a>"
 								}
 							}
 						else{
@@ -84,9 +84,9 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							}
 						})
 					$(this).find('blinding_assessment').each(function(){
-						if (this.hasAttribute('explanation')){
-							if (this.attr('explanation').length > 8){
-								blinding_assessment = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+						if (this.find('blinding_assessment').hasAttribute('explanation')){
+							if (this.find('blinding_assessment').attr('explanation').length > 8){
+								blinding_assessment = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).find('blinding_assessment').attr('explanation')+ "\">" + $(this).text() + "</a>"
 								}
 							}
 						else{
@@ -94,9 +94,9 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							}
 						})
 					$(this).find('attrition').each(function(){
-						if (this.hasAttribute('explanation')){
-							if (this.attr('explanation').length > 8){
-								attrition = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+						if (this.find('attrition').hasAttribute('explanation')){
+							if (this.find('attrition').attr('explanation').length > 8){
+								attrition = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).find('attrition').attr('explanation')+ "\">" + $(this).text() + "</a>"
 								}
 							}
 						else{
@@ -104,9 +104,9 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							}
 						})
 					$(this).find('selective_reporting').each(function(){
-						if (this.hasAttribute('explanation')){
-							if (this.attr('explanation').length > 8){
-								selective_reporting = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+						if (this.find('selective_reporting').hasAttribute('explanation')){
+							if (this.find('selective_reporting').attr('explanation').length > 8){
+								selective_reporting = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).find('selective_reporting').attr('explanation')+ "\">" + $(this).text() + "</a>"
 								}
 							}
 						else{
@@ -114,9 +114,9 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 							}
 						})
 					$(this).find('other_biases').each(function(){
-						if (this.hasAttribute('explanation')){
-							if (this.attr('explanation').length > 8){
-								other_biases = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+						if (this.find('other_biases').hasAttribute('explanation')){
+							if (this.find('other_biases').attr('explanation').length > 8){
+								other_biases = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).find('other_biases').attr('explanation')+ "\">" + $(this).text() + "</a>"
 								}
 							}
 						else{
