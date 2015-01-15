@@ -63,7 +63,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						})
 					$(this).find('allocation').each(function(){
 						if (this.hasAttribute("explanation")){
-							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							allocation = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
 							}
 						else{
 							allocation = $(this).text()
@@ -71,7 +71,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						})
 					$(this).find('blinding_people').each(function(){
 						if (this.hasAttribute("explanation")){
-							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							blinding_people = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
 							}
 						else{
 							blinding_people = $(this).text()
@@ -79,7 +79,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						})
 					$(this).find('blinding_assessment').each(function(){
 						if (this.hasAttribute("explanation")){
-							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							blinding_assessment = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
 							}
 						else{
 							blinding_assessment = $(this).text()
@@ -87,7 +87,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						})
 					$(this).find('attrition').each(function(){
 						if (this.hasAttribute("explanation")){
-							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							attrition = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
 							}
 						else{
 							attrition = $(this).text()
@@ -95,7 +95,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						})
 					$(this).find('selective_reporting').each(function(){
 						if (this.hasAttribute("explanation")){
-							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							selective_reporting = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
 							}
 						else{
 							selective_reporting = $(this).text()
@@ -103,7 +103,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 						})
 					$(this).find('other_biases').each(function(){
 						if (this.hasAttribute("explanation")){
-							randomization = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
+							other_biases = "<a href=\"#\" class=\"hastip_intitle\" title=\"" + $(this).attr('explanation')+ "\">" + $(this).text() + "</a>"
 							}
 						else{
 							other_biases = $(this).text()
