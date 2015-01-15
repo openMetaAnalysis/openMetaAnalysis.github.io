@@ -21,10 +21,10 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						}
 					}
 				if ( $(this).find('citation').attr('trialregistration')){
-					if ( $(this).find('citation').attr('trialregistration').indexOf("nct") >= 0){
+					if ( $(this).find('citation').attr('trialregistration').toLowerCase().indexOf("nct") >= 0){
 						citationtext += "<a href='https://clinicaltrials.gov/ct2/show/study/" + $(this).find('citation').attr('trialregistration') + "'>" + $(this).find('citation').attr('trialregistration') + "</a><br>"
 						}
-					if ( $(this).find('citation').attr('trialregistration').indexOf("isrctn") >= 0){
+					if ( $(this).find('citation').attr('trialregistration').toLowerCase().indexOf("isrctn") >= 0){
 						citationtext += "<a href='http://www.isrctn.com/" + $(this).find('citation').attr('trialregistration') + "'>" + $(this).find('citation').attr('trialregistration') + "</a><br>"
 						}
 					}
