@@ -30,7 +30,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			var highrisksubjects = 0;
 			var unclearrisksubjects = 0;
 			$(xml).find('study').each(function(){
-					var patient_selection = [], index_test = [], reference_standard = [], flow_timing = [];
+					var patient_selection = [], index_test = [], reference_standard = [], flow_timing = [], other_biases = [];
 					var citationtext = $(this).find('citation').text() + ', ' + $(this).find("citation").attr("year") + "<br>"
 					if ( $(this).find('citation').attr('pmid')){
 						if ( $(this).find('citation').attr('pmid').length > 4){
@@ -93,7 +93,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 								}
 							}
 						})
-				var trHTML = '<tr><td>' +  citationtext + '</td><td>' + patient_selection + '</td><td>' + index_test + '</td><td>' + reference_standard + '</td><td>' + flow_timing + '</td><td>' + other_bias + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
+				var trHTML = '<tr><td>' +  citationtext + '</td><td>' + patient_selection + '</td><td>' + index_test + '</td><td>' + reference_standard + '</td><td>' + flow_timing + '</td><td>' + other_biases + '</td></tr>';
 			        $('#citations').append(trHTML);
 			})
 
