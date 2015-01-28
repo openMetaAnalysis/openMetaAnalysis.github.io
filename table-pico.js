@@ -77,7 +77,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 	//Reuse
 	$("#business-pico").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/reusing.MD'>Cite &amp; use this content</a></div>")
 	//Edit and history
-	$("#business-pico").append("<div style='text-align:center'>Source content: <a href='/" + repo_dir + "/pico.xml'>view</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/tables/pico.xml'>history</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/tables/pico.xml'>Edit</a> (Hint: use <a href=\"https://kobra.io\">Kobra</a> for collaborative editing)</div>")
+	$("#business-pico").append("<div style='text-align:center'>Source content: <a href='/" + repo_dir + "/tables/pico.xml'>view</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/tables/pico.xml'>history</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/tables/pico.xml'>edit</a> (Hint: use <a href=\"https://kobra.io\">Kobra</a> for collaborative editing)</div>")
 	//Issues and comments
 	$("#business-pico").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a></div>")
 
