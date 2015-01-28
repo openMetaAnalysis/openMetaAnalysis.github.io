@@ -14,7 +14,7 @@ $( document ).ajaxComplete(function() {
 });
 $(document).ready(function(){
 //Write header
-$("#header_bias").html("<table><caption>Possible bias in studies of diagnostic test accuracy for this topic<br><a href=\"http://www.bris.ac.uk/quadas/quadas-2/\" style=\"font-size:12px\">Criteria for individual items from QUADAS-2</a></caption><tr><th class='col1' rowspan='2'>Study</th><th colspan='2'>Patient selectio</th><th>Index test performance</th><th>Reference test performance</th><th>Flow and timing of subjects</th><th>Other biased</th><th rowspan=2 style='width:7px;background-color:white;border: 1px solid white'></th></tr><tr><th>Random sequence generation</th><th>Allocation concealment</th><th>Blinding of participants and personnel</th><th>Blinding of outcome assessment</th><th>Incomplete outcome data</th><th>Selective reporting</th><th>E.g. imbalanced compliance , co-interventions, or other.</th></tr></table>");
+$("#header_bias").html("<table><caption>Possible bias in studies of diagnostic test accuracy for this topic<br><a href=\"http://www.bris.ac.uk/quadas/quadas-2/\" style=\"font-size:12px\">Criteria for individual items from QUADAS-2</a></caption><tr><th class='col1' rowspan='2'>Study</th><th colspan='2'>Patient selection</th><th>Index test performance</th><th>Reference test performance</th><th>Flow and timing of subjects</th><th>Other biases</th><th rowspan=2 style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
 //Get xml for table
 var url = "/" + repo_dir + "/tables/bias.xml";
         $.ajax({
