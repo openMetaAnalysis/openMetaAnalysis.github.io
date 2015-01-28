@@ -71,10 +71,10 @@ function iterateJSON(idlist, publications) {
 		}
 		if ($("#type_diagnosis").is(":checked")){
 	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;patient_selection <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Nonconsecutive patients\"</span>&gt;<span style='background-color:yellow'>High risk</span>&lt;/randomization&gt;<br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;index_test&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/allocation&gt;<br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;reference_standard&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_people&gt;<br>"
-			citation+= String.fromCharCode(9) + "&nbsp;&lt;flow and timingt&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/blinding_assessment&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;patient_selection <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Nonconsecutive patients\"</span>&gt;<span style='background-color:yellow'>High risk</span>&lt;/patient_selection&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;index_test&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/index_test&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;reference_standard&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/reference_standard&gt;<br>"
+			citation+= String.fromCharCode(9) + "&nbsp;&lt;flow_timing&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/flow_timing&gt;<br>"
 			citation+= "&lt;/study&gt;<br>"
 			$("#criteria").html("<a href=\"http://www.bris.ac.uk/quadas/quadas-2/\">Four criteria for judging risk of bias from QUADAS-2</a> (see Risk of bias row in the Table guided by the detailed criteria in the rows above)</li></ul>")
 		}
