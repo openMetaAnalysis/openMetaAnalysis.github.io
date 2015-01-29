@@ -2,7 +2,7 @@ $( document ).ajaxComplete(function() {
 	//Background-color of cells
 	});
 $(document).ready(function(){
-$("#header_pico").html("<p>Included stuides, starting with the oldest.</p><table><caption>Diagnostic test accuracy studies of this topic</caption><tbody><tr><th>Trial</th><th>Subjects</th><th>Index test</th><th>Reference standard</th><th>Subject flow and timing</th><th style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
+$("#header_pico").html("<p>Included studies, starting with the oldest.</p><table><caption>Diagnostic test accuracy studies of this topic</caption><tbody><tr><th>Trial</th><th>Subjects</th><th>Index test</th><th>Reference standard</th><th>Subject flow and timing</th><th style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
 var url = "/" + repo_dir + "/tables/pico.xml";
         $.ajax({
             type: "GET",
@@ -48,6 +48,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						flow_timing += '<br>&bull; ' + $(this).text()
 						})
 					})
+				flow_timing = $(this).find('flow_timing').find('bullet').remove().end().text() + flow_timing
                         	var pmid= $(this).find('citation').attr('pmid');
 				var trHTML = '<tr><td>' +  citationtext + '</td><td>' + patient_selection + '</td><td>' + index_test + '</td><td>' + reference_standard + '</td><td>' + flow_timing + '</td></tr>';
 				//PubMed links
