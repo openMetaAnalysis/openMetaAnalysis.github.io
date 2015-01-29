@@ -2,7 +2,7 @@ $( document ).ajaxComplete(function() {
 	//Background-color of cells
 	});
 $(document).ready(function(){
-$("#header_pico").html("<p>Included trials, starting with the oldest trials.</p><table><caption>Randomized controlled trials of this topic</caption><tbody><tr><th>Trial</th><th>Patients</th><th>Intervention</th><th>Comparison</th><th>Outcome</th><th style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
+$("#header_pico").html("<p>Included stuides, starting with the oldest.</p><table><caption>Diagnostic test accuracy studies of this topic</caption><tbody><tr><th>Trial</th><th>Subjects</th><th>Index test</th><th>Reference standard</th><th>Subject flow and timing</th><th style='width:7px;background-color:white;border: 1px solid white'></th></tr></table>");
 var url = "/" + repo_dir + "/tables/pico.xml";
         $.ajax({
             type: "GET",
