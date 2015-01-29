@@ -31,5 +31,15 @@
     <href>http://handbook.cochrane.org/chapter_12/12_6_2_re_expressing_smds_using_rules_of_thumb_for_effect_sizes.htm</href>
   </link>
 </item>
+<!-- start of a new tip -->
+<item name="SoF_explanation">
+  <message>
+    <p>The Summary of Findings Table (SoF) is:</p>
+    <p>A product of the GRADE Working Group and is a distillation of the GRADE Evidence Profile. The SoF creates a transparent structure for asessing the quality of evidence and displaying the estimate of quality along with the projected impact of a medical intervention or test.</p>
+  <link>
+    <text>Cochrane Handbook</text>
+    <href>http://handbook.cochrane.org/chapter_11/11_5_summary_of_findings_tables.htm</href>
+  </link>
+</item>
 <!-- Leave this bottom line -->
 </tips>
