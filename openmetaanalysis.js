@@ -53,6 +53,7 @@ $(document).ready(function(){
 		//For specific files on master
 		$(this).attr('href', "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href"));
 		})
+	//Tips
 	$("body").find('GRADE').each(function(){
 		//For GRADE
 		//$(this).attr("id","grade_quality_definition")
@@ -60,6 +61,10 @@ $(document).ready(function(){
 		//$(this).attr("href","#")
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		$(this).replaceWith($("<a href=\"#\" class=\"hastip\" id=\"grade_quality_definition\">" + $(this).text() + '</a>'));
+		})
+	$("body").find('SoF').each(function(){
+		//For Summary of Findings Tables
+		$(this).replaceWith($("<a href=\"#\" class=\"hastip\" id=\"SoF_explanation\">" + $(this).text() + '</a>'));
 		})
 	//For eligibility criteria
 	$("CRITERIA").css("display","none")
