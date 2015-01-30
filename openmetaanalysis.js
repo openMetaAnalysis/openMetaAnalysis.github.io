@@ -70,6 +70,10 @@ $(document).ready(function(){
 	$("CRITERIA").css("display","none")
 	$("#criteria_display").html($("CRITERIA").html())
 	
+	$("body").find('red').each(function(){
+		//For red font
+		$(this).replaceWith($("<span style=\"color:red;font-weight:bold\">" + $(this).text() + '</span>'));
+		})
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
 		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
