@@ -74,9 +74,9 @@ $(document).ready(function(){
 		//For red font
 		$(this).replaceWith($("<span style=\"color:red;font-weight:normal\">" + $(this).text() + '</span>'));
 		})
-	$("body").find('red').each(function(){
-		//For red font
-		$(this).replaceWith($("<span style=\"color:red;font-weight:normal\">" + $(this).text() + '</span>'));
+	$("body").find('FOREST_PLOTS').each(function(){
+		//Link to directory of forest plots
+		$(this).replaceWith($("<a href=\"/" + repo_dir + "/tree/master/forest-plots/\" title=\"forest plots\">" + $(this).text() + '</a>'));
 		})
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
