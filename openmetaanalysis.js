@@ -76,7 +76,7 @@ $(document).ready(function(){
 		})
 	$("body").find('FOREST_PLOTS').each(function(){
 		//Link to directory of forest plots
-		$(this).replaceWith($("<a href=\"/" + repo_dir + "/tree/master/forest-plots/\" title=\"forest plots\">" + $(this).text() + '</a>'));
+		$(this).replaceWith($("<a href=\"https://github.com/openMetaAnalysis/" + repo_dir + "/tree/master/forest-plots/\" title=\"forest plots\">" + $(this).text() + '</a>'));
 		})
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
