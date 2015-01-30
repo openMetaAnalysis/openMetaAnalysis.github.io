@@ -70,6 +70,10 @@ $(document).ready(function(){
 	$("CRITERIA").css("display","none")
 	$("#criteria_display").html($("CRITERIA").html())
 	
+	$("body").find('RED').each(function(){
+		//For red font
+		$(this).replaceWith($("<span style=\"color:red;font-weight:bold\">" + $(this).text() + '</span>'));
+		})
 	$("body").find('red').each(function(){
 		//For red font
 		$(this).replaceWith($("<span style=\"color:red;font-weight:bold\">" + $(this).text() + '</span>'));
@@ -79,6 +83,11 @@ $(document).ready(function(){
 		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		})
 	$("body").find('pmid').each(function(){
+		//For PMIDs
+		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
+		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text() + '</a>'));
+		})
+	$("body").find('PMID').each(function(){
 		//For PMIDs
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text() + '</a>'));
