@@ -72,11 +72,11 @@ $(document).ready(function(){
 	
 	$("body").find('RED').each(function(){
 		//For red font
-		$(this).replaceWith($("<span style=\"color:red;font-weight:bold\">" + $(this).text() + '</span>'));
+		$(this).replaceWith($("<span style=\"color:red;font-weight:normal\">" + $(this).text() + '</span>'));
 		})
 	$("body").find('red').each(function(){
 		//For red font
-		$(this).replaceWith($("<span style=\"color:red;font-weight:bold\">" + $(this).text() + '</span>'));
+		$(this).replaceWith($("<span style=\"color:red;font-weight:normal\">" + $(this).text() + '</span>'));
 		})
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
