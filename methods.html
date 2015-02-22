@@ -13,7 +13,6 @@ $(document).ready(function(){
   //button handlers
   $(".type2").on("click", function(){
   	if ($("#iqr").is(':checked')){
-  		alert('');
   		$("#subjects").css("background-color",lightgray);
   		}
 	else{
@@ -268,7 +267,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <tr><th>Group 1</th><th>Group 2</th></tr>
 <tr><td><input type="text" id="numer1" placeholder="Proportion or mean"/></td><td><input type="text" id="numer2" placeholder="Proportion or mean"/></td></tr>
 <tr><td><input type="text" id="denom1" placeholder="Number of subjects"/></td><td><input type="text" id="denom2" placeholder="Number of subjects"/></td></tr>
-<tr><td colspan="2"><input id="counts" name="type" type="radio"><label for="counts">Counts</label>&nbsp;<input id="percents" name="type" type="radio"><label for="percents">Percentages</label>&nbsp;<input id="means" name="type" type="radio"><label for="means">Means</label>&nbsp;</td></tr>
+<tr><td colspan="2" align="center"><input id="counts" name="type" type="radio"><label for="counts">Counts</label>&nbsp;<input id="percents" name="type" type="radio"><label for="percents">Percentages</label>&nbsp;<input id="means" name="type" type="radio"><label for="means">Means</label>&nbsp;</td></tr>
 <tr><td colspan="2"><button id="bttncalculate">Calculate weighted value</button> Weighted value: <span id="answer"></span></td></tr>
 </table>
 </form>
@@ -276,8 +275,8 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <table>
 <caption>Calculation of standard deviation from confidence interval or interquartile range</caption>
 <tr><td><input type="text" id="lower" placeholder="Lower limit"/></td><td><input type="text" id="upper" placeholder="Upper limit"/></td></tr>
-<tr><td colspan="2"><input type="text" id="subjects" placeholder="Number subjects in group"/></td></tr>
-<tr><td colspan="2"><input id="ci" name="type2" type="radio"><label for="ci">Confidence interval</label>&nbsp;<input id="iqr" name="type2" type="radio"><label for="iqr">Interquartile range</label></td></tr>
+<tr><td colspan="2" align="center"><input type="text" id="subjects" placeholder="Number subjects in group" style="width: 200px;" /></td></tr>
+<tr><td colspan="2" align="center"><input id="ci" name="type2" class="type2" type="radio"><label for="ci">Confidence interval</label>&nbsp;<input id="iqr" name="type2" class="type2" type="radio"><label for="iqr">Interquartile range</label></td></tr>
 <tr><td colspan="2"><button id="bttncalculate2">Calculate standard deviation</button> SD: <span id="answer2"></span></td></tr>
 </table>
 </form>
