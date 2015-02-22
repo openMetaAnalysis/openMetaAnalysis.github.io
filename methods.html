@@ -38,7 +38,7 @@ $(document).ready(function(){
 		weightedvalue = weightedvalue.toFixed(2).toString();
 		}
     $("#answer").html(weightedvalue);
-  }
+  });
   $("#bttncalculate2").on("click", function(e){
     e.preventDefault();
 	var subjects = parseFloat($("#experimentals").val())  + parseFloat($("#controls").val()) ;
