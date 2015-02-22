@@ -50,9 +50,9 @@ $(document).ready(function(){
 		}
 	if ($("#iqr").is(':checked')){
 		sd = width/1.35;
-		sd = sd.toFixed(2).toString();
 		}
-    $("#answer2").html(sd);
+	sd = sd.toFixed(2).toString();
+    	$("#answer2").html(sd);
   });
 });
 </script>
@@ -282,7 +282,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <tr><td colspan="2"><button id="bttncalculate2">Calculate standard deviation</button> SD: <span id="answer2"></span></td></tr>
 </table>
 </form>
-<div>Details about calculating standard deviation from: <a href="http://pubmed.gov/11113947">confidence interval</a> and <a href="http://handbook.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">interquartile range</a>)</div>
+<div>Details about calculating standard deviation from: <a href="http://pubmed.gov/11113947">confidence interval</a> and <a href="http://handbook.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">interquartile range</a>.</div>
 </td></tr>
 </table>
 
