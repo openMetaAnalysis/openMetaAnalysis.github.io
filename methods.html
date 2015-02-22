@@ -11,6 +11,16 @@
 <script>
 $(document).ready(function(){
   //button handlers
+  $(".type").on("click", function(){
+  	if ($("#iqr").is(':checked')){
+  		$("#experimentals").css("background-color","gray");
+  		$("#controls").css("background-color","gray");
+  		}
+	else{
+  		$("#experimentals").css("background-color","white");
+  		$("#controls").css("background-color","white");
+  		}
+  	}
   $("#bttncalculate").on("click", function(e){
     e.preventDefault();
 	var subjects = parseFloat($("#denom1").val())  + parseFloat($("#denom2").val()) ;
@@ -28,6 +38,20 @@ $(document).ready(function(){
 		weightedvalue = weightedvalue.toFixed(2).toString();
 		}
     $("#answer").html(weightedvalue);
+  $("#bttncalculate2").on("click", function(e){
+    e.preventDefault();
+	var subjects = parseFloat($("#experimentals").val())  + parseFloat($("#controls").val()) ;
+	var width = Math.abs(parseFloat($("#upper").val())  + parseFloat($("#lower").val()) ;)
+	var se = 0;
+	if ($("#ci").is(':checked')){
+		se = width/2/1.96 //Chinn, 2000 PMID 11113947
+		sd = se * Math.sqrt(subjects)  //Varies with sample size
+		}
+	if ($("#iqr").is(':checked')){
+		sd = width/1.35;
+		sd = sd.toFixed(2).toString();
+		}
+    $("#answer2").html(sd);
   });
 });
 </script>
@@ -240,7 +264,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <td>
 <form>
 <table>
-<caption>Quick calculation of population characteristics from 'Table 1' of studies for PICO Table in openMetaAnalysis</caption>
+<caption>Calculation of population characteristics from 'Table 1' of studies for PICO Table in openMetaAnalysis</caption>
 <tr><th>Group 1</th><th>Group 2</th></tr>
 <tr><td><input type="text" id="numer1" placeholder="Proportion or mean"/></td><td><input type="text" id="numer2" placeholder="Proportion or mean"/></td></tr>
 <tr><td><input type="text" id="denom1" placeholder="Number of subjects"/></td><td><input type="text" id="denom2" placeholder="Number of subjects"/></td></tr>
@@ -248,7 +272,17 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <tr><td colspan="2"><button id="bttncalculate">Calculate weighted value</button> Weighted value: <span id="answer"></span></td></tr>
 </table>
 </form>
-<div>Converting medians and interquartile ranges to means and standard deviations: divide IQR by 1.35 if normally distributed (<a href="http://handbook.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">details</a>).</div>
+<form>
+<table>
+<caption>Calculation of standard deviation from confidence interval or interquartile range</caption>
+<tr><th>Group 1</th><th>Group 2</th></tr>
+<tr><td><input type="text" id="lower" placeholder="Lower limit"/></td><td><input type="text" id="upper" placeholder="Upper limit"/></td></tr>
+<tr><td><input type="text" id="experimentals" placeholder="Number of experimental subjects"/></td><td><input type="text" id="controls" placeholder="Number of control subjects"/></td></tr>
+<tr><td colspan="2"><input id="ci" name="type" type="radio"><label for="ci">Confidence interval</label>&nbsp;<input id="iqr" name="type" type="radio"><label for="iqr">Interquartile range</label></td></tr>
+<tr><td colspan="2"><button id="bttncalculate2">Calculate standard deviation</button> DS: <span id="answer2"></span></td></tr>
+</table>
+</form>
+<div>Details about calculating standard deviation from: <a href="http://pubmed.gov/11113947">confidence interval</a> and <a href="http://handbook.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">interquartile range</a>)</div>
 </td></tr>
 </table>
 
