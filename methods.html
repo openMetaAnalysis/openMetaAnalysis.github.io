@@ -13,12 +13,11 @@ $(document).ready(function(){
   //button handlers
   $(".type2").on("click", function(){
   	if ($("#iqr").is(':checked')){
-  		$("#experimentals").css("background-color","gray");
-  		$("#controls").css("background-color","gray");
+  		alert('');
+  		$("#subjects").css("background-color",lightgray);
   		}
 	else{
-  		$("#experimentals").css("background-color","white");
-  		$("#controls").css("background-color","white");
+  		$("#subjects").css("background-color",white);
   		}
   });
   $("#bttncalculate").on("click", function(e){
@@ -41,10 +40,10 @@ $(document).ready(function(){
   });
   $("#bttncalculate2").on("click", function(e){
     e.preventDefault();
-	var subjects = parseFloat($("#experimentals").val())  + parseFloat($("#controls").val()) ;
-	var width = Math.abs(parseFloat($("#upper").val())  + parseFloat($("#lower").val()) );
+	var width = Math.abs(parseFloat($("#upper").val()) - parseFloat($("#lower").val()) );
 	var se = 0;
 	if ($("#ci").is(':checked')){
+		var subjects = parseFloat($("#subjects").val());
 		se = width/2/1.96 //Chinn, 2000 PMID 11113947
 		sd = se * Math.sqrt(subjects)  //Varies with sample size
 		}
@@ -277,7 +276,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <table>
 <caption>Calculation of standard deviation from confidence interval or interquartile range</caption>
 <tr><td><input type="text" id="lower" placeholder="Lower limit"/></td><td><input type="text" id="upper" placeholder="Upper limit"/></td></tr>
-<tr><td><input type="text" id="experimentals" placeholder="Number of experimental subjects"/></td><td><input type="text" id="controls" placeholder="Number of control subjects"/></td></tr>
+<tr><td colspan="2"><input type="text" id="subjects" placeholder="Number subjects in group"/></td></tr>
 <tr><td colspan="2"><input id="ci" name="type2" type="radio"><label for="ci">Confidence interval</label>&nbsp;<input id="iqr" name="type2" type="radio"><label for="iqr">Interquartile range</label></td></tr>
 <tr><td colspan="2"><button id="bttncalculate2">Calculate standard deviation</button> SD: <span id="answer2"></span></td></tr>
 </table>
