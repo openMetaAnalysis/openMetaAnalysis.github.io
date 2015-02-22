@@ -42,7 +42,7 @@ $(document).ready(function(){
   $("#bttncalculate2").on("click", function(e){
     e.preventDefault();
 	var subjects = parseFloat($("#experimentals").val())  + parseFloat($("#controls").val()) ;
-	var width = Math.abs(parseFloat($("#upper").val())  + parseFloat($("#lower").val()) ;)
+	var width = Math.abs(parseFloat($("#upper").val())  + parseFloat($("#lower").val()) );
 	var se = 0;
 	if ($("#ci").is(':checked')){
 		se = width/2/1.96 //Chinn, 2000 PMID 11113947
