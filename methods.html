@@ -314,11 +314,11 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <ul>
 <li>Studies of intervention
 	<ul>
-	<li>We use the random effects model with the inverse variance.</li>
+	<li>We use the random effects model with the inverse variance as implemented in the R package <a href="http://cran.r-project.org/web/packages/meta/">meta</a>.</li>
 	<li>The Knapp-Hartung method adjusts test statistics and confidence intervals to gives wider (more conservative) confidence intervals and is one of the methods suggested by Cornell et al.(2)</li>
 	<li>The continuity correction of Diamond is used.(3)</li>
 	<li>Summary measures for binary outcomes include odds ratio and relative risk. Measures for continuous outcomes are either mean differences or <a href="http://handbook.cochrane.org/chapter_12/12_6_interpreting_results_from_continuous_outcomes_including.htm" class="hastip" id="smd_definition">standardized mean differences</a>.</li>
-	<li>Subgroup analyses and meta-regressions are done as needed. This includes investigating correlation of the control rate with the outcome
+	<li>Subgroup analyses and meta-regressions are done as needed with the R package <a href="http://cran.r-project.org/web/packages/meta/">meta</a>. This includes investigating correlation of the control rate with the outcome
 		<ul><li><a href="http://pubmed.gov/24339017,21908417,15358396,9777687?dopt=abstract">PubMed citations</li></ul>
 	</li>
 	<li>Heterogeneity is assessed with I<sup>2</sup></li>
@@ -326,7 +326,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 </li>
 <li>Studies of diagnosis
 	<ul>
-	<li>Hierarchial bivariate model (Reitsma, 2005. PMID <a href="http://pubmed.gov/16168343">16168343</a>)</li>
+	<li>Hierarchial bivariate model (Reitsma, 2005. PMID <a href="http://pubmed.gov/16168343">16168343</a>) as implemented in the R package <a href="http://cran.r-project.org/web/packages/metatron/">metatron</a> with AUC from the R package <a href="http://cran.r-project.org/web/packages/mada/">mada</a></li>
 	</ul>
 </li>
 </ul>
@@ -366,7 +366,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <td>Probability of publication bias</td>
 <td>This area of meta-analytic practice is evolving and presently only addresses studies of interventions. See discussion at <a href="http://handbook.cochrane.org/chapter_10/10_4_5_summary.htm">http://handbook.cochrane.org/chapter_10/10_4_5_summary.htm</a>.
 <ul>
-<li>If more than 10 studies are present, test for the small study effect with the Egger test for continuous outcomes or the Rucker test for binary outcomes (<a href="http://cran.r-project.org/web/packages/metasens/index.html">CRAN</a> and PMIDs: <a href="http://pubmed.gov/17592831,19836925">17592831,19836925</a>).</li> 
+<li>If more than 10 studies are present, test for the small study effect with the Egger test for continuous outcomes or the Rucker test for binary outcomes (<a href="http://cran.r-project.org/web/packages/metasens/">CRAN</a> and PMIDs: <a href="http://pubmed.gov/17592831,19836925">17592831,19836925</a>).</li> 
 <li>When less than 10 studies are present, study size of less than 50 or 1000 patients total (PMID: <a href="http://pubmed.gov/23616031">23616031</a>) or 100 per arm (PMID: <a href="http://pubmed.gov/20639294">20639294</a>) in most of all available studies may suggest small study effect.</li>
 </ul>
 </td>
