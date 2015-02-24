@@ -42,5 +42,20 @@
   </link>
   </message>
 </item>
+<!-- start of a new tip -->
+<item name="heterogeneity">
+  <message>
+    <p>Heterogeneity of pooled results is qualified by the Cochrane handbook as:</p>
+    <p>'0% to 40%: might not be important'</p>
+    <p>'30% to 60%: may represent moderate heterogeneity'</p>
+    <p>'50% to 90%: may represent substantial heterogeneity'</p>
+    <p>'75% to 100%: considerable heterogeneity'</p>
+    <p>'Inconsistency' of results downgrades the quality of evidence per the GRADE Profile.</p>
+  <link>
+    <text>Cochrane Handbook</text>
+    <href>http://handbook.cochrane.org/chapter_9/9_5_2_identifying_and_measuring_heterogeneity.htm</href>
+  </link>
+  </message>
+</item>
 <!-- Leave this bottom line -->
 </tips>
