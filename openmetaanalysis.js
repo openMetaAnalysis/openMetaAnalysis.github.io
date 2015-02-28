@@ -121,7 +121,7 @@ $(document).ready(function(){
 	//Resuse
 	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/reusing.MD'>Cite &amp; use this content</a></div>")
 	//Edit and issues/comments
-	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a></div>")
+	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aboth+is%3Aissue'>Issues and comments</a></div>")
 	//Version date...
 	lastmod = document.lastModified     // get string of last modified date
 	lastmoddate = Date.parse(lastmod)   // convert modified string to date
