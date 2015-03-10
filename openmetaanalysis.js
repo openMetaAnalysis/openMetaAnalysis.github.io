@@ -1,5 +1,6 @@
-var n = location.pathname.indexOf("/",1)
-if (n == 0){n = location.pathname.length}
+var n = location.pathname.indexOf("/",1);
+var sub_domain = location.hostname.split('.').shift();
+if (n == 0){n = location.pathname.length};
 var pagename = location.pathname.split('/').slice(-1);
 if (pagename == ""){pagename = "index.html"};
 var repo_dir = location.pathname.substring(1,n);
@@ -28,30 +29,30 @@ $(document).ready(function(){
 	if (repo_dir == "Early-goal-directed-therapy-for-septic-shock"){
 		//code for testing a specific repository
 	}
-	$("#metaregression_figure").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#metaregression_figure").attr('src'))
+	$("#metaregression_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/' + $("#metaregression_figure").attr('src'))
 	$("#metaregression_figure").load(function() {
 		metaregression = true;
 		$("#metaregression").show();
 	});
 	//Customize src for images based on repo name
-	$("#forest").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#forest").attr('src'))
-	$("#grade").attr('src', 'https://raw.githubusercontent.com/openMetaAnalysis/' + repo_dir + '/master/' + $("#grade").attr('src'))
+	$("#forest").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/' + $("#forest").attr('src'))
+	$("#grade").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/' + $("#grade").attr('src'))
 	//Link rewrites
 	$("body").find('a.main').each(function(){
 		//gh-pages
-		$(this).attr('href', "http://openmetaanalysis.github.io/" + $(this).attr("href"));
+		$(this).attr('href', "http://" + sub_domain + ".github.io/" + $(this).attr("href"));
 		})
 	$("body").find('a.master').each(function(){
 		//For directories on gh-pages
-		$(this).attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/' + $(this).attr("href"));
+		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/' + $(this).attr("href"));
 		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
-		$(this).attr('href', "https://github.com/openMetaAnalysis/" + repo_dir + '/tree/master/' + $(this).attr("href"));
+		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/master/' + $(this).attr("href"));
 		})
 	$("body").find('a.master-file').each(function(){
 		//For specific files on master
-		$(this).attr('href', "https://raw.githubusercontent.com/openMetaAnalysis/" + repo_dir + '/master/' + $(this).attr("href"));
+		$(this).attr('href', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/' + $(this).attr("href"));
 		})
 	//Tips
 	$("body").find('GRADE').each(function(){
@@ -76,7 +77,7 @@ $(document).ready(function(){
 		})
 	$("body").find('FOREST_PLOTS').each(function(){
 		//Link to directory of forest plots
-		$(this).replaceWith($("<a href=\"https://github.com/openMetaAnalysis/" + repo_dir + "/tree/master/forest-plots/\" title=\"forest plots\">" + $(this).text() + '</a>'));
+		$(this).replaceWith($("<a href=\"https://github.com/" + sub_domain + '/' + repo_dir + "/tree/master/forest-plots/\" title=\"forest plots\">" + $(this).text() + '</a>'));
 		})
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
@@ -121,14 +122,14 @@ $(document).ready(function(){
 	//Resuse
 	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/reusing.MD'>Cite &amp; use this content</a></div>")
 	//Edit and issues/comments
-	$("#business").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aboth+is%3Aissue'>Issues and comments</a></div>")
+	$("#business").append("<div style='text-align:center'><a href='https://github.com/" + sub_domain + '/' + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/" + sub_domain + '/' + repo_dir + "/issues?q=is%3Aboth+is%3Aissue'>Issues and comments</a></div>")
 	//Version date...
 	lastmod = document.lastModified     // get string of last modified date
 	lastmoddate = Date.parse(lastmod)   // convert modified string to date
 	if (lastmoddate == 0) {               // unknown date (or January 1, 1970 GMT)
 		$("#business").append("<div style='text-align:center'>You need a new browser</div>")
 	} else {
-		$("#business").append("<div style='text-align:center'>Updated: " + lastmod + " - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/" + pagename + "'>History</a></div>")
+		$("#business").append("<div style='text-align:center'>Updated: " + lastmod + " - <a href='https://github.com/" + sub_domain + '/' + repo_dir + "/commits/gh-pages/" + pagename + "'>History</a></div>")
 	}
 	//Event handlers
 	$('#tip').mouseleave(function(event){
