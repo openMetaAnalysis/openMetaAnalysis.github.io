@@ -56,7 +56,7 @@ padding:10px;
 		page-break-after: avoid;
 		}
 }
-@media sccreen {
+@media screen {
 	.body_panel{
 		height:400px;
 		page-break-after: avoid;
