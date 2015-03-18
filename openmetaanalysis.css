@@ -20,7 +20,6 @@ margin-left: auto;
 {
 display:inline-block;
 width:100%;
-height:400px;
 overflow-y:scroll;
 }
 table{
@@ -54,6 +53,12 @@ padding:10px;
 @media print {
 	.body_panel{
 		height:auto;
+		page-break-after: avoid;
+		}
+}
+@media sccreen {
+	.body_panel{
+		height:400px;
 		page-break-after: avoid;
 		}
 }
