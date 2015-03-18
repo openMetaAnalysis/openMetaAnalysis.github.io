@@ -142,7 +142,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 	//Reuse
 	$("#business-bias").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/reusing.MD'>Cite &amp; use this content</a></div>")
 	//Edit and history
-	$("#business-bias").append("<div style='text-align:center'>Source content: <a href='/" + repo_dir + "/tables/bias.xml'>view</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/tables/bias.xml'>history</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/tables/bias.xml'>edit</a> (Hint: use <a href=\"https://kobra.io\">Kobra</a> for collaborative editing)</div>")	
+	$("#business-bias").append("<div style='text-align:center'>Source content: <a href='/" + repo_dir + "/tables/bias.xml'>view</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/commits/gh-pages/tables/bias.xml'>history</a> - <a href='https://github.com/openMetaAnalysis/" + repo_dir + "/blob/gh-pages/tables/bias.xml'>edit</a> - <a id='xmlhelp' class='hastip' href='#'>help with editting</a> (Hint: use <a href=\"https://kobra.io\">Kobra</a> for collaborative editing)</div>")
 	//Issues and comments
 	$("#business-bias").append("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/" + repo_dir + "/issues?q=is%3Aopen+is%3Aissue'>Issues and comments</a></div>")
 });
