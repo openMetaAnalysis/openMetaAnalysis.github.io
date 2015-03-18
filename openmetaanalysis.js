@@ -7,20 +7,24 @@ var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
 var metagression = false;
 function showtip(tiptext, trigger, width){
-		$("#tip").css('display','block');
+	$("#tip").css('display','block');
         $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>');
-		$("#tip").css('width', width);
-		$("#tip").css({"background-color":"#6DC6E7"});
-		$("#tip").css({"color":"#0022B4"});
-		$("#tip").css({"opacity":"1"});
-		var posleft = trigger.position().left;
+	$("#tip").css('width', width);
+	$("#tip").css({"background-color":"#6DC6E7"});
+	$("#tip").css({"color":"#0022B4"});
+	$("#tip").css({"opacity":"1"});
+	var posleft = trigger.position().left;
         if ((posleft + $("#tip").width()) > $(window).width()){
             posleft = $(window).width() - $("#tip").width() - 10;
 		}
         if (posleft < 0){
             posleft = 10;
 		}
-        $("#tip").offset({top: trigger.position().top + 0, left: posleft});
+	var postop = trigger.position().top;
+        if ((postop + $("#tip").height()) > $(window).height()){
+            postop = $(window).height() - $("#tip").height() - 10;
+		}
+        $("#tip").offset({top: postop, left: posleft});
 }  
 $(document).ready(function(){
 	//Display the repo_name in all the correct spots
