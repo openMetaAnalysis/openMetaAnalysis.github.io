@@ -51,3 +51,8 @@ caption{
 .tip{
 padding:10px;	
 }
+@media print {
+	.body_panel{
+		height:auto;
+		}
+}
