@@ -21,6 +21,7 @@ function showtip(tiptext, trigger, width){
             posleft = 10;
 		}
 	var postop = trigger.position().top;
+	alert($(window).height())
         if ((postop + $("#tip").height()) > $(window).height()){
             postop = $(window).height() - $("#tip").height() - 10;
 		}
