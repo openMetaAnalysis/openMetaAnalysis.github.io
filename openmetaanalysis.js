@@ -14,7 +14,7 @@ function showtip(tiptext, trigger, width){
 	$("#tip").css({"color":"#0022B4"});
 	$("#tip").css({"opacity":"1"});
 	var pos_left = trigger.position().left;
-        if ((pos.left + $("#tip").width()) > $(window).width()){
+        if ((pos_left + $("#tip").width()) > $(window).width()){
             pos_left = $(window).width() - $("#tip").width() - 10;
 		}
         if (pos_left < 0){
