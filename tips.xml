@@ -60,9 +60,9 @@
 <!-- start of a new tip -->
 <item name="xmlhelp">
   <message>
-    <p>Only use letters, basic characters (:;,.-=), and digits. For example, use 'less than' rather than &lt;.</p>
-    <p>To collaboratively edit with a colleague over a conference call, use https://kobra.io/ and set the file type to 'xml'.</p>
-    <p>To trouble shoot errors, save the file onto your computer as test.xml. Then open in Chrome, FireFox, or Safari to learn which line contains the error.</p>
+    <p>1. Only use letters, basic characters (:;,.-=), and digits. For example, use 'less than' rather than &lt;.</p>
+    <p>2. To collaboratively edit with a colleague over a conference call, use https://kobra.io/ and set the file type to 'xml'.</p>
+    <p>3. To trouble shoot errors, save the file onto your computer as test.xml. Then open in Chrome, FireFox, or Safari to learn which line contains the error.</p>
   <link>
     <text></text>
     <href></href>
