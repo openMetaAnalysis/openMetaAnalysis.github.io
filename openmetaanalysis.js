@@ -13,19 +13,20 @@ function showtip(tiptext, trigger, width){
 	$("#tip").css({"background-color":"#6DC6E7"});
 	$("#tip").css({"color":"#0022B4"});
 	$("#tip").css({"opacity":"1"});
-	var posleft = trigger.position().left;
-        if ((posleft + $("#tip").width()) > $(window).width()){
-            posleft = $(window).width() - $("#tip").width() - 10;
+	var pos_left = trigger.position().left;
+        if ((pos.left + $("#tip").width()) > $(window).width()){
+            pos_left = $(window).width() - $("#tip").width() - 10;
 		}
-        if (posleft < 0){
-            posleft = 10;
+        if (pos_left < 0){
+            pos-left = 10;
 		}
-	var postop = trigger.position().top;
-	//alert($(window).height())
-        //if ((postop + $("#tip").height()) > $(window).height()){
-        //    postop = $(window).height() - $("#tip").height() - 10;
-	//	}
-        $("#tip").offset({top: postop, left: posleft});
+	var pos_top = trigger.position().top;
+	alert(pos_top)
+        if ((pos_top + $("#tip").height()) > $(window).height()){
+            pos_top = $(window).height() - $("#tip").height() - 10;
+		}
+	alert(pos_top)
+        $("#tip").offset({top: pos_top, left: pos_left});
 }  
 $(document).ready(function(){
 	//Display the repo_name in all the correct spots
