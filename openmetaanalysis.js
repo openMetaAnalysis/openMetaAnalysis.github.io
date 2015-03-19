@@ -21,11 +21,9 @@ function showtip(tiptext, trigger, width){
             pos_left = 10;
 		}
 	var pos_top = trigger.position().top;
-	alert(pos_top)
         if ((pos_top + $("#tip").height()) > $(window).height()){
-            pos_top = $(window).height() - $("#tip").height() - 10;
+            pos_top = $(window).height() - $("#tip").height() + 5;
 		}
-	alert(pos_top)
         $("#tip").offset({top: pos_top, left: pos_left});
 }  
 $(document).ready(function(){
