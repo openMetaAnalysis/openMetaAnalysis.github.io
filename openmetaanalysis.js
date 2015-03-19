@@ -22,7 +22,7 @@ function showtip(tiptext, trigger, width){
 		}
 	var pos_top = trigger.position().top;
         if ((pos_top + $("#tip").height()) > $(window).height()){
-            pos_top = $(window).height() - $("#tip").height() + 5;
+            pos_top = $(window).height() - $("#tip").height() + 10;
 		}
         $("#tip").offset({top: pos_top, left: pos_left});
 }  
@@ -159,11 +159,13 @@ $(document).ready(function(){
 						tiptext += $(this).text() + "<br>"
 					})
 					$(this).find('href').each(function(){
-						tiptext += "From: <a href='" +  $(this).text() + "' style='align:center'>"
-					})
-					$(this).find('text').each(function(){
-						tiptext += $(this).text() + "</a>"
-					})
+						if ($(this).text().length> 5){
+							tiptext += "From: <a href='" +  $(this).text() + "' style='align:center'>"
+							$(this).find('text').each(function(){
+								tiptext += $(this).text() + "</a>"
+								})
+							}
+						})
 				     });
 				showtip(tiptext, trigger, width)
 			}
