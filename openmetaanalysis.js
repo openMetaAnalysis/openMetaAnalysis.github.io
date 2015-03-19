@@ -18,7 +18,7 @@ function showtip(tiptext, trigger, width){
             pos_left = $(window).width() - $("#tip").width() - 10;
 		}
         if (pos_left < 0){
-            pos-left = 10;
+            pos_left = 10;
 		}
 	var pos_top = trigger.position().top;
 	alert(pos_top)
