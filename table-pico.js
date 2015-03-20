@@ -28,7 +28,7 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						citationtext += "<a href='http://www.isrctn.com/" + $(this).find('citation').attr('trialregistration') + "'>" + $(this).find('citation').attr('trialregistration') + "</a><br>"
 						}
 					if ( $(this).find('citation').attr('trialregistration').toLowerCase().indexOf("actrn") >= 0){
-						citationtext += "<a href='http://www.anzctr.org.au" + $(this).find('citation').attr('trialregistration') + "'>" + $(this).find('citation').attr('trialregistration') + "</a><br>"
+						citationtext += "<a href='http://www.anzctr.org.au/" + $(this).find('citation').attr('trialregistration') + "'>" + $(this).find('citation').attr('trialregistration') + "</a><br>"
 						}
 					}
 				var patients = $(this).find('patients').attr('total') + ' subjects with ' + $(this).find('patients').find('description').text();
