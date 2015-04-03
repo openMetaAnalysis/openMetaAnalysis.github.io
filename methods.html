@@ -59,11 +59,11 @@ $(document).ready(function(){
 	var or = 1;
 	var se = 0;
 	var subjects = parseFloat($("#subjects3").val());
-	smd = parseFloat($("#meandiff3").val()) / sd;
-	or = Math.exp(1.81 * smd)
 	se = width/2/1.96 //Chinn, 2000 PMID 11113947
 	sd = se * Math.sqrt(subjects)  //Varies with sample size
-	sd = se * Math.exp(1.81 * sd)
+	smd = parseFloat($("#meandiff3").val()) / sd;
+	or = Math.exp(1.81 * smd)
+	sd = Math.exp(1.81 * sd)
     	$("#answer3").html(or.toFixed(2).toString() + "(" + (or-1.96*se).toFixed(2).toString() + " to " + (or+1.96*se).toFixed(2).toString() + ")");
   });
 });
