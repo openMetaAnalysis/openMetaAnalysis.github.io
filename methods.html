@@ -61,7 +61,7 @@ $(document).ready(function(){
 	var subjects = parseFloat($("#subjects3").val());
 	se = width/2/1.96 //Chinn, 2000 PMID 11113947
 	sd = se * Math.sqrt(subjects3)  //Varies with sample size
-	smd = meandiff3 / sd;
+	smd = parseFloat($("#meandiff3").val()) / sd;
 	or = Math.exp(-1.81 * smd)
     	$("#answer3").html(or.toString() + "(" + (or-1.96*se).toString() + " to " + (or+1.96*se).toString() + ")");
   });
