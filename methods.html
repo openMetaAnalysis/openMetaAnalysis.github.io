@@ -60,9 +60,13 @@ $(document).ready(function(){
 	var se = 0;
 	var subjects = parseFloat($("#subjects3").val());
 	se = width/2/1.96 //Chinn, 2000 PMID 11113947
+	alert (se);
 	sd = se * Math.sqrt(subjects3)  //Varies with sample size
+	alert (sd);
 	smd = parseFloat($("#meandiff3").val()) / sd;
+	alert (smd);
 	or = Math.exp(-1.81 * smd)
+	alert (sor);
     	$("#answer3").html(or.toString() + "(" + (or-1.96*se).toString() + " to " + (or+1.96*se).toString() + ")");
   });
 });
