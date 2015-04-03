@@ -64,7 +64,7 @@ $(document).ready(function(){
 	sd = sd.toFixed(2).toString();
 	smd = meandiff3 / sd;
 	or = Math.exp(-1.81 * smd)
-    	$("#answer2").html("Odds ratio: " + or.toString() + "(" + (or-1.96*se).toString() + " to " + (or+1.96*se).toString() + ")";
+    	$("#answer2").html("Odds ratio: " + or.toString() + "(" + (or-1.96*se).toString() + " to " + (or+1.96*se).toString() + ")");
   });
 });
 </script>
