@@ -63,7 +63,6 @@ $(document).ready(function(){
 	sd = se * Math.sqrt(subjects)  //Varies with sample size
 	smd = parseFloat($("#meandiff3").val()) / sd;
 	or = Math.exp(-1.81 * smd)
-	alert (sor);
     	$("#answer3").html(or.toString() + "(" + (or-1.96*se).toString() + " to " + (or+1.96*se).toString() + ")");
   });
 });
