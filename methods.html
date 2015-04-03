@@ -52,6 +52,20 @@ $(document).ready(function(){
 	sd = sd.toFixed(2).toString();
     	$("#answer2").html(sd);
   });
+  $("#bttncalculate3").on("click", function(e){
+  //Continous to binary conversion
+    e.preventDefault();
+	var width = Math.abs(parseFloat($("#upper3").val()) - parseFloat($("#lower3").val()) );
+	var or = 1;
+	var se = 0;
+	var subjects = parseFloat($("#subjects3").val());
+	se = width/2/1.96 //Chinn, 2000 PMID 11113947
+	sd = se * Math.sqrt(subjects3)  //Varies with sample size
+	sd = sd.toFixed(2).toString();
+	smd = meandiff3 / sd;
+	or = Math.exp(-1.81 * smd)
+    	$("#answer2").html("Odds ratio: " + or.toString() + "(" + (or-1.96*se).toString() + " to " + (or+1.96*se).toString() + ")";
+  });
 });
 </script>
 <style>
@@ -262,25 +276,38 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 </td>
 <td>
 <form>
-<table>
-<caption>Calculation of population characteristics from 'Table 1' of studies for PICO Table in openMetaAnalysis</caption>
-<tr><th>Group 1</th><th>Group 2</th></tr>
-<tr><td><input type="text" id="numer1" placeholder="Proportion or mean"/></td><td><input type="text" id="numer2" placeholder="Proportion or mean"/></td></tr>
-<tr><td><input type="text" id="denom1" placeholder="Number of subjects"/></td><td><input type="text" id="denom2" placeholder="Number of subjects"/></td></tr>
-<tr><td colspan="2" align="center"><input id="counts" name="type" type="radio"><label for="counts">Counts</label>&nbsp;<input id="percents" name="type" type="radio"><label for="percents">Percentages</label>&nbsp;<input id="means" name="type" type="radio"><label for="means">Means</label>&nbsp;</td></tr>
-<tr><td colspan="2"><button id="bttncalculate">Calculate weighted value</button> Weighted value: <span id="answer"></span></td></tr>
-</table>
+	<table>
+		<caption>Calculation of population characteristics from 'Table 1' of studies for PICO Table in openMetaAnalysis</caption>
+		<tr><th>Group 1</th><th>Group 2</th></tr>
+		<tr><td><input type="text" id="numer1" placeholder="Proportion or mean"/></td><td><input type="text" id="numer2" placeholder="Proportion or mean"/></td></tr>
+		<tr><td><input type="text" id="denom1" placeholder="Number of subjects"/></td><td><input type="text" id="denom2" placeholder="Number of subjects"/></td></tr>
+		<tr><td colspan="2" align="center"><input id="counts" name="type" type="radio"><label for="counts">Counts</label>&nbsp;<input id="percents" name="type" type="radio"><label for="percents">Percentages</label>&nbsp;<input id="means" name="type" type="radio"><label for="means">Means</label>&nbsp;</td></tr>
+		<tr><td colspan="2"><button id="bttncalculate">Calculate weighted value</button> Weighted value: <span id="answer"></span></td></tr>
+	</table>
 </form>
 <form>
-<table>
-<caption>Calculation of standard deviation from confidence interval or interquartile range</caption>
-<tr><td><input type="text" id="lower" placeholder="Lower limit"/></td><td><input type="text" id="upper" placeholder="Upper limit"/></td></tr>
-<tr><td colspan="2" align="center"><input type="text" id="subjects" placeholder="Number subjects in group" style="width: 200px;" /></td></tr>
-<tr><td colspan="2" align="center"><input id="ci" name="type2" class="type2" type="radio"><label for="ci">Confidence interval</label>&nbsp;<input id="iqr" name="type2" class="type2" type="radio"><label for="iqr">Interquartile range</label></td></tr>
-<tr><td colspan="2"><button id="bttncalculate2">Calculate standard deviation</button> SD: <span id="answer2"></span></td></tr>
-</table>
+	<table>
+		<caption>Calculation of standard deviation from confidence interval or interquartile range</caption>
+		<tr><td><input type="text" id="lower" placeholder="CI lower limit"/></td><td><input type="text" id="upper" placeholder="CI upper limit"/></td></tr>
+		<tr><td colspan="2" align="center"><input type="text" id="subjects" placeholder="Number subjects in group" style="width: 200px;" /></td></tr>
+		<tr><td colspan="2" align="center"><input id="ci" name="type2" class="type2" type="radio"><label for="ci">Confidence interval</label>&nbsp;<input id="iqr" name="type2" class="type2" type="radio"><label for="iqr">Interquartile range</label></td></tr>
+		<tr><td colspan="2"><button id="bttncalculate2">Calculate standard deviation</button> SD: <span id="answer2"></span>
+			<div>Details about this calculation from: <a href="http://pubmed.gov/11113947">confidence interval</a> and <a href="http://handbook.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">interquartile range</a>.</div>
+		</td></tr>
+	</table>
 </form>
-<div>Details about calculating standard deviation from: <a href="http://pubmed.gov/11113947">confidence interval</a> and <a href="http://handbook.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">interquartile range</a>.</div>
+<form>
+	<table>
+		<caption>Converting continuous measures into binary measures</caption>
+		<tr><td><input type="text" id="lower3" placeholder="CI lower limit"/></td><td><input type="text" id="upper3" placeholder="CI upper limit"/></td></tr>
+		<tr><td colspan="2" align="center"><div><input type="text" id="subjects3" placeholder="Number subjects in group" style="width: 200px;" /></div>
+			<div><input type="text" id="meandiff3" placeholder="Mean difference" style="width: 200px;" /></div>
+		</td></tr>
+		<tr><td colspan="2"><button id="bttncalculate3">Calculate binary measures</button> SD: <span id="answer3"></span>
+			<div>Details about this calculation from: Chinn, 2000 (PMID <a href="http://pubmed.gov/11113947">11113947</a>)</div>
+		</td></tr>
+	</table>
+</form>
 </td></tr>
 </table>
 
