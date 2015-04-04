@@ -299,8 +299,9 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <form>
 	<table>
 		<caption>Converting continuous measures into binary measures</caption>
-		<tr><td><input type="text" id="lower3" placeholder="CI lower limit"/></td><td><input type="text" id="upper3" placeholder="CI upper limit"/></td></tr>
-		<tr><td colspan="2" align="center"><div><input type="text" id="subjects3" placeholder="Number subjects in group" style="width: 200px;" /></div>
+		<tr><td colspan="2" align="center"><input onclick="alert('Not implemented')" id="twosamples3" name="type2" class="type2" type="radio"><label for="twosamples3">Two group means</label>&nbsp;<input id="smd3" name="type2" class="type2" type="radio"><label for="smd3">Single difference between group means</label></td></tr>
+		<tr class="onedifference3"><td><input type="text" id="lower3" placeholder="CI lower limit"/></td><td><div<input type="text" id="upper3" placeholder="CI upper limit"/></div></td></tr>
+		<tr class="onedifference3"><td colspan="2" align="center"><input type="text" id="subjects3" placeholder="Number subjects in group" style="width: 200px;" />
 			<div><input type="text" id="meandiff3" placeholder="Mean difference" style="width: 200px;" /></div>
 		</td></tr>
 		<tr><td colspan="2"><button id="bttncalculate3">Calculate binary measures</button> Odds ratio (under construction): <span id="answer3"></span>
