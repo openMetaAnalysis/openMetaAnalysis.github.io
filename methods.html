@@ -41,6 +41,7 @@ $(document).ready(function(){
     e.preventDefault();
 	var width = Math.abs(parseFloat($("#upper").val()) - parseFloat($("#lower").val()) );
 	var se = 0;
+	var sd = 0;
 	if ($("#ci").is(':checked')){
 		var subjects = parseFloat($("#subjects").val());
 		se = width/2/1.96 //Chinn, 2000 PMID 11113947
