@@ -21,6 +21,24 @@ Authors should consider summarizing their edit at http://wikidoc.org and can the
 
 This guidance may change at the concepts of [microattribution](http://en.wikipedia.org/wiki/Microattribution) of [nanopublications](http://nanopub.org/) in order to [incentivize](http://pubmed.gov/22736453) contributions are changing with input from [World Wide Web Consortium (W3C)](http://www.w3.org/wiki/HCLSIG/SWANSIOC/Nanopublications-Subtask).
 
+Documenting additional detail of your contributions for scholarly credit.
+------------------
+Consider using the framework proposed by Mazumdar for biostatisticians, but adapted to collaborative meta-analysis. For each of the following domains that you contributed to, document whether your contribution was Major/Moderate/Minor using the criteria and examples of Mazumdar et al in their Chart 1. Below are proposed based on Mazumdar et al: 
+* Data collection (lit searching, creation of PICO and BIAS tables, extracting results
+  * Major: Participated actively in regular meetings during data collection
+  * Moderate: Was an independent data abstractor
+  * Minor: provided advice as needed
+* Manuscript reporting activities
+  * Major: prepared first draft of one section (background, methods, results, discussion)
+  * Moderate: preparted first draft one subsection such as statistics within the methods section or limitations within the discusison
+  * Minor: "Reviewed final manuscript, helped clarify some of results and wording of conclusions."
+
+**Reference**
+
+1. Mazumdar M, Messinger S, Finkelstein DM, et al; Biostatistics, Epidemiology, and Research Design (BERD) Key Function Committee of the Clinical and Translational Science (CTSA) Consortium. Evaluating Academic Scientists Collaborating in
+Team-Based Research: A Proposed Framework. Acad Med. 2015 May 19. [Epub ahead of 
+print] PMID: [25993282](http://pubmed.gov/25993282).
+
 Licensing
 ------------------
 
