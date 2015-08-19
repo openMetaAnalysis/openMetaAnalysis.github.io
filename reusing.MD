@@ -14,6 +14,8 @@ users could simply link in their curiculum vitae to their user page, or link to 
 * Doe, J. Hypertonic saline for bronchiolitis: a living systematic review. Contributions archived at https://github.com/openMetaAnalysis/Hypertonic-Saline-for-Bronchiolitis/commits/gh-pages/ and https://github.com/openMetaAnalysis/Hypertonic-Saline-for-Bronchiolitis/commits/master/
  - or -
 * Doe, J. Hypertonic saline for bronchiolitis: a living systematic review. Contributions archived at https://github.com/doej
+ 
+Additional methods of citing your contributions are recommended by the National Library of Medicine in Citing Medicine: [Chapter 24 Databases/Retrieval Systems on the Internet](http://www.ncbi.nlm.nih.gov/books/NBK7273/#A57722).
 
 Authors should consider summarizing their edit at http://wikidoc.org and can then cite that edit in the page history at wikidoc. For example:
 
