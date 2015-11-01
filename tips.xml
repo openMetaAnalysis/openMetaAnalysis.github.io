@@ -18,7 +18,7 @@
 <item name="smd_definition">
   <message>
     <p>The standardized mean difference (SMD) is: (difference in mean outcomes)/(standard deviation of mean outcome)</p>
-    <p>In the interpretation of SMD:</p>
+    <p>In the interpretation of SMD (PMID: <a href="http://pubmed.gov/19565683">19565683</a>):</p>
     	<p><ul>
     		<li>0.2 represents a small effect,</li>
     		<li>0.5 a moderate effect,</li>
