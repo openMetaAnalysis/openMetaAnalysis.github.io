@@ -55,7 +55,12 @@ $(document).ready(function(){
 		}
 	if ($("#median").val() != ''){
 		median = parseFloat($("#median").val())
-		alert(sd)
+		if ($("#median").val() != ''){
+			alert('Ready')
+			}
+		else	{
+			alert('Selecte Range and enter values for the range in order to convert the median to a mean.')
+			}
 		}
 	sd = sd.toFixed(2).toString();
     	$("#answer_sd").html(sd);
