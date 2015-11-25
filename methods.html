@@ -53,8 +53,10 @@ $(document).ready(function(){
 	if ($("#range").is(':checked')){
 		sd = width/4;
 		}
-	median = parseFloat($("#median").val())
-	alert(median)
+	if ($("#median").val() != ''){
+		median = parseFloat($("#median").val())
+		alert(sd)
+		}
 	sd = sd.toFixed(2).toString();
     	$("#answer_sd").html(sd);
   });
