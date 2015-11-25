@@ -42,8 +42,8 @@ $(document).ready(function(){
 	var width = Math.abs(parseFloat($("#upper").val()) - parseFloat($("#lower").val()) );
 	var se = 0;
 	var sd = 0;
+	var subjects = parseFloat($("#subjects").val());
 	if ($("#ci").is(':checked')){
-		var subjects = parseFloat($("#subjects").val());
 		se = width/2/1.96 //Chinn, 2000 PMID 11113947
 		sd = se * Math.sqrt(subjects)  //Varies with sample size
 		}
@@ -58,9 +58,6 @@ $(document).ready(function(){
 		median = parseFloat($("#median").val())
 		if ($("#median").val() != '' && $("#range").is(':checked')){
 			var mean = (parseFloat($("#lower").val()) + 2*median + parseFloat($("#upper").val()) )/4 + (parseFloat($("#lower").val()) - 2*median + parseFloat($("#upper").val()) )/(4*subjects)
-			alert(mean)
-			mean = (parseFloat($("#lower").val()) + 2*median + parseFloat($("#upper").val()) )/4
-			alert(mean)
 			mean = mean.toFixed(2).toString();
 			$("#answer_mean").html(mean);
 			}
