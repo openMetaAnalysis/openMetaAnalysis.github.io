@@ -59,6 +59,7 @@ $(document).ready(function(){
 		if ($("#median").val() != '' && $("#range").is(':checked')){
 			var mean = (parseFloat($("#lower").val()) + 2*median + parseFloat($("#upper").val()) )/4 + (parseFloat($("#lower").val()) - 2*median + parseFloat($("#upper").val()) )/(4*subjects)
 			$("#answer_mean").html(mean);
+			answer_mean = answer_mean.toFixed(2).toString();
 			}
 		else	{
 			alert('Selecte Range and enter values for the range in order to convert the median to a mean.')
