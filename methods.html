@@ -54,9 +54,11 @@ $(document).ready(function(){
 		sd = width/4;
 		}
 	if ($("#median").val() != ''){
+		//Hozo, 2005 PMID 15840177
 		median = parseFloat($("#median").val())
 		if ($("#median").val() != '' && $("#range").is(':checked')){
-			alert('Ready')
+			var mean = (parseFloat($("#lower").val()) + 2*median + parseFloat($("#upper").val()) )/4 + (parseFloat($("#lower").val()) - 2*median + parseFloat($("#upper").val()) )/(4*subjects)
+			$("#answer_mean").html(mean);
 			}
 		else	{
 			alert('Selecte Range and enter values for the range in order to convert the median to a mean.')
