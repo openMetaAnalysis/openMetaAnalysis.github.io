@@ -37,9 +37,9 @@ var url = "/" + repo_dir + "/tables/pico.xml";
 						})
 				var intervention = '';
 					$(this).find('intervention').find('bullet').each(function(){
-						intervention += '<br>&bull; ' + $(this).html()
+						intervention += '<br>&bull; ' + $(this).text()
 						})
-				intervention = $(this).find('intervention').find('bullet').remove().end().text() + intervention
+				intervention = $(this).find('intervention').find('bullet').remove().end().html() + intervention
 				var comparison = '';
 					$(this).find('comparison').find('bullet').each(function(){
 						comparison += '<br>&bull; ' + $(this).text()
