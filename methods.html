@@ -263,31 +263,43 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <span style="font-weight:bold;font-size:130%">Searching for studies</span>
 <span style="font-weight:bold"> (PRISMA Items 7,8)</span>
 </div>
-<p>Searching starts with identifying a recent meta-analysis. Additional trials may be identified by using PubMed and <a href="http://www.cochranelibrary.com/about/central-landing-page.html">Central</a>, as recommended by Royle (PMID <a href="http://pubmed.gov/16042789">16042789</a>), with additional cited references searches:</p>
-
-<ul>
-<li>Cited reference searches for studies that cite the recent systematic review or the highest impact study within the most recent meta-analysis. 
+<p>1. Start with making a reconciliation table of all studies included in at least one recent meta-analysis. (PMID <a href="https://pubmed.gov/27136216">27136216</a>)</p>
 	<ul>
-		<li><a href="http://isiknowledge.com">Web of Science</a></li>
-		<li><a href="http://scholar.google.com">Google Scholar</a></li>
+		<li>Identify up to 3-4 recent meta-analyses; place these in the columns a a table</li>
+		<li>List each trial in the rows of a spreadsheet.</li>
+		<li>In each cell, note whether a study was included or the reason it was not</li>
+		<li><a href="https://github.com/openMetaAnalysis/Early-goal-directed-therapy-for-septic-shock/tree/master/reconciliation-tables">Example of reconciliation tables</a></li>
 	</ul>
-</li>
-<li>Manual searches of online textbooks</li>
-<li><a href="http://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Finding_articles_rel">PubMed's Find Related Data portlet</a></li>
-<li>Manual searches of PubMed</li>
-<li>For clinical trials
+	
+<p>2. Search for more recent studies with traditional searching using search terms</p>
 	<ul>
-		<li>Search of the <a href="http://www.cochranelibrary.com/">Cochrane Central Register of Controlled Trials (CENTRAL)</a></li>
-		<li>Clinical Trials registries with methods suggested by Glanville (<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4076126/">PMC4076126</a>):
+		<li>Search PubMed with a 'Brief Search Strategy'(PMID <a href="http://pubmed.gov/16042789">16042789</a>)</li>
+		<li>Manual searches of online textbooks</li>
+		<li>For clinical trials
 			<ul>
-			<li><a href="https://clinicaltrials.gov/ct2/search/advanced">ClinicalTrials.gov</a> (for studies with completed results and the search term random*)</li>
-			<li><a href="http://apps.who.int/trialsearch/AdvSearch.aspx">International Clinical Trials Registry Platform (ICTRP)</a> (WHO)</li>
+				<li>Search of the <a href="http://www.cochranelibrary.com/">Cochrane Central Register of Controlled Trials (CENTRAL)</a></li>
+				<li>Clinical Trials registries with methods suggested by Glanville (<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4076126/">PMC4076126</a>):
+					<ul>
+					<li><a href="https://clinicaltrials.gov/ct2/search/advanced">ClinicalTrials.gov</a> (for studies with completed results and the search term random*)</li>
+					<li><a href="http://apps.who.int/trialsearch/AdvSearch.aspx">International Clinical Trials Registry Platform (ICTRP)</a> (WHO)</li>
+					</ul>
+				</li>
 			</ul>
 		</li>
+	<ul>
+<p>3. Search for more recent studies with <a class="hastip" id="cited_references">cited reference searches</a></p>
+	<ul>
+		<li>Identify the most highly cited meta-analysis and original study by using <a href="http://scholar.google.com">Google Scholar</a> or <a href="http://isiknowledge.com">Web of Science</a> to retrieve the number of citations to each study on the reconciliaiton table. This work can be reduced by starting with studies in high impact journals.</li>
+		<li></li>
 	</ul>
-</ul>
+<p>4. Each time a study is identified at PubMed, look for addiitonal studies using <a href="http://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Finding_articles_rel">PubMed's Find Related Data portlet</a></p>
 
-<p>Please add studies to repositories if you find qualifying trials that have not been included.</p>
+<p>If you find qualifying studies to an existing repository at openMetaAnalysis</p>
+	<ul>
+		<li>Please add the citation to the relevant: 1) data table, 2) PICO table, and 3) risk of bias table.</li>
+		<li>Update the relevant forest plot</li>
+		<li><i>Consider publishing the updated meta-analysis in a journal.</i></li>
+	</ul>
 
 <div>
 <a name="data_abstraction"/>
@@ -334,7 +346,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 		<caption>Converting continuous measures into binary measures</caption>
 		<tr><td colspan="2">Many calculators for data conversions are at <a href="http://www.campbellcollaboration.org/escalc/html/EffectSizeCalculator-SMD1.php">George Mason University</a>. Equations for conversion <a href="http://handbook.cochrane.org/chapter_9/9_4_6_combining_dichotomous_and_continuous_outcomes.htm">are available</a> at the Cochrane Handbook.</tr>
 		<tr><td colspan="2" align="center"><input onclick="alert('Not implemented')" id="twosamples3" name="type2" class="type2" type="radio"><label for="twosamples3">Two group means</label>&nbsp;<input id="smd3" name="type2" class="type2" type="radio"><label for="smd3">Single difference between group means</label></td></tr>
-		<tr class="onedifference3"><td><input type="text" id="lower3" placeholder="CI lower limit"/></td><td><div></div><input type="text" id="upper3" placeholder="CI upper limit"/></div></td></tr>
+		<tr class="onedifference3"><td><input type="text" id="lower3" placeholder="CI lower limit"/></td><td><div></div><input type="text" id="upper3" placeholder="CI upper limit"/></td></tr>
 		<tr class="onedifference3"><td colspan="2" align="center"><input type="text" id="subjects3" placeholder="Number subjects in group" style="width: 200px;" />
 			<div><input type="text" id="meandiff3" placeholder="Mean difference" style="width: 200px;" /></div>
 		</td></tr>
