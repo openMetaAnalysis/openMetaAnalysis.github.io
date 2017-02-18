@@ -104,17 +104,18 @@ $(document).ready(function(){
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
+		// Replace plain text links by hyperlinks
 		// Set the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
-		// Replace plain text links by hyperlinks
 		replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmedcentral.gov/$2'>$2</a>");
 		// Set the regex string for NCTs
 		regex = /(\s{1,})(NCT\d{7,})/ig;
-		// Replace plain text links by hyperlinks
 		replaced_text = replaced_text.replace(regex, "$1<a href='https://clinicaltrials.gov/ct2/show/study/$2'>$2</a>");
+		// Set the regex string for DOIs
+		regex = /\b10\.(\d+\.*)+[\/](([^\s\.])+\.*)+\b/ig;
+		replaced_text = replaced_text.replace(regex, "<a href='http://dx.doi.org/10.$1$2'>10.$1$2</a>");
 		// Set the regex string for PMIDs
 		regex = /(\s{1,})(\d{7,})/ig;
-		// Replace plain text links by hyperlinks
 		replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
 		// Set the regex string for line
 		// try 1: regex = /([^>]\n{1,}\s{0,})/ig;
