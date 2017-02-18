@@ -104,6 +104,9 @@ $(document).ready(function(){
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
+		//remove line feeds
+		regex = /\r?\n|\r/g
+		replaced_text = replaced_text.replace(regex, "");
 		// Replace plain text links by hyperlinks
 		// Set the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
