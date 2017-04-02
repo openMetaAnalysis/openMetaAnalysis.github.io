@@ -115,8 +115,12 @@ $(document).ready(function(){
 		regex = /(\s{1,})(NCT\d{7,})/ig;
 		replaced_text = replaced_text.replace(regex, "$1<a href='https://clinicaltrials.gov/ct2/show/study/$2'>$2</a>");
 		// Set the regex string for DOIs
-		regex = /\b10\.(\d+\.*)+[\/](([^\s\.])+\.*)+\b/ig;
-		replaced_text = replaced_text.replace(regex, "<a href='http://dx.doi.org/10.$1$2'>10.$1$2</a>");
+		// var = regex = 'https://www.crossref.org/blog/dois-and-matching-regular-expressions/';
+		// var regex = '/^10.\d{4,9}/[-._;()/:A-Z0-9]+$/i';
+		// based on http://stackoverflow.com/questions/27910/finding-a-doi-in-a-document-or-page
+		// var regex = '\b10\.(\d+\.*)+[\/](([^\s\.])+\.*)+\b';
+		var regex = /(\b10\.\d+\.*)+[\/](([^\s])+\.*)+\b/ig;
+		replaced_text = replaced_text.replace(regex, "<a href='http://dx.doi.org/$1\/$2'>$1\/$2</a>");
 		// Set the regex string for PMIDs
 		regex = /(\s{1,})(\d{7,})/ig;
 		replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
