@@ -52,15 +52,15 @@ $(document).ready(function(){
 		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
-		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/master/files' + $(this).attr("href"));
+		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/master/files/' + $(this).attr("href"));
 		})
 	$("body").find('a.master-file').each(function(){
 		//For specific files on master
-		$(this).attr('href', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/' + $(this).attr("href"));
+		$(this).attr('href', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $(this).attr("href"));
 		})
 	$("body").find('a.Reconciliation-of-conclusions').each(function(){
 		//For specific files on master
-		$(this).attr('href', 'https://github.com/openMetaAnalysis/' + repo_dir + '/blob/master/reconciliation-tables/Reconciliation%20of%20conclusions.csv');
+		$(this).attr('href', 'https://github.com/openMetaAnalysis/' + repo_dir + '/blob/master/files/reconciliation-tables/Reconciliation%20of%20conclusions.csv');
 		})
 	//Tips
 	$("body").find('GRADE').each(function(){
