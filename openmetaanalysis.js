@@ -33,14 +33,14 @@ $(document).ready(function(){
 	if (repo_dir == "Early-goal-directed-therapy-for-septic-shock"){
 		//code for testing a specific repository
 	}
-	$("#metaregression_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/' + $("#metaregression_figure").attr('src'))
+	$("#metaregression_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#metaregression_figure").attr('src'))
 	$("#metaregression_figure").load(function() {
 		metaregression = true;
 		$("#metaregression").show();
 	});
 	//Customize src for images based on repo name
-	$("#forest").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/' + $("#forest").attr('src'))
-	$("#grade").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/' + $("#grade").attr('src'))
+	$("#forest").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#forest").attr('src'))
+	$("#grade").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#grade").attr('src'))
 	//Link rewrites
 	$("body").find('a.main').each(function(){
 		//gh-pages
@@ -85,7 +85,7 @@ $(document).ready(function(){
 		})
 	$("body").find('FOREST_PLOTS').each(function(){
 		//Link to directory of forest plots
-		$(this).replaceWith($("<a href=\"https://github.com/" + sub_domain + '/' + repo_dir + "/tree/master/forest-plots/\" title=\"forest plots\">" + $(this).text() + '</a>'));
+		$(this).replaceWith($("<a href=\"https://github.com/" + sub_domain + '/' + repo_dir + "/tree/master/files/forest-plots/\" title=\"forest plots\">" + $(this).text() + '</a>'));
 		})
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
