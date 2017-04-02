@@ -52,7 +52,7 @@ $(document).ready(function(){
 		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
-		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/master/' + $(this).attr("href"));
+		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/master/files' + $(this).attr("href"));
 		})
 	$("body").find('a.master-file').each(function(){
 		//For specific files on master
