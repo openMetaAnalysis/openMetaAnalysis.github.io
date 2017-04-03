@@ -54,10 +54,16 @@ $(document).ready(function(){
 		sd = width/4;
 		}
 	if ($("#median").val() != ''){
-		//Hozo, 2005 PMID 15840177
 		median = parseFloat($("#median").val())
 		if ($("#median").val() != '' && $("#range").is(':checked')){
+			// Hozo, 2005 PMID 15840177: equation 4
 			var mean = (parseFloat($("#lower").val()) + 2*median + parseFloat($("#upper").val()) )/4 + (parseFloat($("#lower").val()) - 2*median + parseFloat($("#upper").val()) )/(4*subjects)
+			mean = mean.toFixed(2).toString();
+			$("#answer_mean").html(mean);
+			}
+		elseif ($("#median").val() != '' && $("#iqr").is(':checked')){
+			// Wan, 2014 PMID 25524443: equation 14
+			var mean = (parseFloat($("#lower").val()) + median + parseFloat($("#upper").val()) )/3
 			mean = mean.toFixed(2).toString();
 			$("#answer_mean").html(mean);
 			}
@@ -337,7 +343,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 		<tr><td colspan="3" align="center"><input type="text" id="subjects" placeholder="Number subjects in group" style="width: 200px;" /></td></tr>
 		<tr><td colspan="3" align="center"><input id="ci" name="type2" class="type2" type="radio"><label for="ci">Confidence interval</label>&nbsp;<input id="iqr" name="type2" class="type2" type="radio"><label for="iqr">Interquartile range</label>&nbsp;<input id="range" name="type2" class="type3" type="radio"><label for="range">Range</label></td></tr>
 		<tr><td colspan="3"><button id="bttncalculate2">Calculate standard deviation</button> Mean: <span id="answer_mean"></span> SD: <span id="answer_sd"></span>
-			<div>Details from: <a href="http://pubmed.gov/15840177">mean to median</a>, <a href="http://pubmed.gov/11113947">confidence interval</a>, <a href="http://handbook.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">interquartile range</a>, and <a href="http://www.biomedcentral.com/1471-2288/5/13">range</a>.</div>
+			<div>Details from: <a href="http://pubmed.gov/25524443,15840177">mean to median</a>, <a href="http://pubmed.gov/11113947">confidence interval</a>, <a href="http://handbook.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">interquartile range</a>, and <a href="http://www.biomedcentral.com/1471-2288/5/13">range</a>.</div>
 		</td></tr>
 	</table>
 </form>
