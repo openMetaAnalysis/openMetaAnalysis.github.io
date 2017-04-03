@@ -33,9 +33,6 @@ table, td, th{
 	padding:5px;
 	margin:5px;
 }
-td, th{
-	width:100px;
-}
 th{
 	background-color:lightgray;
 }
