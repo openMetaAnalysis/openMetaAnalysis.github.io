@@ -112,7 +112,7 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 								}
 							}
 						})
-				var trHTML = '<tr><td width=\'180px\'>' +  citationtext + '</td><td>' + randomization + '</td><td>' + allocation + '</td><td>' + blinding_people + '</td><td>' + blinding_assessment + '</td><td>' + attrition + '</td><td>' + selective_reporting + '</td><td>' + other_biases + '</td></tr>';
+				var trHTML = '<tr><td width=\'180px\'>' +  citationtext + '</td><td width=\'100px\'>' + randomization + '</td><td width=\'100px\'>' + allocation + '</td><td width=\'100px\'>' + blinding_people + '</td><td width=\'100px\'>' + blinding_assessment + '</td><td width=\'100px\'>' + attrition + '</td><td width=\'100px\'>' + selective_reporting + '</td><td width=\'100px\'>' + other_biases + '</td></tr>';
 			        $('#citations').append(trHTML);
 			})
 
