@@ -61,7 +61,7 @@ $(document).ready(function(){
 			mean = mean.toFixed(2).toString();
 			$("#answer_mean").html(mean);
 			}
-		elseif ($("#median").val() != '' && $("#iqr").is(':checked')){
+		else if ($("#median").val() != '' && $("#iqr").is(':checked')){
 			// Wan, 2014 PMID 25524443: equation 14
 			var mean = (parseFloat($("#lower").val()) + median + parseFloat($("#upper").val()) )/3
 			mean = mean.toFixed(2).toString();
