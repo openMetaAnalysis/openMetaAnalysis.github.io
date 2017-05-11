@@ -75,7 +75,7 @@ $(document).ready(function(){
 	$("body").find('a').each(function(){
 		//For PDFs
 		if ($(this).attr('href').toLowerCase().indexOf(".pdf") > 1){ 
-			$(this).after( " <span style='background:red;color:white;font-weight:bolder;border-radius: 2px;padding:1px;font-size:smaller'>PDF</span>")
+			$(this).after( " <span style='background:#CB0606;color:white;font-weight:bolder;border-radius: 2px;padding:1px;font-size:smaller'>PDF</span>")
 			}
 		})
 	//Tips
