@@ -51,8 +51,13 @@ $(document).ready(function(){
 		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/gh-pages/' + $(this).attr("href"));
 		})
 	$("body").find('a.gh-pages-files').each(function(){
-		//For directories on gh-pages
-		$(this).attr('href', '/' + repo_dir + '/' + $(this).attr("href"));
+		//For files on gh-pages
+		if ($(this).find('citation').attr('href').toLowerCase().indexOf(".odt") >= 0){
+			// http://viewerjs.org/instructions/
+			$(this).attr('href', '/ViewerJS/#' + sub_domain + '/' + repo_dir + '/' + $(this).attr("href"));
+			}
+		else{
+			$(this).attr('href', '/' + repo_dir + '/' + $(this).attr("href"));
 		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
