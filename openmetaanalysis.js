@@ -60,6 +60,7 @@ $(document).ready(function(){
 			}
 		else{
 			$(this).attr('href', '/' + repo_dir + '/' + $(this).attr("href"));
+			}
 		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
