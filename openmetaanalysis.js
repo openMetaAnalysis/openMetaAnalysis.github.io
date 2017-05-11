@@ -52,7 +52,7 @@ $(document).ready(function(){
 		})
 	$("body").find('a.gh-pages-files').each(function(){
 		//For files on gh-pages
-		if ($(this).attr('href').toLowerCase().indexOf(".odt") >= 0){
+		if ($(this).attr('href').toLowerCase().indexOf(".odt") > 1){
 			// http://viewerjs.org/instructions/
 			$(this).attr('href', '/ViewerJS/#' + sub_domain + '/' + repo_dir + '/' + $(this).attr("href"));
 			}
