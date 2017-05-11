@@ -72,6 +72,12 @@ $(document).ready(function(){
 		//For specific files on master
 		$(this).attr('href', 'https://github.com/openMetaAnalysis/' + repo_dir + '/blob/master/files/reconciliation-tables/Reconciliation%20of%20conclusions.csv');
 		})
+	$("body").find('a').each(function(){
+		//For PDFs
+		if ($(this).attr('href').toLowerCase().indexOf(".pdf") > 1){ 
+			$(this).after( " <img scr='/images/225px-Pdf_by_mimooh.svg.png' alt='PDF'>" )
+			}
+		})
 	//Tips
 	$("body").find('GRADE').each(function(){
 		//For GRADE
