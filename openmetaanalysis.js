@@ -52,6 +52,8 @@ $(document).ready(function(){
 		})
 	$("body").find('a.gh-pages-files').each(function(){
 		//For files on gh-pages
+		alert($(this).attr('href'))
+		alert($(this).attr('href', '/ViewerJS/#' + sub_domain + '/' + repo_dir + '/' + $(this).attr("href")))
 		if ($(this).attr('href').toLowerCase().indexOf(".odt") > 1){
 			// http://viewerjs.org/instructions/
 			$(this).attr('href', '/ViewerJS/#' + sub_domain + '/' + repo_dir + '/' + $(this).attr("href"));
