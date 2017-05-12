@@ -43,8 +43,8 @@ $(document).ready(function(){
 	$("#grade").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#grade").attr('src'))
 	//Link rewrites
 	$("body").find('a.main').each(function(){
-		//gh-pages
-		$(this).attr('href', "http://" + sub_domain + ".github.io/" + $(this).attr("href"));
+		// main (root) directory for project
+		$(this).attr('href', 'http://' + sub_domain + '.github.io/' + repo_dir + '/' + $(this).attr("href"));
 		})
 	$("body").find('a.gh-pages-dir').each(function(){
 		//For directories on gh-pages
