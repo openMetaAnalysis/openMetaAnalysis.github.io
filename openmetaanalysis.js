@@ -67,10 +67,16 @@ $(document).ready(function(){
 		$(this).attr('href', 'https://github.com/openMetaAnalysis/' + repo_dir + '/blob/master/files/reconciliation-tables/Reconciliation%20of%20conclusions.csv');
 		})
 	$("body").find('a').each(function(){
+	$("body").find('a').each(function(){
+		try{
 		//For PDFs
-		//if ($(this).attr('href').toLowerCase().indexOf(".pdf") > 1){ 
-			//$(this).after( " <span style='background:#CB0606;opacity:0.5;color:white;font-weight:bolder;border-radius: 2px;padding:1px;font-size:75%'>PDF</span>")
-			//}
+		if ($(this).attr('href').toLowerCase().indexOf(".pdf") > 1){
+			$(this).after( " <span style='background:#CB0606;opacity:0.5;color:white;font-weight:bolder;border-radius: 2px;padding:1px;font-size:75%'>PDF</span>")
+			}
+			}
+			catch(e){
+				//catch and just suppress error
+			}
 		})
 	//Tips
 	$("body").find('GRADE').each(function(){
