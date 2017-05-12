@@ -44,7 +44,7 @@ $(document).ready(function(){
 	//Link rewrites
 	$("body").find('a.main').each(function(){
 		// main (root) directory for project
-		$(this).attr('href', 'http://' + sub_domain + '.github.io/' + repo_dir + '/' + $(this).attr("href"));
+		$(this).attr('href', 'https://github.com/openMetaAnalysis//' + repo_dir + '/' + $(this).attr("href"));
 		})
 	$("body").find('a.gh-pages-dir').each(function(){
 		//For directories on gh-pages
