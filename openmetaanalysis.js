@@ -46,9 +46,13 @@ $(document).ready(function(){
 		//gh-pages
 		$(this).attr('href', "http://" + sub_domain + ".github.io/" + $(this).attr("href"));
 		})
-	$("body").find('a.master').each(function(){
+	$("body").find('a.gh-pages-dir').each(function(){
 		//For directories on gh-pages
-		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/' + $(this).attr("href"));
+		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/gh-pages/' + $(this).attr("href"));
+		})
+	$("body").find('a.gh-pages-files').each(function(){
+		//For directories on gh-pages
+		$(this).attr('href', '/' + repo_dir + '/' + $(this).attr("href"));
 		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
