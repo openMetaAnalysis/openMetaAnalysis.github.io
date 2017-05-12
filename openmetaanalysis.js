@@ -67,7 +67,6 @@ $(document).ready(function(){
 		$(this).attr('href', 'https://github.com/openMetaAnalysis/' + repo_dir + '/blob/master/files/reconciliation-tables/Reconciliation%20of%20conclusions.csv');
 		})
 	$("body").find('a').each(function(){
-	$("body").find('a').each(function(){
 		try{
 		//For PDFs
 		if ($(this).attr('href').toLowerCase().indexOf(".pdf") > 1){
