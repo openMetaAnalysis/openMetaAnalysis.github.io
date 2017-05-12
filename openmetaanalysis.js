@@ -46,19 +46,9 @@ $(document).ready(function(){
 		//gh-pages
 		$(this).attr('href', "http://" + sub_domain + ".github.io/" + $(this).attr("href"));
 		})
-	$("body").find('a.gh-pages-dir').each(function(){
+	$("body").find('a.master').each(function(){
 		//For directories on gh-pages
-		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/gh-pages/' + $(this).attr("href"));
-		})
-	$("body").find('a.gh-pages-files').each(function(){
-		//For files on gh-pages
-		if ($(this).attr('href').toLowerCase().indexOf(".zzz") > 1){ //replace .zzz with .odt to enable
-			// http://viewerjs.org/instructions/
-			$(this).attr('href', '/ViewerJS/#../' + repo_dir + '/' + $(this).attr("href"));
-			}
-		else{
-			$(this).attr('href', '/' + repo_dir + '/' + $(this).attr("href"));
-			}
+		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/' + $(this).attr("href"));
 		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
@@ -71,12 +61,6 @@ $(document).ready(function(){
 	$("body").find('a.Reconciliation-of-conclusions').each(function(){
 		//For specific files on master
 		$(this).attr('href', 'https://github.com/openMetaAnalysis/' + repo_dir + '/blob/master/files/reconciliation-tables/Reconciliation%20of%20conclusions.csv');
-		})
-	$("body").find('a').each(function(){
-		//For PDFs
-		if ($(this).attr('href').toLowerCase().indexOf(".zzz") > 1){ 
-			$(this).after( " <span style='background:#CB0606;opacity:0.5;color:white;font-weight:bolder;border-radius: 2px;padding:1px;font-size:75%'>PDF</span>")
-			}
 		})
 	//Tips
 	$("body").find('GRADE').each(function(){
