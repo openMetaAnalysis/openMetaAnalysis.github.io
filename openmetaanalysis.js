@@ -114,6 +114,7 @@ $(document).ready(function(){
 		//Link to directory of forest plots
 		$(this).replaceWith($("<a href=\"https://github.com/" + sub_domain + '/' + repo_dir + "/tree/master/files/forest-plots/\" title=\"forest plots\">" + $(this).text() + '</a>'));
 		})
+		//Replace line feeds {'\n') in link labels with space (' ')
 	$("body").find('a.pmid').each(function(){
 		//For PMIDs
 		$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
@@ -121,19 +122,19 @@ $(document).ready(function(){
 	$("body").find('pmid').each(function(){
 		//For PMIDs
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
-		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text() + '</a>'));
+		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text(text.replace('\n', ' ')) + '</a>'));
 		})
 	$("body").find('PMID').each(function(){
 		//For PMIDs
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
-		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text() + '</a>'));
+		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text(text.replace('\n', ' ')) + '</a>'));
 		})
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
-		//remove line feeds
+		//remove line feeds and replace with space
 		regex = /\r?\n|\r/g
-		replaced_text = replaced_text.replace(regex, "");
+		replaced_text = replaced_text.replace(regex, " ");
 		// Replace plain text links by hyperlinks
 		// Set the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
