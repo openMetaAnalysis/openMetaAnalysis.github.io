@@ -38,6 +38,16 @@ $(document).ready(function(){
 		metaregression = true;
 		$("#metaregression").show();
 	});
+	$("#network_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#network_figure").attr('src'))
+	$("#network_figure").load(function() {
+		metaregression = true;
+		$("#network").show();
+	});
+	$("#r_code").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/r-code')
+	$("#r_code").load(function() {
+		r_code = true;
+		$("#r-code").show();
+	});
 	//Customize src for images based on repo name
 	$("#forest").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#forest").attr('src'))
 	$("#grade").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#grade").attr('src'))
