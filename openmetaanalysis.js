@@ -6,6 +6,8 @@ if (pagename == ""){pagename = "index.html"};
 var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
 var metagression = false;
+var network = false;
+var r_code = false;
 function showtip(tiptext, trigger, width){
 	$("#tip").css('display','block');
         $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>');
@@ -40,7 +42,7 @@ $(document).ready(function(){
 	});
 	$("#network_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#network_figure").attr('src'))
 	$("#network_figure").load(function() {
-		metaregression = true;
+		network = true;
 		$("#network").show();
 	});
 	$("#r_code").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/r-code')
