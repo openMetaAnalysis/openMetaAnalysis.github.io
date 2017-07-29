@@ -132,6 +132,9 @@ $(document).ready(function(){
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
+		//remove double line feeds and replace with LI elements
+		regex = /\n\s{0,}\n|\r\s{0,}r/g
+		replaced_text = replaced_text.replace(regex, "</lil><li>");
 		//remove line feeds and replace with space
 		regex = /\r?\n|\r/g
 		replaced_text = replaced_text.replace(regex, " ");
