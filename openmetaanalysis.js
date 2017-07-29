@@ -129,12 +129,15 @@ $(document).ready(function(){
 		//$(this).attr('href', "http://www.ncbi.nlm.nih.gov/pubmed/" + $(this).text());
 		$(this).replaceWith($("<a href=\"http://pubmed.gov/" + $(this).text() + "\">" + $(this).text(text.replace('\n', ' ')) + '</a>'));
 		})
+	$("body").find('ol').each(function(){
+		//For references
+		//remove double line feeds and replace with LI elements
+		regex = /\n\s{0,}\n|\r\s{0,}r/g
+		replaced_text = replaced_text.replace(regex, "</lil><li>");
+		})
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
-		//remove double line feeds and replace with LI elements
-		//regex = /\n\s{0,}\n|\r\s{0,}r/g
-		//replaced_text = replaced_text.replace(regex, "</lil><li>");
 		//remove line feeds and replace with space
 		regex = /\r?\n|\r/g
 		replaced_text = replaced_text.replace(regex, " ");
