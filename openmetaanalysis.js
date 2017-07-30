@@ -131,8 +131,11 @@ $(document).ready(function(){
 		})
 	$("body").find('ol').each(function(){
 		//For references
+		var str = $(this).html();
 		//remove double line feeds and replace with LI elements
-		$(this).text(text.replace('\n\s{0,}\n|\r\s{0,}\r', '</li><li>'))
+		var regex = /\n\s{0,}\n/ig;
+		str = str.replace(regex, "</li>\n<li>");
+		$(this).replaceWith('<ol>' + str + '</ol>');
 		})
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
