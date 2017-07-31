@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Using GitHub for openMetaAnalysis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+
+.wrapper
+{
+width: 860px;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0px;
+margin-left: auto;
+}
+
+//Menu from http://codepen.io/philhoyt/pen/ujHzd
+#primary_nav_wrap
+{
+	margin-top:15px
+}
+
+#primary_nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primary_nav_wrap ul a
+{
+	display:block;
+	background-color:#6DC6E7;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-weight:bold;
+	//font-weight:700;
+	//font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+	//font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#primary_nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primary_nav_wrap ul li.current-menu-item
+{
+	background:#0022B4;
+		color:#FFFFFF;
+}
+
+#primary_nav_wrap ul a:hover
+{
+	background:#0022B4;
+		color:#FFFFFF;
+}
+
+#primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background-color:#6DC6E7;
+	color:#FFFFFF;
+	padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+	float:none;
+	width:200px
+}
+
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px;
+}
+
+#primary_nav_wrap ul ul ul
+{
+	top:0;
+	left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block
+}
+</style>
+</head>
+
+<body>
+<!-- 
+http://jquery-csv.googlecode.com/git/examples/basic-usage.html
+http://jquery-csv.googlecode.com/git/examples/flot.html -> seems best and most stable without reticulating spines error
+http://code.google.com/p/jquery-csv/wiki/API -> instructions
+-->
+<div class="wrapper">
+
+<div class="page-header">
+      <div style="color:#0022B4">
+		<h1>openMetaAnalysis: <span style="font-size:50%">collaborative and continuous</span></h1>
+	</div>
+	
+<nav id="primary_nav_wrap">
+<ul id="menu">
+<li class="listitem"><a href="http://openmetaanalysis.github.io/" class="menuitem">Home</a></li>
+<li class="listitem"><a href="#" class="menuitem">Editors</a>
+<ul>
+	<li><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor.html" class="menuitem">Intervention</a></li>
+	<li><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor.html#instruct" class="menuitem">Intervention (instructional)</a></li>
+	<li><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor-dx.html" class="menuitem">Diagnosis</a></li>
+	<li class="listitem"><a href="https://openmetaanalysis.ocpu.io/home/www/arrows.html" class="menuitem">Arrows Plot</a></li>
+	</ul>
+</li>
+<li class="listitem"><a href="http://openmetaanalysis.github.io/methods.html" class="menuitem">Methods</a></li>
+<li class="listitem"><a href="http://openmetaanalysis.github.io/new.html" class="menuitem">Create a new review</a></li>
+<li class="listitem"><a href="http://openmetaanalysis.github.io/update.html" class="menuitem">Improve/update an existing review</a></li>
+</ul>
+</nav>
+</div>
+<div style="clear:both">&nbsp;</div>
+
+<h1 style="color:#0022B4">Improve or update an existing review</h1>
+<div>If you would like to modify or make a alternative version of an existing review, feel free to contact <a href="mailto:rbadgett@kumc.edu">rbadgett@kumc.edu</a></div>
+
+<h3>To contribute to an existing openMetaAnalysis</h3>
+	<div>Explore possible revisions by using the <a id="showeditor" href="https://openmetaanalysis.ocpu.io/home/www/editor.html">editor</a> and <a href="https://github.com/openMetaAnalysis/Vitamin-D-for-fracture-prevention/blob/master/data/all%20trials.csv">this example</a> or any <a href="https://github.com/openMetaAnalysis">other</a> data set. To do this:</div>
+	<ul>
+	<li>Click the '<a href="https://raw.githubusercontent.com/openMetaAnalysis/Vitamin-D-for-fracture-prevention/master/data/all%20trials.csv">raw view</a>' of the example dataset</li>
+	<li>Paste into the <a href="https://openmetaanalysis.ocpu.io/home/www/editor.html">editor</a></li>
+	<li>Remove the column labels from the top line</li>
+	<li>Click the link, "Click here to add commas"</li>
+	<li>Click the button, "Update Plot"</li>
+	</ul>
+	<div>Then, if you have a good revision:</div>
+	<ul>
+	<li>Revise the data, by copying ('<a href="https://help.github.com/articles/fork-a-repo">forking</a>') the repository to a new repository, then:
+		<ul>
+		<li>Edit or update the data files.</li>
+		<li>Revising images such as forest plots or GRADE Profiles requires the GitHub client for <a href="https://windows.github.com/">Windows</a> or <a href="https://mac.github.com/">Mac</a>.
+		<ul>
+		<li>The client will let you copy all of the repository to your computer.</li>
+		<li>Then, replace the images you downloaded with the new ones you create and synchronize to upload.</li>
+		</ul>
+		</li>
+		</ul>
+	</li>
+	<li>Lastly, either initiate a '<a href="https://help.github.com/articles/using-pull-requests">pull request</a>' for your revisions to be pulled back into the original repository or keep your analysis as a new, stand-alone analysis.</li>
+	</ul>
+
+<h3>To cite or re-use content or document your contributions for scholarly credit</h3>
+<ul><li><a href="https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/reusing.MD">Details, including citing for your own scholarly credit</a></li></ul>
+<div>&nbsp;</div>
+
+<script>
+//For gh-pages
+//Page history and edit
+var pagename = location.pathname.split('/').slice(-1);
+if (pagename.toString().length < 1){pagename = "index.html"}
+document.write("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/commits/master/" + pagename + "'>Page history</a></div>")
+</script>
+
+</div>
+
+<script src="javascripts/scale.fix.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-56740469-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>
