@@ -67,7 +67,7 @@ function iterateJSON(idlist, publications) {
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;selective_reporting <span style='background-color:green;color:white;font-weight:bold'>explanation=\"Original protocol not available at a website for trial registration.\"</span>&gt;<span style='background-color:yellow'>Unclear risk</span>&lt;/selective_reporting&gt;<br>"
 			citation+= String.fromCharCode(9) + "&nbsp;&lt;other_biases&gt;<span style='background-color:yellow'>&nbsp;risk</span>&lt;/other_biases&gt;<br>"
 			citation+= "&lt;/study&gt;<br>"
-			$("#criteria").html("<a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\">Individual criteria for judging risk of bias</a> in a trial using the '<a href=\"http://handbook.cochrane.org/chapter_8/8_5_the_cochrane_collaborations_tool_for_assessing_risk_of_bias.htm\">Cochrane's Risk of bias tool</a>'</li></ul>")
+			$("#criteria").html("<a href=\"http://handbook-5-1.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\">Individual criteria for judging risk of bias</a> in a trial using the '<a href=\"http://handbook.cochrane.org/chapter_8/8_5_the_cochrane_collaborations_tool_for_assessing_risk_of_bias.htm\">Cochrane's Risk of bias tool</a>'</li></ul>")
 		}
 		if ($("#type_diagnosis").is(":checked")){
 	        	citation+="&lt;study&gt;<br>&lt;citation  year=\"" + pubyear + "\" pmid=\"" + summary.result[id].uid + '\" nct=\"\" journal_abbrev=\"' + summary.result[id].source + '\" totalsubjects=\"0\" &gt;' + studyname + "&lt;/citation&gt;</span><br>"
