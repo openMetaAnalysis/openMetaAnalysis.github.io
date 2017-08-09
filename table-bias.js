@@ -14,7 +14,7 @@ $( document ).ajaxComplete(function() {
 });
 $(document).ready(function(){
 //Write header
-$("#header_bias").html("<table><caption>Possible bias in randomized controlled trials of this topic<br><a href=\"http://handbook.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\" style=\"font-size:12px\">Criteria for individual items from Cochrane Handbook</a></caption><tr><th class='col1' width='180px' rowspan='2'>Trial</th><th colspan='2'>Selection bias</th><th width=\'100px\'>Performance bias</th><th width=\'100px\'>Detection bias</th><th width=\'100px\'>Attrition bias</th><th width=\'100px\'>Reporting bias</th><th width=\'100px\'>Other biases</th><th rowspan=2 style='width:7px;background-color:white;border: 1px solid white'></th></tr><tr><th width=\'100px\'>Random sequence generation</th><th width=\'100px\'>Allocation concealment</th><th>Blinding of participants and personnel</th><th>Blinding of outcome assessment</th><th>Incomplete outcome data</th><th>Selective reporting</th><th>E.g. imbalanced compliance , co-interventions, or other.</th></tr></table>");
+$("#header_bias").html("<table><caption>Possible bias in randomized controlled trials of this topic<br><a href=\"http://handbook-5-1.cochrane.org/chapter_8/table_8_5_d_criteria_for_judging_risk_of_bias_in_the_risk_of.htm\" style=\"font-size:12px\">Criteria for individual items from Cochrane Handbook</a></caption><tr><th class='col1' width='180px' rowspan='2'>Trial</th><th colspan='2'>Selection bias</th><th width=\'100px\'>Performance bias</th><th width=\'100px\'>Detection bias</th><th width=\'100px\'>Attrition bias</th><th width=\'100px\'>Reporting bias</th><th width=\'100px\'>Other biases</th><th rowspan=2 style='width:7px;background-color:white;border: 1px solid white'></th></tr><tr><th width=\'100px\'>Random sequence generation</th><th width=\'100px\'>Allocation concealment</th><th>Blinding of participants and personnel</th><th>Blinding of outcome assessment</th><th>Incomplete outcome data</th><th>Selective reporting</th><th>E.g. imbalanced compliance , co-interventions, or other.</th></tr></table>");
 //Get xml for table
 var url = "/" + repo_dir + "/tables/bias.xml";
         $.ajax({
@@ -121,21 +121,21 @@ var url = "/" + repo_dir + "/tables/bias.xml";
 			var denom = $(xml).find('study').length;
 			$("#judgment").html('Low risk')
 			//ratio = $(xml).find("study:contains(High)").length/denom;
-			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(1-unclearrisksubjects/totalsubjects)).toFixed(1) + "% of " + totalsubjects + " patients</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+			$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*(1-unclearrisksubjects/totalsubjects)).toFixed(1) + "% of " + totalsubjects + " patients</span>) is from studies at low risk of bias.\' (<a href=\'http://handbook-5-1.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			//alert("Unclear/high risk proportion:\n" + eval(100*(unclearrisksubjects)/totalsubjects).toFixed(1)+"%")
 			if (unclearrisksubjects/totalsubjects > 0.5){
 			//Below is per Cochrane, but does not seem sensible as a study could have most trials low risk and also have most trials low or unclear.
 			//if (1-highrisksubjects/totalsubjects > 0.5){
 				$("#judgment").html('Unclear risk');
 				$("#judgment").css('background-color','#ffcccc');
-				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*unclearrisksubjects/totalsubjects).toFixed(1) + "% of " + totalsubjects + " patients</span>) is from studies at unclear or high risk of bias.\' (modified from <a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+				$("#rationale").html("\'Most information (<span style='color:red;font-weight:bold'>" + eval(100*unclearrisksubjects/totalsubjects).toFixed(1) + "% of " + totalsubjects + " patients</span>) is from studies at unclear or high risk of bias.\' (modified from <a href=\'http://handbook-5-1.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			};
 			//ratio = $(xml).find("study:contains(Unclear)").length/denom;
 			//alert("High risk proportion:\n"        + eval(100*highrisksubjects/totalsubjects).toFixed(1)+"%")
 			if (highrisksubjects/totalsubjects > 0.5){
 				$("#judgment").html('High risk');
 				$("#judgment").css('background-color','#ff5959');
-				$("#rationale").html("\'The proportion of information (<span style='color:red;font-weight:bold'>" + eval(100*highrisksubjects/totalsubjects).toFixed(1) + "% of " + totalsubjects + " patients</span> from studies at high risk of bias is sufficient to affect the interpretation of results.\' (<a href=\'http://handbook.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
+				$("#rationale").html("\'The proportion of information (<span style='color:red;font-weight:bold'>" + eval(100*highrisksubjects/totalsubjects).toFixed(1) + "% of " + totalsubjects + " patients</span> from studies at high risk of bias is sufficient to affect the interpretation of results.\' (<a href=\'http://handbook-5-1.cochrane.org/chapter_8/table_8_7_a_possible_approach_for_summary_assessments_of_the.htm\'>Cochrane Handbook</a>)");
 			};
 
                 }
