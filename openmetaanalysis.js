@@ -66,6 +66,10 @@ $(document).ready(function(){
 		//For directories on gh-pages
 		$(this).attr('href', '/' + repo_dir + '/' + $(this).attr("href"));
 		})
+	$("body").find('a.master-home').each(function(){
+		//For directories on master
+		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/master/');
+		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
 		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/master/files/' + $(this).attr("href"));
