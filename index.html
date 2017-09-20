@@ -1,129 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>openMetaAnalysis</title>
-<meta name="author" content="openMetaAnalysis Contributors">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script src="//code.jquery.com/jquery.min.js"></script>
-<style>
-.wrapper
-{
-  width: 860px;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-bottom: 0px;
-  margin-left: auto;
-}
-/* Menu from http://codepen.io/philhoyt/pen/ujHzd */
-#primary_nav_wrap
-{
-	margin-top:15px;
-}
-#primary_nav_wrap ul
-{
-	list-style:none;
-	position:relative;
-	float:left;
-	margin:0;
-	padding:0
-}
-#primary_nav_wrap ul a
-{
-	display:block;
-	background-color:#6DC6E7;
-	color:#FFFFFF;
-	text-decoration:none;
-	font-weight:bold;
-	//font-weight:700;
-	//font-size:12px;
-	line-height:32px;
-	padding:0 15px;
-	//font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
-}
-#primary_nav_wrap ul li
-{
-	position:relative;
-	float:left;
-	margin:0;
-	padding:0
-}
-#primary_nav_wrap ul li.current-menu-item
-{
-	background:#0022B4;
-		color:#FFFFFF;
-}
-#primary_nav_wrap ul a:hover
-{
-	background:#0022B4;
-	color:#FFFFFF;
-}
-#primary_nav_wrap ul ul
-{
-	display:none;
-	position:absolute;
-	top:100%;
-	left:0;
-	background-color:#6DC6E7;
-	color:#FFFFFF;
-	padding:0
-}
-#primary_nav_wrap ul ul li
-{
-	float:none;
-	width:200px
-}
-#primary_nav_wrap ul ul a
-{
-	line-height:120%;
-	padding:10px 15px;
-}
-#primary_nav_wrap ul ul ul
-{
-	top:0;
-	left:100%
-}
-#primary_nav_wrap ul li:hover > ul
-{
-	display:block
-}
-</style>
+  <title>openMetaAnalysis</title>
+  <meta name="author" content="openMetaAnalysis Contributors">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!-- <link rel="stylesheet" href="./vendor/Skeleton-2.0.4/css/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="./vendor/Skeleton-2.0.4/css/skeleton.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-<!-- 
+<!--
 http://jquery-csv.googlecode.com/git/examples/basic-usage.html
 http://jquery-csv.googlecode.com/git/examples/flot.html -> seems best and most stable without reticulating spines error
 http://code.google.com/p/jquery-csv/wiki/API -> instructions
 -->
-<div class="wrapper">
+<div class="container">
+<header>
+  <h1 class="logo"><a href="http://openmetaanalysis.github.io/">openMetaAnalysis: <span>collaborative and continuous</span></a></h1>
 
-<div class="page-header">
-      <div style="color:#0022B4">
-		<h1>openMetaAnalysis: <span style="font-size:50%">collaborative and continuous</span></h1>
-	</div>
-	
-<nav id="primary_nav_wrap">
-<ul id="menu">
-<li class="listitem"><a href="http://openmetaanalysis.github.io/" class="menuitem">Home</a></li>
-<li class="listitem"><a href="#" class="menuitem">Plot editors</a>
-	<ul>
-	<li><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor.html" class="menuitem">Intervention</a></li>
-	<li><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor.html#instruct" class="menuitem">Intervention (instructional)</a></li>
-	<li><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor-dx.html" class="menuitem">Diagnosis</a></li>
-	<li class="listitem"><a href="https://openmetaanalysis.ocpu.io/home/www/arrows.html" class="menuitem">Arrows Plot</a></li>
-	</ul>
-</li>
-<li class="listitem"><a href="http://openmetaanalysis.github.io/methods.html" class="menuitem">Methods</a></li>
-<li class="listitem"><a href="http://openmetaanalysis.github.io/new.html" class="menuitem">Create a new review</a></li>
-<li class="listitem"><a href="http://openmetaanalysis.github.io/update.html" class="menuitem">Improve/update an existing review</a></li>
+<nav class="pure-menu-horizontal">
+<ul class="pure-menu-list">
+  <li class="pure-menu-item"><a href="http://openmetaanalysis.github.io/new.html" class="pure-menu-link">Create a review</a></li>
+  <li class="pure-menu-item"><a href="http://openmetaanalysis.github.io/update.html" class="pure-menu-link">Update a review</a></li>
+  <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+    <a href="#" id="menuLink1" class="pure-menu-link">Edit plots</a>
+  	<ul class="pure-menu-children">
+  	<li class="pure-menu-item"><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor.html" class="pure-menu-link">Intervention Editor</a></li>
+  	<li class="pure-menu-item"><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor.html#instruct" class="pure-menu-link">Intervention (instructional) Editor</a></li>
+  	<li class="pure-menu-item"><a href="opencpu-launch.htm?https://openmetaanalysis.ocpu.io/home/www/editor-dx.html" class="pure-menu-link">Diagnosis Editor</a></li>
+  	<li class="pure-menu-item"><a href="https://openmetaanalysis.ocpu.io/home/www/arrows.html" class="pure-menu-link">Arrows Plot Editor</a></li>
+  	</ul>
+  </li>
+  <li class="pure-menu-item"><a href="http://openmetaanalysis.github.io/methods.html" class="pure-menu-link">Compare review methods</a></li>
 </ul>
 </nav>
-</div>
+</header>
 <div style="clear:both">&nbsp;</div>
 <table>
 <tr><td width="50%" valign="top">
-<h4 style="display:inline">Reviews that have been published</h4>
+<h4 style="display:inline">Published Reviews</h4>
 <ul>
 <li><a href="Colchicine-for-Pericarditis">Colchicine for prevention of pericarditis and the postpericardiotomy syndrome</a> (PMID: <a href="http://pubmed.gov/25164526">25164526</a>)</li>
 <li><a href="http://openmetaanalysis.github.io/Early-goal-directed-therapy-for-septic-shock">Early goal directed therapy for septic shock</a> (PMID: <a href="http://pubmed.gov/27546746">27546746</a>)</li>
@@ -147,7 +65,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 </ul>
 -->
 <h3>Why openMetaAnalysis</h3>
-	<div><span style="font-weight:bold">Problem:</span> Meta-analyses in health care are hindered by becoming outdated (PMID: <a href="https://pubmed.gov/17638714">17638714</a>) and redundant (PMID: <a href="https://pubmed.gov/23873947">23873947</a>). Living systematic reviews and Rapid reviews have been proposed as separate solutions.</div> 
+	<div><span style="font-weight:bold">Problem:</span> Meta-analyses in health care are hindered by becoming outdated (PMID: <a href="https://pubmed.gov/17638714">17638714</a>) and redundant (PMID: <a href="https://pubmed.gov/23873947">23873947</a>). Living systematic reviews and Rapid reviews have been proposed as separate solutions.</div>
 
 	<div>&nbsp;</div>
 	<div><span style="font-weight:bold">openMetaAnalysis</span> provides a platform for <i>collaboratively</i> developing, disseminating, and maintaining systematic reviews. openMetaAnalysis combines features of:
@@ -157,7 +75,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 		<li><b>Living reviews</b> (PMIDs: <a href="http://pubmed.gov/24862208,24558353">24862208,24558353</a>). Updates can be quickly made.</li>
 	</ul>
 	</div>
-	
+
 	<div>&nbsp;</div>
 	<div><span style="font-weight:bold">Details</span>. openMetaAnalysis is an open-source, cloud-based approach that implements the concepts of <a href="http://www.cochrane.org/">Cochrane</a>, <a href="http://www.gradeworkinggroup.org/">GRADE</a> and <a href="http://prisma-statement.org/">PRISMA</a>. <a href="https://github.com/">GitHub</a>, originally developed for collaborative development of software, has been proposed as a method to publish legislative information with transparent tracking of development.(see <a href="http://www.ted.com/talks/clay_shirky_how_the_internet_will_one_day_transform_government.html">Shirkey</a> and <a href="https://github.com/blog/1874-government-opens-up-10k-active-government-users-on-github">Government opens up</a>) Likewise, GitHub can host medical knowledge, support team science(PMID: <a href="http://pubmed.gov/18619407">18619407</a>), and provide collaboration beyond what is possible with wikis. GitHub transparently tracks updates to meta-analyses and provides links to related, <a href="https://osf.io/j5v8f/">alternative, or competing, analyses</a>. Collaboration with GitHub complements the functions of open data repositories such as the <a href="http://srdr.ahrq.gov/">Systematic Review Data Repository</a>, <a href="http://datadryad.org/">DRYAD</a> and <a href="http://medicine.yale.edu/core/projects/yodap/index.aspx">YODA</a>. Similar to <a href="https://www.wikigenes.org/">wikigenes</a>, authors' contributions are tracked for academic credit. While wikis also offer a solution, they are reaching limits in their ability to represent complex knowledge.(<a href="http://www.technologyreview.com/featuredstory/520446/the-decline-of-wikipedia">Simonite, 2013</a>)
 
@@ -188,6 +106,8 @@ document.write("<div style='text-align:center'><a href='https://github.com/openM
 
 </div>
 
+<script src="https://unpkg.com/vue"></script>
+<script src="js/menu.js"></script>
 <script src="javascripts/scale.fix.js"></script>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
