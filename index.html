@@ -5,8 +5,6 @@
   <meta name="author" content="openMetaAnalysis Contributors">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <!-- <link rel="stylesheet" href="./vendor/Skeleton-2.0.4/css/normalize.css"> -->
-  <!-- <link rel="stylesheet" href="./vendor/Skeleton-2.0.4/css/skeleton.css"> -->
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
@@ -17,8 +15,8 @@ http://jquery-csv.googlecode.com/git/examples/basic-usage.html
 http://jquery-csv.googlecode.com/git/examples/flot.html -> seems best and most stable without reticulating spines error
 http://code.google.com/p/jquery-csv/wiki/API -> instructions
 -->
-<div class="container">
-<header>
+<div class="layout pure-g">
+<header class="pure-u-1">
   <h1 class="logo"><a href="http://openmetaanalysis.github.io/">openMetaAnalysis: <span>collaborative and continuous</span></a></h1>
 
 <nav class="pure-menu-horizontal">
@@ -38,7 +36,8 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 </ul>
 </nav>
 </header>
-<div style="clear:both">&nbsp;</div>
+
+<div class="content pure-u-1">
 <table>
 <tr><td width="50%" valign="top">
 <h4 style="display:inline">Published Reviews</h4>
@@ -94,16 +93,15 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 </td>
 </tr>
 </table>
-
+</div>
 <div>&nbsp;</div>
 <script>
 //For gh-pages
 //Page history and edit
 var pagename = location.pathname.split('/').slice(-1);
 if (pagename.toString().length < 1){pagename = "index.html"}
-document.write("<div style='text-align:center'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/commits/master/" + pagename + "'>Page history</a></div>")
+document.write("<footer class='pure-u-1'><a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/blob/master/" + pagename + "'>Edit this page</a> - <a href='https://github.com/openMetaAnalysis/openMetaAnalysis.github.io/commits/master/" + pagename + "'>Page history</a></footer>")
 </script>
-
 </div>
 
 <script src="https://unpkg.com/vue"></script>
