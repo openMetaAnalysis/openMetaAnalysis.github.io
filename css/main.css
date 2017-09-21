@@ -5,17 +5,22 @@
  * gray: #e1e8f0,
  * red: #e62739
 **/
-
-h1 a {
-  text-decoration: none;
-  color: #222;
+body * {
+	font-family: 'Nobile', 'Open Sans', Helvetica, sans-serif;
+	font-style: normal;
+	font-variant: normal;
 }
 nav { margin-bottom: 1em; }
 .pure-menu-children, .pure-menu-children li.pure-menu-item {
+
 }
 .layout header, .layout .content, .layout footer {
   padding: 1em;
 }
 .layout footer {
   text-align: center;
+}
+h1 a {
+  text-decoration: none;
+  color: #222;
 }
