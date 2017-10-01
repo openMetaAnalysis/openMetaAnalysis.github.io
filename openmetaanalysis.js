@@ -145,11 +145,16 @@ $(document).ready(function(){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
 		//remove citation number and colon placed by PubMed
-		var regex = /(\r\d{1,2}:)/ig;
-		replaced_text = replaced_text.replace(regex, '\r');
+		var regex = /\r\d{1,3}:\s/ig;
+		replaced_text = replaced_text.replace(regex, "\r");
 		//remove line feeds and replace with space
 		regex = /\r?\n|\r/g
 		replaced_text = replaced_text.replace(regex, " ");
+		//Remove extra words PubMed likes
+		regex = /PubMed PMID|\r/g
+		replaced_text = replaced_text.replace(regex, 'PMID');
+		regex = /PubMed Central PMCID|\r/g
+		replaced_text = replaced_text.replace(regex, 'PMCID');
 		// Replace plain text links by hyperlinks
 		// Set the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
