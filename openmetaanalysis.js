@@ -145,7 +145,7 @@ $(document).ready(function(){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
 		//remove citation number and colon placed by PubMed
-		var regex = /(\n|\r)\d{1,3}\:\s/g;
+		var regex = /(\n|\r)\d{1,}\:\s/g;
 		replaced_text = replaced_text.replace(regex, "\r");
 		//remove line feeds and replace with space
 		regex = /\r?\n|\r/g
