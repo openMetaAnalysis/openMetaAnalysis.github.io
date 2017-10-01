@@ -136,6 +136,9 @@ $(document).ready(function(){
 	$("body").find('ol').each(function(){
 		//For references
 		var str = $(this).html();
+		//remove PubMed's citation numbers and colon placed by PubMed
+		var regex = /\n\d{1,}\:\s/ig;
+    		str = str.replace(regex, "");
 		//remove double line feeds and replace with LI elements
 		var regex = /\n\s{0,}\n/ig;
 		str = str.replace(regex, "</li>\n<li>");
@@ -149,12 +152,9 @@ $(document).ready(function(){
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
-		//remove PubMed's citation numbers and colon placed by PubMed
-		var regex = /\n\d{1,}\:\s/ig;
-    		str = str.replace(regex, "");
 		//remove line feeds and replace with space
-		regex = /\r?\n|\r/g
-		replaced_text = replaced_text.replace(regex, " ");
+		//regex = /\r?\n|\r/g
+		//replaced_text = replaced_text.replace(regex, " ");
 		//Remove extra words PubMed likes
 		regex = /PubMed PMID|\r/g
 		replaced_text = replaced_text.replace(regex, 'PMID');
