@@ -148,6 +148,9 @@ $(document).ready(function(){
 		//Replace only the first line feed between list items
 		var regex = /<\/li>\n<li>/i;
 		str = str.replace(regex, '');
+		//Remove last <li> from http://jsfiddle.net/dubeynee/PgzrU/64/
+		var regex = /<li>([^(<li>)]*)$/
+		str = str.replace(regex,''+'$1');
 		})
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
