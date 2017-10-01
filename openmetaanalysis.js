@@ -140,13 +140,16 @@ $(document).ready(function(){
 		var regex = /\n\s{0,}\n/ig;
 		str = str.replace(regex, "</li>\n<li>");
 		$(this).replaceWith('<ol>' + str + '</ol>');
+		//Replace only the first line feed between list items
+		var regex = /<\/li>\n<li>/i;
+		str = str.replace(regex, '');
 		})
 	if ($("#references").length){
 		var replaced_text = $("#references").html();
 		//alert("Testing:\n\n" + $("#references").html())
-		//remove citation number and colon placed by PubMed
-		var regex = /(\n|\r)\d{1,}\:\s/g;
-		replaced_text = replaced_text.replace(regex, "\r");
+		//remove PubMed's citation numbers and colon placed by PubMed
+		var regex = /\n\d{1,}\:\s/ig;
+    		str = str.replace(regex, "");
 		//remove line feeds and replace with space
 		regex = /\r?\n|\r/g
 		replaced_text = replaced_text.replace(regex, " ");
@@ -174,10 +177,10 @@ $(document).ready(function(){
 		replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
 		// Set the regex string for line
 		// try 1: regex = /([^>]\n{1,}\s{0,})/ig;
-		regex = /([^>])(\n{1,}\s{0,})/ig;
+		//regex = /([^>])(\n{1,}\s{0,})/ig;
 		// Replace plain text line feeds with <br>
 		// try 1: replaced_text = replaced_text.replace(regex, "<br>");
-		replaced_text = replaced_text.replace(regex, "$1<br>\n");
+		//replaced_text = replaced_text.replace(regex, "$1<br>\n");
 		}
 	// Echo content
 	$('#references').html(replaced_text);
