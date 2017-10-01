@@ -139,6 +139,8 @@ $(document).ready(function(){
 		//remove double line feeds and replace with LI elements
 		var regex = /\n\s{0,}\n/ig;
 		str = str.replace(regex, "</li>\n<li>");
+		var regex = /(\n){2,}/ig;
+    		str = str.replace(regex, "</li>\n<li>");
 		$(this).replaceWith('<ol>' + str + '</ol>');
 		//Replace only the first line feed between list items
 		var regex = /<\/li>\n<li>/i;
