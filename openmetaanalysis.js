@@ -69,6 +69,7 @@ $(document).ready(function(){
 	$("body").find('a.master-home').each(function(){
 		//For directories on master
 		$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/tree/master/');
+		//$(this).attr('href', 'https://github.com/' + sub_domain + '/' + repo_dir + '/blob/master/README.md');
 		})
 	$("body").find('a.master-dir').each(function(){
 		//For directories on master
