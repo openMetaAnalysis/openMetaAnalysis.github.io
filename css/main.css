@@ -1,4 +1,4 @@
-/**
+/r*
 Palette:
 * green: #6ed3cf,
 * purple: #9068be,
@@ -44,16 +44,13 @@ This is the parent `<div>` that contains the menu and the content area.
   left: 0;
   padding-left: 0;
 }
-
+/*
 .content-lead, .content {
   margin: 0 auto;
   padding: 0 2em;
   line-height: 1.6em;
 }
-
-.content {
-  margin-bottom: 4em;
-}
+*/
 
 .header {
   margin: 0;
@@ -61,6 +58,11 @@ This is the parent `<div>` that contains the menu and the content area.
   text-align: center;
   padding: 2.5em 2em 0;
   border-bottom: 1px solid #eee;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #222;
 }
 
 .header h1 {
@@ -82,12 +84,32 @@ This is the parent `<div>` that contains the menu and the content area.
   color: #888;
 }
 
-.layout header, .layout .content, .layout footer {
-  padding: 1em;
+.layout {
+  padding: 0.5em;
 }
 
 .layout footer {
   text-align: center;
+}
+
+.content-body {
+  line-height: 1.5rem;
+}
+
+[class*='content-body'] h2 {
+  border-bottom: solid 4px;
+}
+
+.box {
+  padding: .5em;
+}
+
+.pure-horiz-menu-wrapper {
+  overflow: visible;
+}
+
+.collapse {
+  overflow: hidden;
 }
 
 .pure-menu-active>.pure-menu-link, .pure-menu-link:focus, .pure-menu-link:hover {
@@ -100,7 +122,12 @@ This is the parent `<div>` that contains the menu and the content area.
   height: auto;
 }
 
-h1 a {
-  text-decoration: none;
-  color: #222;
+#openmetaanal-twitter-timeline .timeline-Tweet-text {
+  font-size: 1em;
+}
+
+@media (max-width: 47.999em) {
+    .pure-horiz-menu-wrapper {
+        overflow: hidden;
+    }
 }
