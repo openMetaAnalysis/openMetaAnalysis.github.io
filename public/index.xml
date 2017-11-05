@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenMetaAnalysis</title>
+    <link>http://openmetaanalysis.github.io/</link>
+    <description>Recent content on OpenMetaAnalysis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Nov 2017 21:59:45 -0500</lastBuildDate>
+    
+	<atom:link href="http://openmetaanalysis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Index</title>
+      <link>http://openmetaanalysis.github.io/posts/</link>
+      <pubDate>Wed, 01 Nov 2017 21:59:45 -0500</pubDate>
+      
+      <guid>http://openmetaanalysis.github.io/posts/</guid>
+      <description> OpenMetaAnalysis Index page </description>
+    </item>
+    
+  </channel>
+</rss>
