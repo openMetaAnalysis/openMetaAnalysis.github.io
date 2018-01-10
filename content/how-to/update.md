@@ -1,5 +1,5 @@
 ---
-title: "Update an Existing Review"
+title: "Update a Review"
 ---
 <div>If you would like to modify or make a alternative version of an existing review, feel free to contact <a href="mailto:rbadgett@kumc.edu">rbadgett@kumc.edu</a></div>
 
