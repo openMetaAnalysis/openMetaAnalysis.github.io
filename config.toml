@@ -49,6 +49,7 @@ pygmentCodeFences = true
 [[menu.main]]
     identifier = "how-to"
     name = "How To"
+    url = "how-to"
     weight = 2
 
 [[menu.main]]
