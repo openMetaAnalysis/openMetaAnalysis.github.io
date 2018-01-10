@@ -43,33 +43,50 @@ pygmentCodeFences = true
 
 [[menu.main]]
     name = "Reviews"
-    url = "review"
+    url = "reviews"
     weight = 1
+
+[[menu.main]]
+    identifier = "how-to"
+    name = "How To"
+    weight = 2
+
+[[menu.main]]
+    name = "Create a Review"
+    parent = "how-to"
+    url = "how-to/create"
+    weight = 1
+
+[[menu.main]]
+    name = "Update a Review"
+    parent = "how-to"
+    url = "how-to/update"
+    weight = 2
 
 [[menu.main]]
     identifier = "editor"
     name = "Plot Editors"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
-    parent = "editor"
     name = "Editor 1"
+    parent = "editor"
     url = "editor/editor01"
     weight = 1
 
 [[menu.main]]
-    parent = "editor"
     name = "Editor 2"
+    parent = "editor"
     url = "editor/editor02"
     weight = 2
 
 [[menu.main]]
-    parent = "editor"
     name = "Editor 3"
+    parent = "editor"
     url = "editor/editor03"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Methods"
     url = "page/methods"
-    weight = 3
+    weight = 5
