@@ -1,7 +1,10 @@
 ---
 title: "Create a Review"
+date: 2017-07-31
 ---
-<div>Combining the concepts of scoping reviews (PMID <a href="https://pubmed.gov/20854677,25034198">20854677,25034198</a>) with Agile programming, you can have prelimimary forest plots on your public website quickly to help yourself and collaborators design your formal lit search and analyses. By taking advantage of existing systematic reviews and cited reference searching, your lit search is quicker than in other methods of executing meta-analyses.</div>
+Combining the concepts of scoping reviews (PMID <a href="https://pubmed.gov/20854677,25034198">20854677,25034198</a>) with Agile programming, you can have preliminary forest plots on your public website quickly to help yourself and collaborators design your formal lit search and analyses. By taking advantage of existing systematic reviews and cited reference searching, your lit search is quicker than in other methods of executing meta-analyses.
+<!--more-->
+
 <h3>If you are not familiar with using repositories at GitHub</h3>
 <ul>
 	<li>Create your GitHub account</li>
