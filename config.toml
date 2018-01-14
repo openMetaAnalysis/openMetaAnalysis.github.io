@@ -1,8 +1,8 @@
-baseURL = "http://openmetaanalysis.github.io/"
+baseURL = "http://jstirnaman.github.io/"
 languageCode = "en-us"
 title = "OpenMetaAnalysis"
 theme = "beautifulhugo"
-baseurl = "https://username.github.io"
+baseurl = "https://jstirnaman.github.io"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 metaDataFormat = "yaml"
@@ -12,6 +12,7 @@ pygmentCodeFences = true
 #googleAnalytics = "XXX"
 
 [Params]
+  publishUrl = "docs"
   subtitle = "Collaborative and continuous meta-analysis"
   logo = "img/avatar-icon.png"
   favicon = "img/favicon.ico"
