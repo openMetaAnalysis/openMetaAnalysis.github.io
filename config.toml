@@ -10,9 +10,9 @@ pygmentsUseClasses = true
 pygmentCodeFences = true
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
+publishDir = "docs"
 
 [Params]
-  publishUrl = "docs"
   subtitle = "Collaborative and continuous meta-analysis"
   logo = "img/avatar-icon.png"
   favicon = "img/favicon.ico"
