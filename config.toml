@@ -1,0 +1,95 @@
+baseURL = "http://jstirnaman.github.io/"
+languageCode = "en-us"
+title = "OpenMetaAnalysis"
+theme = "beautifulhugo"
+DefaultContentLanguage = "en"
+#DefaultContentLanguage = "ja"
+metaDataFormat = "yaml"
+pygmentsUseClasses = true
+pygmentCodeFences = true
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+contentDir = "content"
+layoutDir = "layouts"
+publishDir = "docs"
+
+[Params]
+  subtitle = "Collaborative and continuous meta-analysis"
+  logo = "img/avatar-icon.png"
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = true
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "Robert Badgett, MD"
+  website = "yourwebsite.com"
+  email = "youremail@domain.com"
+  github = "username"
+  twitter = "username"
+  linkedin = "username"
+  instagram = "username"
+  youtube = "user/username" # or channel/channelname
+
+[[menu.main]]
+    name = "Reviews"
+    url = "reviews"
+    weight = 1
+
+[[menu.main]]
+    identifier = "how-to"
+    name = "How To"
+    url = "how-to"
+    weight = 2
+
+[[menu.main]]
+    name = "Create a Review"
+    parent = "how-to"
+    url = "how-to/create"
+    weight = 1
+
+[[menu.main]]
+    name = "Update a Review"
+    parent = "how-to"
+    url = "how-to/update"
+    weight = 2
+
+[[menu.main]]
+    identifier = "editor"
+    name = "Plot Editors"
+    weight = 3
+
+[[menu.main]]
+    name = "Editor 1"
+    parent = "editor"
+    url = "editor/editor01"
+    weight = 1
+
+[[menu.main]]
+    name = "Editor 2"
+    parent = "editor"
+    url = "editor/editor02"
+    weight = 2
+
+[[menu.main]]
+    name = "Editor 3"
+    parent = "editor"
+    url = "editor/editor03"
+    weight = 4
+
+[[menu.main]]
+    name = "Methods"
+    url = "page/methods"
+    weight = 5

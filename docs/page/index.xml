@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on OpenMetaAnalysis</title>
+    <link>http://jstirnaman.github.io/page/</link>
+    <description>Recent content in Pages on OpenMetaAnalysis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>youremail@domain.com (Robert Badgett, MD)</managingEditor>
+    <webMaster>youremail@domain.com (Robert Badgett, MD)</webMaster>
+    
+	<atom:link href="http://jstirnaman.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Methods</title>
+      <link>http://jstirnaman.github.io/page/methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Robert Badgett, MD)</author>
+      <guid>http://jstirnaman.github.io/page/methods/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

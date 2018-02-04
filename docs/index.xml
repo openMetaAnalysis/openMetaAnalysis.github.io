@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenMetaAnalysis Home on OpenMetaAnalysis</title>
+    <link>http://jstirnaman.github.io/</link>
+    <description>Recent content in OpenMetaAnalysis Home on OpenMetaAnalysis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>youremail@domain.com (Robert Badgett, MD)</managingEditor>
+    <webMaster>youremail@domain.com (Robert Badgett, MD)</webMaster>
+    <lastBuildDate>Sun, 05 Nov 2017 21:59:45 -0500</lastBuildDate>
+    
+	<atom:link href="http://jstirnaman.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Plot Editor 1</title>
+      <link>http://jstirnaman.github.io/editor/editor01/</link>
+      <pubDate>Sun, 05 Nov 2017 21:59:45 -0500</pubDate>
+      <author>youremail@domain.com (Robert Badgett, MD)</author>
+      <guid>http://jstirnaman.github.io/editor/editor01/</guid>
+      <description> Plot editor 1 </description>
+    </item>
+    
+    <item>
+      <title>Create a Review</title>
+      <link>http://jstirnaman.github.io/how-to/create/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Robert Badgett, MD)</author>
+      <guid>http://jstirnaman.github.io/how-to/create/</guid>
+      <description>&lt;p&gt;Combining the concepts of scoping reviews (PMID &lt;a href=&#34;https://pubmed.gov/20854677,25034198&#34;&gt;20854677,25034198&lt;/a&gt;) with Agile programming, you can have preliminary forest plots on your public website quickly to help yourself and collaborators design your formal lit search and analyses. By taking advantage of existing systematic reviews and cited reference searching, your lit search is quicker than in other methods of executing meta-analyses.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Update a Review</title>
+      <link>http://jstirnaman.github.io/how-to/update/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Robert Badgett, MD)</author>
+      <guid>http://jstirnaman.github.io/how-to/update/</guid>
+      <description>&lt;p&gt;If you would like to modify or make a alternative version of an existing review, feel free to contact &lt;a href=&#34;mailto:rbadgett@kumc.edu&#34;&gt;rbadgett@kumc.edu&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Methods</title>
+      <link>http://jstirnaman.github.io/page/methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Robert Badgett, MD)</author>
+      <guid>http://jstirnaman.github.io/page/methods/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
