@@ -55,7 +55,7 @@ $(document).ready(function(){
 	if ($("#range").is(':checked')){
 		sd = width/4;
 		}
-	variance = sd^2
+	variance = Math.pow(sd, 2);
 	if ($("#median").val() != ''){
 		median = parseFloat($("#median").val())
 		if ($("#median").val() != '' && $("#range").is(':checked')){
