@@ -167,7 +167,7 @@ $(document).ready(function(){
 		// Replace plain text links by hyperlinks
 		// Set the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
-		replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmedcentral.gov/$2'>$2</a>");
+		replaced_text = replaced_text.replace(regex, "$1<a href='https://www.ncbi.nlm.nih.gov/pmc/articles/$2/'>$2</a>");
 		// Set the regex string for NCTs
 		regex = /(\s{1,})(NCT\d{7,})/ig;
 		replaced_text = replaced_text.replace(regex, "$1<a href='https://clinicaltrials.gov/ct2/show/study/$2'>$2</a>");
