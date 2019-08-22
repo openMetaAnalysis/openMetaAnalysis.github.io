@@ -164,21 +164,21 @@ $(document).ready(function(){
 		replaced_text = replaced_text.replace(regex, 'PMID');
 		regex = /PubMed Central PMCID|\r/g
 		replaced_text = replaced_text.replace(regex, 'PMCID');
-		// Replace plain text links by hyperlinks
-		// Set the regex string for PMCIDs
+		// Replace plain text links by hyperlinks by using regular expressions
+		// Set regular expression the regex string for PMCIDs
 		var regex = /(\s{1,})(pmc\d{7,})/ig;
 		replaced_text = replaced_text.replace(regex, "$1<a href='https://www.ncbi.nlm.nih.gov/pmc/articles/$2/'>$2</a>");
 		// Set the regex string for NCTs
 		regex = /(\s{1,})(NCT\d{7,})/ig;
 		replaced_text = replaced_text.replace(regex, "$1<a href='https://clinicaltrials.gov/ct2/show/study/$2'>$2</a>");
-		// Set the regex string for DOIs
+		// Set the regular expression regex string for DOIs
 		// var = regex = 'https://www.crossref.org/blog/dois-and-matching-regular-expressions/';
 		// var regex = '/^10.\d{4,9}/[-._;()/:A-Z0-9]+$/i';
 		// based on http://stackoverflow.com/questions/27910/finding-a-doi-in-a-document-or-page
 		// var regex = '\b10\.(\d+\.*)+[\/](([^\s\.])+\.*)+\b';
 		var regex = /(\b10\.\d+\.*)+[\/](([^\s])+\.*)+\b/ig;
 		replaced_text = replaced_text.replace(regex, "<a href='http://dx.doi.org/$1\/$2'>$1\/$2</a>");
-		// Set the regex string for PMIDs
+		// Set the regular expression regex string for PMIDs
 		regex = /(\s{1,})(\d{7,})/ig;
 		replaced_text = replaced_text.replace(regex, "$1<a href='http://pubmed.gov/$2'>$2</a>");
 		// Set the regex string for line
