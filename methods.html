@@ -75,6 +75,7 @@ $(document).ready(function(){
 			}
 		}
 	sd = sd.toFixed(2).toString();
+    	$("#answer_se").html(se);
     	$("#answer_sd").html(sd);
 	variance = variance.toFixed(2).toString();
     	$("#answer_variance").html(variance);
@@ -347,11 +348,11 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 </form>
 <form>
 	<table>
-		<caption>Calculation of standard deviation from<br/>confidence interval, range, or interquartile range</caption>
+		<caption>Calculation of standard deviation and error from<br/>confidence interval, range, or interquartile range</caption>
 		<tr><td><input type="text" id="lower" placeholder="Lower limit"/></td><td><input type="text" id="median" placeholder="Median (optional)"/></td><td><input type="text" id="upper" placeholder="Upper limit"/></td></tr>
 		<tr><td colspan="3" align="center"><input type="text" id="subjects" placeholder="Number subjects in group" style="width: 200px;" /></td></tr>
 		<tr><td colspan="3" align="center"><input id="ci" name="type2" class="type2" type="radio"><label for="ci">Confidence interval</label>&nbsp;<input id="iqr" name="type2" class="type2" type="radio"><label for="iqr">Interquartile range</label>&nbsp;<input id="range" name="type2" class="type3" type="radio"><label for="range">Range</label></td></tr>
-		<tr><td colspan="3"><button id="bttncalculate2">Calculate standard deviation</button> Mean: <span id="answer_mean"></span> SD: <span id="answer_sd"></span> VAR: <span id="answer_variance"></span>
+		<tr><td colspan="3"><button id="bttncalculate2">Calculate standard deviation</button> Mean: <span id="answer_mean"></span> SE: <span id="answer_se"></span> SD: <span id="answer_sd"></span> VAR: <span id="answer_variance"></span>
 			<div>Details from: <a href="http://pubmed.gov/25524443,15840177">mean to median</a>, <a href="http://pubmed.gov/11113947">confidence interval</a>, <a href="http://handbook-5-1.cochrane.org/chapter_7/7_7_3_5_mediansand_interquartile_ranges.htm">interquartile range</a>, and <a href="http://www.biomedcentral.com/1471-2288/5/13">range</a>. See downloadable spreadsheet for calculations by Wan, 2014 PMID <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4383202/">25524443</a></div>
 		</td></tr>
 	</table>
