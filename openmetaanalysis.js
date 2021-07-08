@@ -52,9 +52,9 @@ $(document).ready(function(){
 		network = true;
 		$("#network").show();
 	});
-	$("#blobbogram_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#blobbogramfigure").attr('src'))
+	$("#blobbogram_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#blobbogram_figure").attr('src'))
 	$("#blobbogramfigure").load(function() {
-		subgroup = true;
+		blobbogram = true;
 		$("#blobbogram").show();
 	});
 	$("#r_code").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/r-code')
