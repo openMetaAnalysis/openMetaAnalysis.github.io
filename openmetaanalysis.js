@@ -5,8 +5,10 @@ var pagename = location.pathname.split('/').slice(-1);
 if (pagename == ""){pagename = "index.html"};
 var repo_dir = location.pathname.substring(1,n);
 var repo_name = repo_dir.replace(/\-/gi, ' '); 
+var subgroup = false;
 var metagression = false;
 var network = false;
+var blobbogram = false;
 var r_code = false;
 function showtip(tiptext, trigger, width){
 	$("#tip").css('display','block');
@@ -35,6 +37,11 @@ $(document).ready(function(){
 	if (repo_dir == "Early-goal-directed-therapy-for-septic-shock"){
 		//code for testing a specific repository
 	}
+	$("#subgroup_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#subgroup_figure").attr('src'))
+	$("#subgroup_figure").load(function() {
+		subgroup = true;
+		$("#subgroup").show();
+	});
 	$("#metaregression_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#metaregression_figure").attr('src'))
 	$("#metaregression_figure").load(function() {
 		metaregression = true;
@@ -44,6 +51,11 @@ $(document).ready(function(){
 	$("#network_figure").load(function() {
 		network = true;
 		$("#network").show();
+	});
+	$("#blobbogram_figure").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/' + $("#blobbogramfigure").attr('src'))
+	$("#blobbogramfigure").load(function() {
+		subgroup = true;
+		$("#blobbogram").show();
 	});
 	$("#r_code").attr('src', 'https://raw.githubusercontent.com/' + sub_domain + '/' + repo_dir + '/master/files/r-code')
 	$("#r_code").load(function() {
