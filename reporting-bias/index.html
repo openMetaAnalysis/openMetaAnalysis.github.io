@@ -135,18 +135,20 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
        </header>
       <section>
 
-<div>This page provides the details underpinning an example of reporting bias. This example focuses on one clinical recommendation, topical NSAIDs versus placebo for non-back pain over 1-7 days, from a larger, very well-done clinical practice guideline (PMID <a href="http://pubmed.gov/32805126">32805126</a>).  The goal of this example is to demonstrate the need for authors of guidelines and evidence syntheses to provide two rates that describe the possibility of publication bias their underlying evidence base:</div>
+<div>This page provides the details underpinning an example of reporting bias. This example focuses on one clinical recommendation, topical NSAIDs versus placebo for non-back pain over 1-7 days, from a larger, very well-done clinical practice guideline (PMID <a href="http://pubmed.gov/32805126">32805126</a>).  The goal of this example is to demonstrate the need for authors of guidelines and evidence syntheses to provide rates that describe the possibility of publication bias their underlying evidence base:</div>
   <ul style="line-height:150%">
-    <li>Registration rate of published subjects (Rate<span class='supsub'><sup class='superscript'>reg</sup><sub class='subscript'>pub</sub></span>)</li>
-    <li>Publication rate of registered subjects (Rate<span class='supsub'><sup class='superscript'>pub</sup><sub class='subscript'>reg</sub></span>)</li>
+    <li>Registration rate of published subjects (Rate Reg/Pub)
+	    <ul><li><i>Prospective</i> registration rate of published subjects (Rate Reg/Pub)</li></ul>
+    </li>
+    <li>Publication rate of registered subjects (Rate Pub/Reg)</li>
   </ul>
 
 <div>This example has been presented at the 2022 Annual Meeting of the Society of General Internal Medicine (see <a href="#notes">Notes</a> below).</div>
 
   <h2>Contents</h2>
   <ul>
-    <li><a href="#section1">Registration rate (Rate<span class='supsub'><sup class='superscript'>reg</sup><sub class='subscript'>pub</sub></span>) of published subjects</a></li>
-    <li><a href="#section2">Publication rate (Rate<span class='supsub'><sup class='superscript'>pub</sup><sub class='subscript'>reg</sub></span>) of subjects registered at ClinicalTrials.gov</a></li>
+    <li><a href="#section1">Registration rate (Rate Reg/Pub) of published subjects</a></li>
+    <li><a href="#section2">Publication rate (Rate Pub/Reg) of subjects registered at ClinicalTrials.gov</a></li>
     <li><a href="#excluded">Excluded by APC from pairwise analysis but may be helpful</a></li>
   </ul>
 
@@ -161,10 +163,10 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 		<div>Denominator: total published in 27 studies (ACP Supplement Table 14 - pairwise analysis for pain at 1-7 days):</div>
 			<ul><li>4777 subjects</li></ul>
 		<div>Rate of registration of published subjects:</div>
-			<ul><li>Rate<span class='supsub'><sup class='superscript'>reg</sup><sub class='subscript'>pub</sub></span> <span style='color:red'>28%</span> (1316/4777 subjects)</li></ul>
+			<ul><li>Rate Reg/Pub <span style='color:red'>28%</span> (1316/4777 subjects)</li></ul>
 		<div>Rate of <i>prospective</i> registration of published subjects:</div>
-			<ul><li><b>Rate<span class='supsub'><sup class='superscript'>reg</sup><sub class='subscript'>pub</sub></span> <span style='color:red'>2%</span></b> (<span style='color:orange;font-weight:bold'>72</span> /4777 subjects)</li></ul>
-	</td><td style="width:50%;vertical-align:middle;border:none"><img src="https://openmetaanalysis.github.io/reporting-bias/Figure2a - 2022-09-03.png" width="500px" alt="Figure"/></td></tr>
+			<ul><li><b>Rate pReg/Pub <span style='color:red'>2%</span></b> (<span style='color:orange;font-weight:bold'>72</span> /4777 subjects)</li></ul>
+	</td><td style="width:50%;vertical-align:middle;border:none"><img src="https://openmetaanalysis.github.io/reporting-bias/Figure2a - 2023-04-16.png" width="500px" alt="Figure"/></td></tr>
 </table>
 <h3>ClinicalTrials.gov</h3>
 	<div>Total registered <i>and</i> published in 2 studies: <span style='color:green;font-weight:bold'>314</span> = 242 + <span style='color:orange;font-weight:bold'>72</span> </div>
@@ -205,7 +207,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 		<ul><li><!--4172 pre removing GSK and Lai-->3474 = <span style='color:black;font-weight:bold'>2889</span> + <span style='color:orange;font-weight:bold'>271</span> + <span style='color:green;font-weight:bold'>314</span></li></ul>
 		<div>Publication rate of subjects registered at ClinicalTrials.gov:</div>
 		<ul>
-			<li><b>Rate<span class='supsub'><sup class='superscript'>pub</sup><sub class='subscript'>reg</sub></span>: <span style='color:red'>9%</span></b> (314/3474 subjects)</li>
+			<li><b>Rate Pub/Reg: <span style='color:red'>9%</span></b> (314/3474 subjects)</li>
 		</ul>
 	</td><td style="width:50%;vertical-align:middle;border:none"><img src="https://openmetaanalysis.github.io/reporting-bias/Figure2b - 2022-09-03.png" width="500px" alt="Figure"/></td></tr>
 </table>
