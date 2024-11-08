@@ -390,7 +390,7 @@ http://code.google.com/p/jquery-csv/wiki/API -> instructions
 <form>
 	<table>
 		<caption>Converting continuous measures into binary measures</caption>
-		<tr><td colspan="2">Many calculators for data conversions are at <a href="http://www.campbellcollaboration.org/escalc/html/EffectSizeCalculator-SMD1.php">George Mason University</a>. Equations for conversion <a href="http://handbook-5-1.cochrane.org/chapter_9/9_4_6_combining_dichotomous_and_continuous_outcomes.htm">are available</a> at the Cochrane handbook-5-1.</tr>
+		<tr><td colspan="2">Many calculators for data conversions are at <a href="https://www.campbellcollaboration.org/calculator/">George Mason University</a>. Equations for conversion <a href="https://training.cochrane.org/handbook/current/chapter-10#section-10-6">are available</a> at the Cochrane handbook-5-1.</tr>
 		<tr><td colspan="2" align="center"><input onclick="alert('Not implemented')" id="twosamples3" name="type2" class="type2" type="radio"><label for="twosamples3">Two group means</label>&nbsp;<input id="smd3" name="type2" class="type2" type="radio"><label for="smd3">Single difference between group means</label></td></tr>
 		<tr class="onedifference3"><td><input type="text" id="lower3" placeholder="CI lower limit"/></td><td><div></div><input type="text" id="upper3" placeholder="CI upper limit"/></td></tr>
 		<tr class="onedifference3"><td colspan="2" align="center"><input type="text" id="subjects3" placeholder="Number subjects in group" style="width: 200px;" />
@@ -500,6 +500,10 @@ independently when and where they choose.". Thus, adding to selective reporting 
 	<li>Hierarchial bivariate model (Reitsma, 2005. PMID <a href="http://pubmed.gov/16168343">16168343</a>) as implemented in the R package <a href="http://cran.r-project.org/web/packages/Metatron/">metatron</a> with AUC from the R package <a href="http://cran.r-project.org/web/packages/mada/">mada</a></li>
 	</ul>
 </li>
+	<a name="smd"/>
+	<ul>
+	<li>The standardized mean difference (SMD) may help combine studies that report conceptually compatible metrics, but vary in the exact method of measurement yielding conflicting numerical results. Many statistical measures used in healthcare can be converted to the SMD (https://training.cochrane.org/handbook/current/chapter-10#section-10-6">Cochrane Handbook</a>) and then pooled (<a href="https://www.campbellcollaboration.org/calculator/">online calculators at the Campbell Collaboration</a>, <a href="https://cran.r-project.org/web/packages/esc/">R package calculators</a>). The SMD can be interpreted as 0.2 represents a small effect; 0.5 a moderate effect; 0.8 a large effect (PMID <a href="http://pubmed.gov/19565683">19565683</a>). As the SMD may not be familiar to readers and also does not give a result that can be translated into clinical impact, after the SMD is calculated and a statistically significant result is found, you can identify a study whose result is closest to the pooled SMD and then describe that study. For example, in the <a href="https://github.com/openMetaAnalysis/Adult_ADHD_Diagnosis/blob/master/README.md">diagnosis of adult ADHD</a>, the <a href="https://pubmed.ncbi.nlm.nih.gov/32285644/">Brevick study</a> had the closest SMD to the pooled SMD of the two studies of the WURS. Thus you could describe the Brevick results in clinical terms using the aROC that they reported and ADHD experts may understand.</li>
+	</ul>
 </ul>
 
 <div>
